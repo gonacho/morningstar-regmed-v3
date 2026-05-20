@@ -6,11 +6,15 @@ import '@/styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  /** Serialised JSON-LD object(s) for structured data. Pass a string or leave
+   *  undefined; the layout will inject it inside <script type="application/ld+json">. */
+  jsonLd?: string;
 }
 
 const {
   title,
-  description = 'Morningstar RegMed — Regulatory and medical affairs consulting for the life sciences industry.',
+  description = 'Morning Star Neuropathy & Pain Treatment Center in St. Peters, MO — advanced neuropathy care, regenerative therapy, and pain management.',
+  jsonLd,
 } = Astro.props;
 ---
 
@@ -27,7 +31,10 @@ const {
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>{title} | Morningstar RegMed</title>
+    <title>{title} | Morning Star</title>
+    {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
+    <!-- JSON-LD slot: child pages may inject additional structured data here -->
+    <slot name="head" />
   </head>
   <body class="flex flex-col min-h-full bg-white">
     <Header />

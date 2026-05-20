@@ -1,0 +1,56 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const lastUpdated = '2024-01-01';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Morningstar RegMed privacy policy — how we collect, use, and protect your personal information."
+>
+  <!-- Page header -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-brand-navy mb-4">Privacy Policy</h1>
+      <p class="text-gray-500 text-sm">
+        Last updated:{' '}
+        {new Date(lastUpdated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </p>
+    </div>
+  </section>
+
+  <!-- Policy body -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto prose prose-lg prose-headings:text-brand-navy">
+      <p>
+        Placeholder — full privacy policy content coming in Phase 2. This page will cover data
+        collection, use, storage, sharing, cookies, patient rights, and contact information for
+        privacy inquiries.
+      </p>
+
+      <h2>Information We Collect</h2>
+      <p>Placeholder — content coming in Phase 2.</p>
+
+      <h2>How We Use Your Information</h2>
+      <p>Placeholder — content coming in Phase 2.</p>
+
+      <h2>HIPAA Compliance</h2>
+      <p>Placeholder — content coming in Phase 2.</p>
+
+      <h2>Cookies and Tracking</h2>
+      <p>Placeholder — content coming in Phase 2.</p>
+
+      <h2>Third-Party Services</h2>
+      <p>Placeholder — content coming in Phase 2.</p>
+
+      <h2>Your Rights</h2>
+      <p>Placeholder — content coming in Phase 2.</p>
+
+      <h2>Contact Us</h2>
+      <p>
+        For privacy-related questions, please contact us via our{' '}
+        <a href="/contact">contact page</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

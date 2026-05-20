@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+// Placeholder posts — SEO Writer will populate copy in Phase 2.
+// Slugs are period-free (old dot-slug URLs are 301-redirected via _redirects).
+// Slugs match the redirect destinations in public/_redirects (MOR-5).
+// Old slugs (with periods and city/state) 301-redirect here from the old site.
+const posts = [
+  {
+    slug: 'regenerative-therapy-back-pain-recovery',
+    title: 'How Regenerative Therapy May Support Back Pain Recovery',
+    date: '2024-01-15',
+    excerpt: 'Placeholder — content coming in Phase 2.',
+  },
+  {
+    slug: 'neuropathy-treatment-long-term-support',
+    title: 'Neuropathy Treatment for Long-Term Nerve Function Support',
+    date: '2024-02-10',
+    excerpt: 'Placeholder — content coming in Phase 2.',
+  },
+];
+---
+
+<BaseLayout
+  title="Blog"
+  description="Insights on regenerative medicine, pain management, and patient wellness from the Morningstar RegMed team."
+>
+  <!-- Page header -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-brand-navy mb-4">Blog</h1>
+      <p class="text-xl text-gray-600">
+        Expert insights on regenerative medicine, pain management, and patient care.
+      </p>
+    </div>
+  </section>
+
+  <!-- Post listing -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto space-y-8">
+      {posts.map(({ slug, title, date, excerpt }) => (
+        <article class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+          <time class="text-sm text-gray-400 mb-2 block">
+            {new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+          <h2 class="text-2xl font-bold text-brand-navy mb-2">
+            <a href={`/blog/${slug}`} class="hover:text-brand-blue transition-colors">
+              {title}
+            </a>
+          </h2>
+          <p class="text-gray-600 mb-4">{excerpt}</p>
+          <a
+            href={`/blog/${slug}`}
+            class="text-brand-blue text-sm font-medium hover:underline"
+          >
+            Read more →
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

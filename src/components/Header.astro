@@ -1,9 +1,12 @@
 ---
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/about-us', label: 'About' },
+  { href: '/neuropathy', label: 'Neuropathy' },
+  { href: '/neuropathy-treatment', label: 'Treatment' },
+  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact-us', label: 'Contact' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -15,12 +18,12 @@ const currentPath = Astro.url.pathname;
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2">
         <span class="text-brand-navy font-bold text-xl tracking-tight">
-          Morningstar RegMed
+          Morning Star
         </span>
       </a>
 
       <!-- Desktop nav -->
-      <div class="hidden md:flex items-center gap-8">
+      <div class="hidden md:flex items-center gap-6">
         {navLinks.map(({ href, label }) => (
           <a
             href={href}
@@ -35,14 +38,14 @@ const currentPath = Astro.url.pathname;
           </a>
         ))}
         <a
-          href="/contact"
+          href="/schedule-appointment"
           class="ml-2 px-4 py-2 bg-brand-blue text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
         >
-          Get in Touch
+          Schedule Appointment
         </a>
       </div>
 
-      <!-- Mobile menu button (placeholder — JS-free toggle) -->
+      <!-- Mobile menu button -->
       <button
         class="md:hidden p-2 rounded-md text-gray-600 hover:text-brand-navy"
         aria-label="Open menu"
@@ -67,6 +70,12 @@ const currentPath = Astro.url.pathname;
           {label}
         </a>
       ))}
+      <a
+        href="/schedule-appointment"
+        class="block py-2 text-sm font-medium text-brand-blue"
+      >
+        Schedule Appointment
+      </a>
     </div>
   </nav>
 </header>
