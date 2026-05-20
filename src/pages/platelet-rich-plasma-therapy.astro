@@ -1,26 +1,177 @@
 ---
-import ServicePage from '@/layouts/ServicePage.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Platelet Rich Plasma Therapy in St. Peters, MO';
+const description =
+  'PRP therapy at Morning Star in St. Peters, MO uses your own platelets to accelerate healing. Non-surgical joint and tissue repair. Book your session.';
+
+const faqs = [
+  {
+    question: 'How does PRP therapy work?',
+    answer:
+      'PRP therapy begins with a simple blood draw from your arm. The blood is then placed in a centrifuge to separate and concentrate the platelets. This platelet-rich plasma — packed with growth factors — is injected directly into the injured or damaged area, stimulating your body\'s natural healing response and accelerating tissue repair.',
+  },
+  {
+    question: 'What conditions does PRP therapy treat?',
+    answer:
+      'PRP is effective for a range of musculoskeletal conditions including osteoarthritis, tendon injuries, ligament sprains, rotator cuff tears, and soft tissue damage. It is also used to support healing after certain procedures. Our team will evaluate your condition to determine if PRP is the most appropriate option.',
+  },
+  {
+    question: 'How long does a PRP session take?',
+    answer:
+      'A typical PRP session takes approximately 45 minutes to one hour from start to finish. This includes the blood draw, processing time in the centrifuge, and the injection itself. Most patients are able to return to their normal routine the same day.',
+  },
+  {
+    question: 'Is PRP therapy painful?',
+    answer:
+      'Most patients experience minimal discomfort during PRP therapy. A topical numbing cream is applied to the treatment area before the injection to reduce any pain. Some patients report mild soreness at the injection site for a day or two afterward, which typically resolves on its own.',
+  },
+  {
+    question: 'How many PRP sessions will I need?',
+    answer:
+      'The number of sessions varies depending on the severity of your condition and your body\'s response to treatment. Many patients see significant improvement after 1 to 3 sessions spaced several weeks apart. Our team will create a personalized treatment plan based on your specific needs and progress.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+});
 ---
 
-<ServicePage
-  title="Platelet-Rich Plasma Therapy"
-  metaDescription="PRP (platelet-rich plasma) therapy at Morningstar RegMed. Harness your body's natural healing factors to repair damaged tissue and relieve pain."
-  h1="Platelet-Rich Plasma (PRP) Therapy"
-  heroText="Placeholder — content coming in Phase 2."
-  faqs={[
-    {
-      question: 'What is platelet-rich plasma (PRP) therapy?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'What conditions does PRP treat?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'How many PRP sessions will I need?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-  ]}
->
-  <p>Placeholder — content coming in Phase 2.</p>
-</ServicePage>
+<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+  <!-- Hero -->
+  <section class="bg-brand-light py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+        Platelet-Rich Plasma (PRP) Therapy
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl">
+        Use your body's own concentrated platelets to accelerate healing, reduce pain, and repair damaged tissue — without surgery.
+      </p>
+      <a
+        href="/schedule-appointment"
+        class="mt-8 inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Schedule a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">What Is PRP Therapy?</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Platelet-rich plasma (PRP) therapy is a regenerative treatment that uses concentrated platelets from your own blood to promote healing. Platelets contain growth factors that play a critical role in tissue repair, making PRP a natural and effective option for chronic joint conditions, soft tissue injuries, and osteoarthritis.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        At Morning Star Neuropathy &amp; Pain Treatment Center, PRP sessions are performed in-office and typically take 45 minutes to an hour. The procedure involves a simple blood draw, processing in a centrifuge, and a targeted injection into the affected area. A numbing cream is applied beforehand to minimize any discomfort.
+      </p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-8">How PRP Therapy Works</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">1. Blood Draw</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            A small sample of blood is drawn from your arm, similar to a routine blood test. The process is quick and straightforward.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">2. Platelet Concentration</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Your blood is placed in a centrifuge that separates the platelets and concentrates them into a small volume of plasma rich in growth factors.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">3. Targeted Injection</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            The concentrated PRP is injected directly into the damaged tissue or joint, where the growth factors stimulate your body's natural repair process.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-8">Benefits of PRP Therapy</h2>
+      <ul class="grid md:grid-cols-2 gap-4">
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Uses your own blood — no synthetic materials</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Stimulates natural tissue repair and healing</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Non-surgical with minimal downtime</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Effective for osteoarthritis and joint conditions</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Minimal pain with topical numbing cream</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Sessions completed in under one hour</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+      <dl class="space-y-6">
+        {faqs.map(({ question, answer }) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <dt class="font-semibold text-brand-navy mb-2">{question}</dt>
+            <dd class="text-gray-600 text-sm leading-relaxed">{answer}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Heal Naturally with PRP Therapy</h2>
+      <p class="text-blue-200 mb-8">
+        Contact Morning Star to learn how platelet-rich plasma therapy can help you recover from joint pain and soft tissue injuries.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/schedule-appointment"
+          class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+        >
+          Schedule Appointment
+        </a>
+        <a
+          href="/contact"
+          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

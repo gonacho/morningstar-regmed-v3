@@ -1,26 +1,177 @@
 ---
-import ServicePage from '@/layouts/ServicePage.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Medical Weight Loss in St. Peters, MO';
+const description =
+  'Medically supervised weight loss in St. Peters, MO using semaglutide and tirzepatide. Personalized plans to suppress appetite and support long-term health.';
+
+const faqs = [
+  {
+    question: 'How does semaglutide work for weight loss?',
+    answer:
+      'Semaglutide mimics a natural hormone called GLP-1 that regulates appetite and blood sugar. It increases feelings of fullness, helping you eat less without constant hunger. When combined with regular exercise and dietary adjustments, semaglutide can produce significant, sustained weight loss. Our team monitors your progress and adjusts dosing to maximize results.',
+  },
+  {
+    question: 'What kind of weight loss results can I expect with tirzepatide?',
+    answer:
+      'Most patients using tirzepatide lose approximately 1 to 3 pounds per week, though individual results vary based on starting weight, adherence to the program, and lifestyle factors. Clinical studies have shown tirzepatide to be among the most effective weight loss medications available. Our team sets realistic goals tailored to your health profile.',
+  },
+  {
+    question: 'What foods should I avoid while on these medications?',
+    answer:
+      'We recommend limiting high-sugar foods, fried and high-fat dishes, and processed snacks, as these can reduce the effectiveness of your medication and cause gastrointestinal discomfort. Patients taking tirzepatide should also avoid alcohol, which can intensify side effects. Our team provides detailed nutritional guidance as part of your personalized plan.',
+  },
+  {
+    question: 'Who is a candidate for medical weight loss?',
+    answer:
+      'Medical weight loss may be appropriate for adults with a BMI of 30 or higher, or a BMI of 27 or higher with weight-related health conditions such as type 2 diabetes, high blood pressure, or sleep apnea. During your consultation, our team evaluates your medical history, current health, and goals to determine the best approach.',
+  },
+  {
+    question: 'Are the weight loss results permanent?',
+    answer:
+      'Long-term results depend on maintaining healthy habits after completing the program. Semaglutide and tirzepatide help retrain your appetite and metabolism, but lasting success requires ongoing commitment to nutrition and physical activity. Our program includes lifestyle coaching to help you sustain your progress well beyond the treatment period.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+});
 ---
 
-<ServicePage
-  title="Medical Weight Loss"
-  metaDescription="Medically supervised weight loss programs at Morningstar RegMed. Personalized plans combining medication, nutrition, and lifestyle coaching."
-  h1="Medical Weight Loss"
-  heroText="Placeholder — content coming in Phase 2."
-  faqs={[
-    {
-      question: 'What is medical weight loss?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'What medications are used for medical weight loss?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'How much weight can I expect to lose?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-  ]}
->
-  <p>Placeholder — content coming in Phase 2.</p>
-</ServicePage>
+<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+  <!-- Hero -->
+  <section class="bg-brand-light py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+        Medical Weight Loss
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl">
+        Medically supervised weight loss programs using semaglutide and tirzepatide injections. Personalized plans designed to suppress appetite, regulate metabolism, and support long-term health.
+      </p>
+      <a
+        href="/schedule-appointment"
+        class="mt-8 inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Schedule a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">A Medical Approach to Weight Loss</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Losing weight and keeping it off requires more than willpower. At Morning Star Neuropathy &amp; Pain Treatment Center, our medical weight loss program combines FDA-approved medications — semaglutide and tirzepatide — with personalized nutritional guidance and lifestyle coaching to help you achieve sustainable results.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        These injectable medications work by targeting the hormones that control appetite and blood sugar, making it easier to eat less, feel satisfied, and stay on track. Every plan is supervised by our clinical team, with regular check-ins to monitor your progress and adjust your treatment as needed.
+      </p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-8">How Our Program Works</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">1. Health Evaluation</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We assess your medical history, current health markers, and weight loss goals to determine whether semaglutide or tirzepatide is the right fit for you.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">2. Personalized Plan</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Your treatment plan includes medication dosing, nutritional recommendations, and exercise guidelines tailored to your lifestyle and health profile.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">3. Ongoing Support</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Regular follow-up visits allow us to track your progress, adjust medication as needed, and provide the coaching and accountability to keep you on course.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-8">Benefits of Medical Weight Loss</h2>
+      <ul class="grid md:grid-cols-2 gap-4">
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">FDA-approved medications (semaglutide and tirzepatide)</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Suppresses appetite and reduces cravings</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Medically supervised for safety and efficacy</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Personalized plans for lasting results</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Helps regulate metabolism and blood sugar</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Includes nutritional guidance and lifestyle coaching</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+      <dl class="space-y-6">
+        {faqs.map(({ question, answer }) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <dt class="font-semibold text-brand-navy mb-2">{question}</dt>
+            <dd class="text-gray-600 text-sm leading-relaxed">{answer}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Start Your Weight Loss Journey</h2>
+      <p class="text-blue-200 mb-8">
+        Contact Morning Star to learn how our medically supervised programs can help you reach and maintain a healthier weight.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/schedule-appointment"
+          class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+        >
+          Schedule Appointment
+        </a>
+        <a
+          href="/contact"
+          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

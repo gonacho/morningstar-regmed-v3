@@ -1,26 +1,252 @@
 ---
-import ServicePage from '@/layouts/ServicePage.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Joint Pain Relief in St. Peters, MO';
+const description =
+  'Get expert joint pain relief at Morning Star in St. Peters, MO. Diagnosis and treatment for osteoarthritis, stiffness, and joint inflammation.';
+
+const faqs = [
+  {
+    question: 'What are the most common causes of joint pain?',
+    answer:
+      'The most common cause of joint pain is osteoarthritis, a wear-and-tear form of arthritis where cartilage gradually breaks down. Other common causes include injuries such as sprains or fractures, inflammatory conditions like rheumatoid arthritis, bursitis, tendinitis, and overuse from repetitive activities.',
+  },
+  {
+    question: 'What home remedies can help with joint pain?',
+    answer:
+      'Alternating heat and cold therapy can help reduce inflammation and ease stiffness. Over-the-counter anti-inflammatory medications, gentle stretching, and low-impact exercise like swimming or walking may provide temporary relief. However, these remedies address symptoms rather than the underlying cause, so professional evaluation is recommended for persistent pain.',
+  },
+  {
+    question: 'When should I see a doctor for joint pain?',
+    answer:
+      'You should see a doctor if your joint pain is severe, persists for more than a few weeks, is accompanied by significant swelling or redness, or limits your ability to perform daily activities. Sudden, unexplained joint pain or pain following an injury also warrants professional evaluation.',
+  },
+  {
+    question: 'What treatments are available for joint pain at Morning Star?',
+    answer:
+      'Morning Star offers advanced treatments including hyaluronic acid injections to restore joint lubrication, platelet-rich plasma (PRP) therapy to promote tissue repair, regenerative therapy, and comprehensive pain management plans. We tailor each treatment approach to the specific joint and underlying condition.',
+  },
+  {
+    question: 'Can joint pain be prevented?',
+    answer:
+      'While not all joint pain can be prevented, you can reduce your risk by maintaining a healthy weight to lessen joint stress, staying physically active with low-impact exercises, using proper form during physical activities, protecting joints during sports, and eating an anti-inflammatory diet rich in omega-3 fatty acids.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+});
 ---
 
-<ServicePage
-  title="Joint Pain Treatment"
-  metaDescription="Expert joint pain treatment at Morningstar RegMed. From hyaluronic acid injections to PRP therapy, we offer proven solutions for lasting relief."
-  h1="Joint Pain Treatment"
-  heroText="Placeholder — content coming in Phase 2."
-  faqs={[
-    {
-      question: 'What joints can be treated?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'What treatment options are available for joint pain?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'How soon will I feel results?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-  ]}
->
-  <p>Placeholder — content coming in Phase 2.</p>
-</ServicePage>
+<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+  <!-- Hero -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-brand-navy mb-4">Joint Pain Relief in St.&nbsp;Peters, MO</h1>
+      <p class="text-xl text-gray-600">
+        Joint pain can turn simple everyday tasks into painful challenges. At Morning Star in
+        St.&nbsp;Peters, MO, we provide expert diagnosis and advanced treatment options to reduce
+        your joint pain and help you move freely again.
+      </p>
+      <a
+        href="/schedule-appointment"
+        class="mt-8 inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Schedule a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Condition Overview -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Understanding Joint Pain</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        Joint pain affects millions of adults and can occur in any joint in the body, including
+        the knees, hips, shoulders, wrists, and fingers. Symptoms typically include stiffness, pain,
+        soreness, and sometimes a grating sensation when the joint moves.
+      </p>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        Osteoarthritis is the most common cause of joint pain. Often called "wear-and-tear
+        arthritis," osteoarthritis occurs when the protective cartilage that cushions the ends of
+        your bones gradually deteriorates. As cartilage wears away, bones begin to rub against each
+        other, causing pain, swelling, and reduced range of motion.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        While home remedies such as heat, cold, and over-the-counter medications can provide
+        temporary relief, they do not address the underlying cause of joint pain. Professional care
+        offers long-term solutions that target the root of the problem and can slow or halt further
+        joint deterioration.
+      </p>
+    </div>
+  </section>
+
+  <!-- Common Causes -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Common Causes of Joint Pain</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Osteoarthritis</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            The most prevalent form of arthritis, caused by the gradual breakdown of cartilage in
+            the joints. It most commonly affects the knees, hips, hands, and spine.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Injury and Trauma</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Sprains, fractures, dislocations, and ligament tears can cause acute joint pain that, if
+            not properly treated, may develop into a chronic condition.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Inflammatory Conditions</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Rheumatoid arthritis, gout, bursitis, and tendinitis cause inflammation in and around
+            the joints, leading to pain, swelling, and stiffness.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Overuse and Repetitive Stress</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Repetitive motions from work, sports, or daily activities can wear down joint tissues
+            over time, causing chronic pain and reduced function.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Symptoms -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Symptoms of Joint Problems</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Persistent stiffness, especially in the morning</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Aching or soreness during or after movement</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Grating or grinding sensations in the joint</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Swelling, redness, or warmth around the joint</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Reduced range of motion or flexibility</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Weakness or instability in the affected joint</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When to Seek Help -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">When to Seek Professional Care</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        Joint pain that is severe, persistent, or interfering with your daily life deserves
+        professional attention. You should schedule an evaluation if you experience:
+      </p>
+      <ul class="space-y-2 text-gray-600 mb-6">
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Joint pain lasting more than a few weeks</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Significant swelling or deformity of the joint</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Inability to use or bear weight on the joint</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Pain that does not respond to home remedies</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Progressive worsening of symptoms over time</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Treatment Options -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Treatment Options at Morning Star</h2>
+      <p class="text-gray-600 mb-6 leading-relaxed">
+        Our team specializes in advanced, non-surgical approaches to joint pain that address the
+        underlying cause — not just the symptoms. Your personalized treatment plan may include:
+      </p>
+      <div class="space-y-4">
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Hyaluronic Acid Injections</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            These injections restore the natural lubrication in your joints, reducing friction and
+            pain while improving mobility. Particularly effective for knee osteoarthritis.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Platelet-Rich Plasma (PRP) Therapy</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Concentrated growth factors from your own blood are injected into the affected joint to
+            stimulate tissue repair and reduce inflammation.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Regenerative Therapy</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Advanced regenerative treatments that support the body's natural healing processes to
+            repair damaged joint tissues.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Pain Management</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Comprehensive pain management strategies tailored to your condition, providing relief
+            while you undergo treatment for the underlying cause.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+      <dl class="space-y-6">
+        {faqs.map(({ question, answer }) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <dt class="font-semibold text-brand-navy mb-2">{question}</dt>
+            <dd class="text-gray-600 text-sm leading-relaxed">{answer}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Move Without Pain Again</h2>
+      <p class="text-blue-200 mb-8">
+        Do not let joint pain hold you back. Contact Morning Star in St.&nbsp;Peters, MO today to
+        schedule your consultation and explore your treatment options.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/schedule-appointment"
+          class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+        >
+          Schedule Appointment
+        </a>
+        <a
+          href="/contact"
+          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

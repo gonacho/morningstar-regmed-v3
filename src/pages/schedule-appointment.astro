@@ -4,100 +4,151 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Schedule an Appointment"
-  description="Schedule a consultation with Morningstar RegMed. Contact us to discuss your pain management or regenerative medicine needs."
+  description="Schedule your appointment at Morning Star in St. Peters, MO. Take the first step toward neuropathy relief and pain management. Call (636) 244-0124."
 >
-  <!-- Page header -->
+  <!-- Hero -->
   <section class="bg-brand-light py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl font-bold text-brand-navy mb-4">Schedule an Appointment</h1>
+      <h1 class="text-4xl font-bold text-brand-navy mb-4">Schedule Your Appointment</h1>
       <p class="text-xl text-gray-600">
-        Take the first step toward lasting relief. Reach out to schedule your consultation.
+        Take the first step toward lasting relief. Whether you are dealing with neuropathy, chronic pain, or exploring regenerative therapy options, our team is ready to help you find the right path forward.
       </p>
     </div>
   </section>
 
-  <!-- Scheduling options -->
+  <!-- Form + Side Panel -->
   <section class="py-16 px-4">
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Phone / direct CTA -->
-      <div class="bg-brand-light rounded-xl p-8 flex flex-col gap-4">
-        <h2 class="text-2xl font-bold text-brand-navy">Call Us</h2>
-        <p class="text-gray-600">
-          Speak directly with our scheduling team to find the appointment time that works for you.
-        </p>
-        <p class="text-gray-500 text-sm">Placeholder — phone number coming in Phase 2.</p>
-        <a
-          href="tel:+1-000-000-0000"
-          class="mt-auto px-6 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-center"
-        >
-          Call Now
-        </a>
-      </div>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <!-- Appointment Form -->
+      <div class="lg:col-span-2">
+        <h2 class="text-2xl font-bold text-brand-navy mb-6">Request an Appointment</h2>
+        <form class="space-y-5" aria-label="Appointment request form">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                placeholder="Jane Smith"
+              />
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                required
+                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                placeholder="(636) 555-0100"
+              />
+            </div>
+          </div>
 
-      <!-- Online form placeholder -->
-      <div class="border border-gray-200 rounded-xl p-8 flex flex-col gap-4">
-        <h2 class="text-2xl font-bold text-brand-navy">Request Online</h2>
-        <p class="text-gray-600">
-          Fill out the form below and our team will contact you within one business day.
-        </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                placeholder="jane@example.com"
+              />
+            </div>
+            <div>
+              <label for="preferred-date" class="block text-sm font-medium text-gray-700 mb-1">Preferred Date</label>
+              <input
+                id="preferred-date"
+                name="preferred-date"
+                type="date"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              />
+            </div>
+          </div>
 
-        <!-- Form placeholder — integrate scheduling widget in Phase 2 -->
-        <form class="space-y-4 mt-2" aria-label="Appointment request form">
           <div>
-            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              autocomplete="name"
-              class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
-              placeholder="Jane Smith"
-            />
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autocomplete="email"
-              class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
-              placeholder="jane@example.com"
-            />
-          </div>
-          <div>
-            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              autocomplete="tel"
-              class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
-              placeholder="(555) 000-0000"
-            />
-          </div>
-          <div>
-            <label for="reason" class="block text-sm font-medium text-gray-700 mb-1">
-              Reason for Visit
-            </label>
-            <textarea
+            <label for="reason" class="block text-sm font-medium text-gray-700 mb-1">Reason for Visit</label>
+            <select
               id="reason"
               name="reason"
-              rows={3}
-              class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue resize-none"
-              placeholder="Briefly describe your condition or treatment interest…"
+              required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"
+            >
+              <option value="" disabled selected>Select a reason...</option>
+              <option value="neuropathy">Neuropathy</option>
+              <option value="chronic-pain">Chronic Pain</option>
+              <option value="regenerative-therapy">Regenerative Therapy</option>
+              <option value="weight-loss">Weight Loss</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue resize-none"
+              placeholder="Tell us more about your condition or any questions you have..."
             />
           </div>
+
           <button
             type="submit"
-            class="w-full px-6 py-3 bg-brand-navy text-white font-semibold rounded-lg hover:bg-blue-900 transition-colors"
+            class="w-full px-6 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
           >
             Request Appointment
           </button>
-          <p class="text-xs text-gray-400 text-center">
-            Form submission placeholder — backend integration coming in Phase 2.
-          </p>
         </form>
+      </div>
+
+      <!-- Side Panel -->
+      <div class="space-y-6">
+        <div class="bg-brand-light rounded-xl p-6">
+          <h3 class="text-lg font-bold text-brand-navy mb-3">Call Us Directly</h3>
+          <a
+            href="tel:+16362440124"
+            class="text-2xl font-bold text-brand-blue hover:underline"
+          >
+            (636) 244-0124
+          </a>
+          <p class="text-gray-600 text-sm mt-2">
+            Our scheduling team is happy to assist you over the phone.
+          </p>
+        </div>
+
+        <div class="bg-brand-light rounded-xl p-6">
+          <h3 class="text-lg font-bold text-brand-navy mb-3">Our Location</h3>
+          <p class="text-gray-600 text-sm">
+            4710 Mexico Rd Suite C<br />
+            St. Peters, MO 63376
+          </p>
+        </div>
+
+        <div class="bg-brand-light rounded-xl p-6">
+          <h3 class="text-lg font-bold text-brand-navy mb-3">Office Hours</h3>
+          <ul class="text-gray-600 text-sm space-y-1">
+            <li>Monday: 9:00 AM &ndash; 5:00 PM</li>
+            <li>Tuesday: 9:00 AM &ndash; 5:00 PM</li>
+            <li>Wednesday: 9:00 AM &ndash; 5:00 PM</li>
+            <li>Thursday: 9:00 AM &ndash; 5:00 PM</li>
+            <li>Friday &ndash; Sunday: Closed</li>
+          </ul>
+        </div>
+
+        <div class="border border-blue-200 bg-blue-50 rounded-xl p-6">
+          <p class="text-brand-navy text-sm font-medium">
+            New patients welcome. Most consultations take about 30 minutes.
+          </p>
+        </div>
       </div>
     </div>
   </section>

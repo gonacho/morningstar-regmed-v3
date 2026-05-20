@@ -1,26 +1,256 @@
 ---
-import ServicePage from '@/layouts/ServicePage.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Pain Management in St. Peters, MO';
+const description =
+  'Comprehensive chronic pain management at Morning Star in St. Peters, MO. Personalized treatment plans to reduce pain and restore quality of life.';
+
+const faqs = [
+  {
+    question: 'What is chronic pain?',
+    answer:
+      'Chronic pain is defined as any pain that persists for longer than three months. Unlike acute pain, which serves as a warning signal for injury, chronic pain continues well beyond the normal healing period. It can stem from an initial injury, an ongoing condition, or sometimes have no identifiable cause.',
+  },
+  {
+    question: 'Can chronic pain be cured?',
+    answer:
+      'Chronic pain is typically managed rather than cured. While some underlying causes can be treated and resolved, many chronic pain conditions require ongoing management strategies. The good news is that with the right combination of medical treatments, lifestyle modifications, and professional support, most patients achieve significant pain reduction and improved quality of life.',
+  },
+  {
+    question: 'How do I know if my pain is chronic?',
+    answer:
+      'If your pain has lasted longer than three months, it has persisted beyond the time most injuries need to heal and is generally considered chronic. Other indicators include pain that keeps returning even after treatment, pain that gradually worsens over time, or pain that significantly interferes with your daily activities, sleep, or emotional well-being.',
+  },
+  {
+    question: 'What treatment options are available for chronic pain?',
+    answer:
+      'Morning Star offers multiple approaches to chronic pain management, including regenerative therapy, neuromodulation techniques, platelet-rich plasma therapy, and targeted pain management interventions. We develop personalized treatment plans that combine the most effective therapies for your specific condition.',
+  },
+  {
+    question: 'What lifestyle changes help with chronic pain?',
+    answer:
+      'Regular low-impact exercise, maintaining a healthy weight, practicing stress management techniques, getting adequate sleep, and following an anti-inflammatory diet can all contribute to better pain management. Our team provides personalized lifestyle guidance as part of your comprehensive treatment plan.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+});
 ---
 
-<ServicePage
-  title="Chronic Pain Management"
-  metaDescription="Comprehensive chronic pain management at Morningstar RegMed. Evidence-based treatments tailored to your condition and lifestyle."
-  h1="Chronic Pain Management"
-  heroText="Placeholder — content coming in Phase 2."
-  faqs={[
-    {
-      question: 'What is chronic pain?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'How is chronic pain managed at Morningstar RegMed?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'Is chronic pain management covered by insurance?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-  ]}
->
-  <p>Placeholder — content coming in Phase 2.</p>
-</ServicePage>
+<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+  <!-- Hero -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-brand-navy mb-4">Chronic Pain Management</h1>
+      <p class="text-xl text-gray-600">
+        Living with chronic pain can feel overwhelming, but you do not have to face it alone. At
+        Morning Star in St.&nbsp;Peters, MO, we specialize in personalized pain management plans
+        designed to reduce your pain and help you reclaim your quality of life.
+      </p>
+      <a
+        href="/schedule-appointment"
+        class="mt-8 inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Schedule a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Condition Overview -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">What Is Chronic Pain?</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        Chronic pain is any pain that lasts longer than three months. By this point, the pain has
+        persisted well beyond the time most injuries and conditions need to heal, which means the
+        pain itself has become the primary medical concern.
+      </p>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        While there is no single cure for chronic pain, it is highly manageable through a combination
+        of medical treatments and lifestyle changes. Modern pain management has advanced
+        significantly, offering patients more effective options than ever before to reduce pain
+        levels and restore daily function.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        At Morning Star, we understand that chronic pain is deeply personal — it affects every
+        aspect of your life, from work and sleep to relationships and mental health. That is why we
+        take a comprehensive, individualized approach to every patient who walks through our doors.
+      </p>
+    </div>
+  </section>
+
+  <!-- Common Causes -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Common Causes of Chronic Pain</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Previous Injuries</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Injuries from accidents, surgeries, or physical trauma can lead to chronic pain even
+            after the original injury has healed, due to lasting nerve or tissue damage.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Nerve Damage</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Neuropathy and other nerve conditions cause ongoing pain signals even when no active
+            injury is present, creating persistent discomfort.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Arthritis and Joint Conditions</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Osteoarthritis, rheumatoid arthritis, and other joint conditions cause progressive
+            inflammation and pain that worsens without proper management.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Spinal Conditions</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Degenerative disc disease, spinal stenosis, and herniated discs are common sources of
+            chronic back and neck pain.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Symptoms -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Signs You May Be Dealing With Chronic Pain</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Pain that persists for more than three months</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Pain that returns repeatedly after treatment</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Fatigue and difficulty sleeping due to pain</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Reduced mobility and limited daily activities</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Mood changes, including anxiety or depression</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Increased sensitivity to pain or touch</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When to Seek Help -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">When to Seek Professional Help</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        If your pain has lasted longer than three months, it has persisted beyond the time most
+        injuries need to heal. This is a clear signal that professional pain management is needed.
+        You should also seek help if:
+      </p>
+      <ul class="space-y-2 text-gray-600 mb-6">
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Over-the-counter medications no longer provide relief</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Pain is interfering with your work, relationships, or sleep</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> You are relying on pain medication more frequently</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Your pain is getting progressively worse</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> You feel hopeless or depressed because of your pain</li>
+      </ul>
+      <p class="text-gray-600 leading-relaxed">
+        The earlier you begin a structured pain management program, the better your outcomes are
+        likely to be.
+      </p>
+    </div>
+  </section>
+
+  <!-- Treatment Options -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Treatment Options at Morning Star</h2>
+      <p class="text-gray-600 mb-6 leading-relaxed">
+        Our chronic pain management programs combine multiple treatment modalities to address pain
+        from every angle. Your personalized treatment plan may include:
+      </p>
+      <div class="space-y-4">
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Regenerative Therapy</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Cutting-edge treatments that harness your body's natural healing abilities to repair
+            damaged tissues and reduce chronic inflammation.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Neuromodulation</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Advanced techniques that alter nerve activity to interrupt chronic pain signals and
+            provide lasting relief.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Platelet-Rich Plasma Therapy</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Concentrated growth factors from your own blood are used to accelerate healing in areas
+            of chronic pain and inflammation.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Lifestyle and Wellness Support</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Guidance on exercise, nutrition, stress management, and daily habits that complement
+            your medical treatments and support long-term pain reduction.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+      <dl class="space-y-6">
+        {faqs.map(({ question, answer }) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <dt class="font-semibold text-brand-navy mb-2">{question}</dt>
+            <dd class="text-gray-600 text-sm leading-relaxed">{answer}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Take Control of Your Pain</h2>
+      <p class="text-blue-200 mb-8">
+        You deserve a life with less pain. Contact Morning Star in St.&nbsp;Peters, MO today to
+        start your personalized chronic pain management plan.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/schedule-appointment"
+          class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+        >
+          Schedule Appointment
+        </a>
+        <a
+          href="/contact"
+          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

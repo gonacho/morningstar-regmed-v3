@@ -1,26 +1,177 @@
 ---
-import ServicePage from '@/layouts/ServicePage.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Exosome Therapy in St. Peters, MO';
+const description =
+  'Exosome therapy at Morning Star in St. Peters, MO harnesses your body\'s healing power. Reduce inflammation and support tissue repair. Schedule a consultation.';
+
+const faqs = [
+  {
+    question: 'What are the benefits of exosome therapy?',
+    answer:
+      'Exosome therapy can help regenerate damaged tissue, manage chronic pain, and reduce inflammation throughout the body. Because exosomes carry growth factors and signaling molecules, they support the body\'s natural repair processes at a cellular level — making them a powerful option for patients seeking non-surgical recovery.',
+  },
+  {
+    question: 'Are there side effects from exosome therapy?',
+    answer:
+      'Side effects are typically mild and short-lived. Some patients experience minor swelling, bruising, or redness at the treatment site. These effects generally resolve within a few days. Serious complications are rare when the procedure is performed by qualified providers like our team at Morning Star.',
+  },
+  {
+    question: 'How long do exosomes stay in the body?',
+    answer:
+      'Exosomes typically remain active in the body for approximately 3 to 4 weeks after treatment. During this time, they continue to deliver regenerative signals to damaged tissues. The healing effects they initiate, however, can continue well beyond that window as the body\'s own repair mechanisms are activated.',
+  },
+  {
+    question: 'What conditions can exosome therapy treat?',
+    answer:
+      'Exosome therapy is used for a variety of conditions including joint pain, soft tissue injuries, neuropathy, and chronic inflammatory conditions. It is particularly beneficial for patients who have not responded well to conventional treatments or who want to avoid surgery.',
+  },
+  {
+    question: 'When can I expect to see results?',
+    answer:
+      'Most patients begin to notice improvement within 2 to 6 weeks following treatment, though results vary depending on the condition being treated and individual healing capacity. Some patients experience continued improvement for several months as the regenerative process progresses.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+});
 ---
 
-<ServicePage
-  title="Regenerative Therapy"
-  metaDescription="Regenerative therapy at Morningstar RegMed. Cutting-edge treatments that stimulate the body's own healing mechanisms for lasting pain relief."
-  h1="Regenerative Therapy"
-  heroText="Placeholder — content coming in Phase 2."
-  faqs={[
-    {
-      question: 'What is regenerative therapy?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'What types of regenerative therapies are offered?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'Am I a good candidate for regenerative therapy?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-  ]}
->
-  <p>Placeholder — content coming in Phase 2.</p>
-</ServicePage>
+<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+  <!-- Hero -->
+  <section class="bg-brand-light py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+        Exosome Therapy in St. Peters, MO
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl">
+        Harness your body's natural healing power with advanced exosome-based regenerative therapy. Reduce inflammation, support tissue repair, and recover without surgery.
+      </p>
+      <a
+        href="/schedule-appointment"
+        class="mt-8 inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Schedule a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">What Is Exosome Therapy?</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Exosome therapy is a regenerative treatment that uses exosomes — tiny extracellular vesicles packed with growth factors, proteins, and signaling molecules — to stimulate your body's own healing response. Unlike traditional approaches that mask symptoms, exosome therapy works at the cellular level to reduce inflammation and promote tissue repair.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        At Morning Star Neuropathy &amp; Pain Treatment Center, exosome treatments are non-invasive and performed in-office. Our clinical team evaluates your condition to determine whether exosome therapy is the right fit for your recovery goals, often combining it with other modalities for maximum benefit.
+      </p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-8">How Exosome Therapy Works</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">1. Clinical Assessment</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We review your medical history, current symptoms, and diagnostic imaging to determine the target area and appropriate treatment protocol.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">2. In-Office Treatment</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Exosomes are delivered directly to the affected area using guided injection techniques. The procedure is non-invasive with minimal discomfort and typically takes less than an hour.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">3. Recovery &amp; Healing</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Exosomes begin signaling your cells to repair damaged tissue immediately. Most patients resume normal activities quickly with follow-up visits to monitor progress.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-8">Benefits of Exosome Therapy</h2>
+      <ul class="grid md:grid-cols-2 gap-4">
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Regenerates damaged tissue at the cellular level</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Reduces chronic inflammation</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Non-invasive, in-office procedure</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Minimal downtime and fast recovery</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Supports the body's natural healing mechanisms</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Alternative to surgery and heavy medications</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+      <dl class="space-y-6">
+        {faqs.map(({ question, answer }) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <dt class="font-semibold text-brand-navy mb-2">{question}</dt>
+            <dd class="text-gray-600 text-sm leading-relaxed">{answer}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Discover What Exosome Therapy Can Do for You</h2>
+      <p class="text-blue-200 mb-8">
+        Ready to explore a regenerative approach to healing? Contact Morning Star to find out if exosome therapy is right for your condition.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/schedule-appointment"
+          class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+        >
+          Schedule Appointment
+        </a>
+        <a
+          href="/contact"
+          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

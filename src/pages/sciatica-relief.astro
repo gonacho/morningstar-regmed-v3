@@ -1,26 +1,256 @@
 ---
-import ServicePage from '@/layouts/ServicePage.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Sciatica Treatment in St. Peters, MO';
+const description =
+  'Sciatica treatment at Morning Star in St. Peters, MO. Relieve sciatic nerve pain with expert diagnosis and targeted non-invasive therapies.';
+
+const faqs = [
+  {
+    question: 'What causes sciatica?',
+    answer:
+      'Sciatica is caused by pressure on the sciatic nerve, the longest nerve in the body that runs from the lower back through the hips and down each leg. Common causes of this pressure include herniated discs, bone spurs on the spine, spinal stenosis, and piriformis syndrome. In some cases, pregnancy, obesity, or prolonged sitting can also contribute.',
+  },
+  {
+    question: 'What are the best short-term relief options for sciatica?',
+    answer:
+      'Short-term relief options include alternating heat and cold therapy on the affected area, gentle stretching exercises targeting the lower back and hamstrings, over-the-counter anti-inflammatory medications, and avoiding prolonged sitting. These measures can help reduce acute pain, but they do not address the underlying cause.',
+  },
+  {
+    question: 'What is the best long-term treatment for sciatica?',
+    answer:
+      'Professional pain management services are the best way to permanently address sciatica. At Morning Star, we offer targeted treatments that address the root cause of sciatic nerve compression, providing lasting relief rather than temporary symptom management. A comprehensive treatment plan is the most effective path to long-term recovery.',
+  },
+  {
+    question: 'What activities should I avoid with sciatica?',
+    answer:
+      'You should avoid high-impact exercises such as running and jumping, movements that involve twisting or rotating the lower back, heavy lifting, and prolonged sitting or standing in one position. Low-impact activities like walking and swimming are generally safe and beneficial when performed at a comfortable intensity.',
+  },
+  {
+    question: 'Can sciatica be cured?',
+    answer:
+      'Yes, sciatica can be effectively treated and resolved with proper care. Many patients experience complete relief when the underlying cause of nerve compression is addressed through professional treatment. The key is seeking care early and following a comprehensive treatment plan designed by experienced pain management specialists.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+});
 ---
 
-<ServicePage
-  title="Sciatica Relief"
-  metaDescription="Effective sciatica relief at Morningstar RegMed. Non-surgical treatments to address the root cause of sciatic nerve pain."
-  h1="Sciatica Relief"
-  heroText="Placeholder — content coming in Phase 2."
-  faqs={[
-    {
-      question: 'What is sciatica?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'What sciatica treatments do you offer?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'How long until I get sciatica relief?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-  ]}
->
-  <p>Placeholder — content coming in Phase 2.</p>
-</ServicePage>
+<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+  <!-- Hero -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-brand-navy mb-4">Sciatica Treatment in St.&nbsp;Peters, MO</h1>
+      <p class="text-xl text-gray-600">
+        Sciatica pain can be sharp, relentless, and exhausting. At Morning Star in St.&nbsp;Peters,
+        MO, we provide expert diagnosis and targeted, non-invasive therapies to relieve sciatic
+        nerve pain and help you get back to living without discomfort.
+      </p>
+      <a
+        href="/schedule-appointment"
+        class="mt-8 inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Schedule a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Condition Overview -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Understanding Sciatica</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        Sciatica refers to pain that radiates along the path of the sciatic nerve, which branches
+        from the lower back through the hips and buttocks and down each leg. The pain occurs when
+        something — typically a herniated disc or bone spur — puts pressure on the nerve, causing
+        inflammation, pain, and often numbness in the affected leg.
+      </p>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        A pain management clinic can help fix sciatica by identifying and addressing the specific
+        cause of nerve compression. While short-term relief is possible through heat and cold
+        therapy, gentle stretches, and pain medication, these approaches only manage symptoms.
+        Professional pain management services are the best way to permanently address sciatica and
+        prevent it from recurring.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        It is important to avoid activities that can worsen sciatica. High-impact exercises, twisting
+        motions, and bending movements can increase pressure on the sciatic nerve and intensify your
+        pain. Our team will guide you on safe activities and movements as part of your recovery plan.
+      </p>
+    </div>
+  </section>
+
+  <!-- Common Causes -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Common Causes of Sciatica</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Herniated Discs</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            When a spinal disc bulges or ruptures, it can press directly on the sciatic nerve,
+            causing pain that radiates from the lower back down through the leg.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Spinal Stenosis</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Narrowing of the spinal canal compresses the nerves, including the sciatic nerve. This
+            condition is more common with age and can cause progressively worsening symptoms.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Bone Spurs</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Overgrowths of bone on the vertebrae can encroach on the space where the sciatic nerve
+            exits the spine, causing compression and pain.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Piriformis Syndrome</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            The piriformis muscle in the buttocks can tighten or spasm, irritating the sciatic nerve
+            that runs beneath or through it, mimicking sciatica symptoms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Symptoms -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Symptoms of Sciatica</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Sharp, shooting pain from the lower back down the leg</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Burning or tingling sensations in the leg or foot</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Numbness or weakness in the affected leg</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Pain that worsens when sitting for long periods</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Difficulty standing up or walking</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Pain typically affecting only one side of the body</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When to Seek Help -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">When to Seek Professional Help</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        While mild sciatica may improve with self-care, you should seek professional treatment if:
+      </p>
+      <ul class="space-y-2 text-gray-600 mb-6">
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Pain persists for more than a week despite home remedies</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Pain is severe and interfering with your daily activities</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> You experience sudden, severe pain in the lower back or leg</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Numbness or weakness in the leg is worsening</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> You have difficulty controlling your bladder or bowels</li>
+      </ul>
+      <p class="text-gray-600 leading-relaxed">
+        Early treatment is important — the longer sciatica goes untreated, the more difficult it
+        can become to resolve and the greater the risk of lasting nerve damage.
+      </p>
+    </div>
+  </section>
+
+  <!-- Treatment Options -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Treatment Options at Morning Star</h2>
+      <p class="text-gray-600 mb-6 leading-relaxed">
+        Our team provides comprehensive, non-invasive sciatica treatment that targets the root cause
+        of your nerve compression. Your personalized plan may include:
+      </p>
+      <div class="space-y-4">
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Regenerative Therapy</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Advanced treatments that promote healing of the tissues compressing the sciatic nerve,
+            reducing inflammation and relieving pressure at the source.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Neuromodulation</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Specialized techniques that modify nerve activity to reduce sciatic pain signals and
+            restore comfortable function.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Pain Management</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Targeted pain management interventions to provide relief while the underlying cause of
+            your sciatica is being treated.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Activity and Lifestyle Guidance</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Expert recommendations on safe exercises, stretches, and daily habits to support your
+            recovery and prevent sciatica from returning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+      <dl class="space-y-6">
+        {faqs.map(({ question, answer }) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <dt class="font-semibold text-brand-navy mb-2">{question}</dt>
+            <dd class="text-gray-600 text-sm leading-relaxed">{answer}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">End Your Sciatica Pain</h2>
+      <p class="text-blue-200 mb-8">
+        You do not have to live with sciatic nerve pain. Contact Morning Star in St.&nbsp;Peters, MO
+        today to schedule your evaluation and start your path to recovery.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/schedule-appointment"
+          class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+        >
+          Schedule Appointment
+        </a>
+        <a
+          href="/contact"
+          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

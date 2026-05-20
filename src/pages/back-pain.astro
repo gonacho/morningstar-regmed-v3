@@ -1,26 +1,247 @@
 ---
-import ServicePage from '@/layouts/ServicePage.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Back Pain Treatment in St. Peters, MO';
+const description =
+  'Find lasting back pain relief at Morning Star in St. Peters, MO. Expert diagnosis and non-invasive treatment for acute and chronic back conditions.';
+
+const faqs = [
+  {
+    question: 'What are the most common causes of back pain?',
+    answer:
+      'The most common causes of back pain include poor posture, muscle strains from lifting heavy objects, herniated or bulging discs, and injuries from accidents or falls. Sedentary lifestyles and spending long hours hunching over phones or computers have also become leading contributors to back pain in recent years.',
+  },
+  {
+    question: 'When is back pain serious enough to see a doctor?',
+    answer:
+      'You should see a doctor when back pain is recurring, lasts more than a few weeks, or begins to impact your quality of life. Seek immediate care if your pain is accompanied by numbness in your legs, difficulty walking, loss of bladder or bowel control, or if it follows a traumatic injury.',
+  },
+  {
+    question: 'Are there home remedies for back pain?',
+    answer:
+      'For minor back pain, rest combined with alternating heat and cold therapy can provide temporary relief. Over-the-counter anti-inflammatory medications, gentle stretching, and maintaining good posture can also help. However, if your pain persists beyond a few days or worsens, professional evaluation is recommended.',
+  },
+  {
+    question: 'Can back pain be caused by nerve problems?',
+    answer:
+      'Yes, back pain is frequently caused by nerve-related issues such as a pinched nerve, sciatica, or spinal stenosis. At Morning Star, our medical providers perform thorough evaluations to determine whether your pain is muscular, spinal, or nerve-related, so we can develop the most effective treatment plan.',
+  },
+  {
+    question: 'What treatment options does Morning Star offer for back pain?',
+    answer:
+      'Morning Star offers a range of non-invasive treatments for back pain, including regenerative therapy, neuromodulation techniques, targeted pain management, and platelet-rich plasma therapy. Our team creates personalized treatment plans based on the source and severity of your pain.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+});
 ---
 
-<ServicePage
-  title="Back Pain Treatment"
-  metaDescription="Morningstar RegMed offers advanced back pain treatments including regenerative therapies and neuromodulation. Get lasting relief today."
-  h1="Back Pain Treatment"
-  heroText="Placeholder — content coming in Phase 2."
-  faqs={[
-    {
-      question: 'What causes chronic back pain?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'What back pain treatments do you offer?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'How many sessions will I need?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-  ]}
->
-  <p>Placeholder — content coming in Phase 2.</p>
-</ServicePage>
+<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+  <!-- Hero -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-brand-navy mb-4">Back Pain Treatment in St.&nbsp;Peters, MO</h1>
+      <p class="text-xl text-gray-600">
+        Back pain is one of the most common reasons people seek medical care, and it can range from a
+        mild inconvenience to a debilitating condition. At Morning Star, we provide expert diagnosis
+        and personalized, non-invasive treatment to help you find lasting relief.
+      </p>
+      <a
+        href="/schedule-appointment"
+        class="mt-8 inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Schedule a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Condition Overview -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Understanding Back Pain</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        Back pain affects roughly 80 percent of adults at some point in their lives. While minor
+        cases often resolve on their own with rest and self-care, chronic or severe back pain
+        requires professional attention to prevent long-term damage and restore function.
+      </p>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        Poor posture and injuries are the primary causes of back pain. In today's digital world,
+        hunching over phones and computers for hours each day has dramatically increased the number
+        of people experiencing back problems, even among younger adults. When you add in the physical
+        toll of repetitive motions, heavy lifting, or sedentary lifestyles, back pain has become an
+        epidemic.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        Treatment ranges from simple rest combined with heat and cold therapy for minor cases to
+        comprehensive pain management programs for chronic conditions. The key is working with
+        medical providers who can determine whether your pain is muscular, spinal, or nerve-related
+        — because the source of your pain dictates the most effective treatment approach.
+      </p>
+    </div>
+  </section>
+
+  <!-- Common Causes -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Common Causes of Back Pain</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Poor Posture</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Slouching, hunching over screens, and improper ergonomics place excessive stress on the
+            spine, muscles, and ligaments, leading to chronic pain over time.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Injuries and Strains</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Lifting heavy objects incorrectly, sudden movements, sports injuries, and auto accidents
+            can strain muscles or damage spinal structures.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Disc Problems</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Herniated, bulging, or degenerative discs can press on spinal nerves, causing localized
+            or radiating pain throughout the back and legs.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Nerve Compression</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Conditions like spinal stenosis or pinched nerves cause pain that radiates from the back
+            into the extremities, often accompanied by numbness or weakness.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Symptoms -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Symptoms to Watch For</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Dull, aching pain in the lower, middle, or upper back</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Sharp or shooting pain that radiates down the legs</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Stiffness and reduced range of motion</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Muscle spasms or tightness</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Pain that worsens with sitting, standing, or bending</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Numbness or tingling in the legs or feet</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When to Seek Help -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">When to Seek Professional Help</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        While minor back pain often improves with rest, you should seek professional care when pain
+        is recurring, intensifying, or beginning to impact your quality of life. Specific warning
+        signs include:
+      </p>
+      <ul class="space-y-2 text-gray-600 mb-6">
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Pain lasting more than two weeks without improvement</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Numbness, tingling, or weakness in your legs</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Pain following a traumatic injury or accident</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Difficulty sleeping due to back pain</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Pain that prevents you from working or performing daily tasks</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Treatment Options -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Treatment Options at Morning Star</h2>
+      <p class="text-gray-600 mb-6 leading-relaxed">
+        At Morning Star in St.&nbsp;Peters, MO, we take a comprehensive approach to back pain
+        treatment. Our team begins with a thorough evaluation to identify the exact source of your
+        pain, then develops a personalized plan that may include:
+      </p>
+      <div class="space-y-4">
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Regenerative Therapy</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Advanced treatments that promote natural healing of damaged tissues and reduce
+            inflammation in the spine and surrounding structures.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Pain Management</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Targeted interventions to reduce pain levels and improve function, allowing you to
+            return to an active lifestyle.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Neuromodulation</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Techniques that modify nerve signaling to address nerve-related back pain at its source.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+      <dl class="space-y-6">
+        {faqs.map(({ question, answer }) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <dt class="font-semibold text-brand-navy mb-2">{question}</dt>
+            <dd class="text-gray-600 text-sm leading-relaxed">{answer}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Stop Living With Back Pain</h2>
+      <p class="text-blue-200 mb-8">
+        Contact Morning Star in St.&nbsp;Peters, MO today to schedule your evaluation and start
+        your journey toward a pain-free life.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/schedule-appointment"
+          class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+        >
+          Schedule Appointment
+        </a>
+        <a
+          href="/contact"
+          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

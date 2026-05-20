@@ -3,24 +3,24 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Neuropathy & Pain Management Clinic in St. Peters, MO"
-  description="Morningstar Neuropathy & Pain Treatment Center — expert neuropathy and pain management in St. Peters, MO. Non-invasive treatments, no medication required."
+  title="Neuropathy & Pain Treatment in St. Peters, MO"
+  description="Morning Star provides advanced neuropathy treatment, regenerative therapy, and pain management in St. Peters, MO. Call (636) 244-0124 for relief."
 >
   <!-- Hero -->
   <section class="bg-brand-light py-24 px-4">
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="text-4xl sm:text-5xl font-bold text-brand-navy leading-tight mb-6">
-        Neuropathy & Pain Management Clinic in St. Peters, MO
+        Neuropathy & Pain Treatment in St. Peters, MO
       </h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-        Morningstar Neuropathy & Pain Treatment Center helps you live a pain-free life through comprehensive, non-invasive treatments — no surgery, no daily medications required.
+        Stop living with neuropathy and chronic pain. Morning Star Neuropathy & Pain Treatment Center offers advanced, non-invasive therapies that target the root cause of your pain — no surgery and no daily medications required.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/schedule-appointment" class="px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
           Schedule an Appointment
         </a>
-        <a href="/contact-us" class="px-8 py-3 border-2 border-brand-navy text-brand-navy font-semibold rounded-lg hover:bg-brand-navy hover:text-white transition-colors">
-          Contact Us
+        <a href="/neuropathy-treatment" class="px-8 py-3 border-2 border-brand-navy text-brand-navy font-semibold rounded-lg hover:bg-brand-navy hover:text-white transition-colors">
+          Neuropathy Treatment
         </a>
       </div>
     </div>
@@ -35,15 +35,12 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { title: 'Neuropathy Treatment', href: '/neuropathy-treatment', desc: 'Customized plans to restore peripheral nerve health and relieve neuropathic pain.' },
-          { title: 'Regenerative Therapy', href: '/regenerative-therapy', desc: 'Exosome-based treatments that reduce inflammation and support tissue repair.' },
-          { title: 'PRP Therapy', href: '/platelet-rich-plasma-therapy', desc: 'Platelet-rich plasma that accelerates healing in joints and soft tissues.' },
-          { title: 'Hyaluronic Acid Injections', href: '/hyaluronic-acid-injections', desc: 'Lubricate joints and reduce pain with minimally invasive HA injections.' },
-          { title: 'Neuromodulation Technique', href: '/neuromodulation-technique', desc: 'Controlled electrical stimulation to restore nerve function and reduce pain signals.' },
-          { title: 'Medical Weight Loss', href: '/medical-weight-loss', desc: 'Medically supervised weight loss using semaglutide and tirzepatide.' },
-          { title: 'Back Pain', href: '/back-pain', desc: 'Identify and treat the underlying causes of your back pain for lasting relief.' },
-          { title: 'Knee Pain', href: '/knee-pain', desc: 'Professional knee pain management to restore mobility and function.' },
-          { title: 'Chronic Pain Management', href: '/chronic-pain-management', desc: 'Long-term strategies for managing chronic pain and improving quality of life.' },
+          { title: 'Neuropathy Treatment', href: '/neuropathy-treatment', desc: 'Customized plans to restore peripheral nerve health and relieve neuropathic pain using advanced neuromodulation and regenerative protocols.' },
+          { title: 'Regenerative Therapy', href: '/regenerative-therapy', desc: 'Exosome-based treatments that reduce inflammation, promote cellular repair, and support long-term tissue regeneration.' },
+          { title: 'PRP Therapy', href: '/platelet-rich-plasma-therapy', desc: 'Platelet-rich plasma injections that harness your body\'s own healing factors to accelerate recovery in joints and soft tissues.' },
+          { title: 'Hyaluronic Acid Injections', href: '/hyaluronic-acid-injections', desc: 'Lubricate and cushion damaged joints with minimally invasive HA injections for improved mobility and reduced pain.' },
+          { title: 'Medical Weight Loss', href: '/medical-weight-loss', desc: 'Medically supervised weight loss programs using semaglutide and tirzepatide to support lasting, healthy results.' },
+          { title: 'Neuromodulation Technique', href: '/neuromodulation-technique', desc: 'Controlled electrical stimulation that restores nerve function, reduces pain signals, and improves sensation.' },
         ].map(({ title, href, desc }) => (
           <a href={href} class="p-6 rounded-xl border border-gray-200 hover:shadow-md hover:border-brand-blue transition-all group">
             <h3 class="font-semibold text-lg text-brand-navy mb-2 group-hover:text-brand-blue transition-colors">{title}</h3>
@@ -54,32 +51,57 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- About snippet -->
-  <section class="bg-brand-light py-16 px-4">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 class="text-3xl font-bold text-brand-navy mb-4">Why Choose Morningstar?</h2>
-        <p class="text-gray-600 mb-4">
-          Located at 4710 Mexico Rd Suite C, St. Peters, MO 63376, Morningstar Neuropathy & Pain Treatment Center serves patients across a 50-mile radius — including St. Louis, O'Fallon, Saint Charles, Chesterfield, Wentzville, and surrounding communities.
-        </p>
-        <p class="text-gray-600 mb-6">
-          Our team specializes in identifying the root cause of your pain and building a personalized treatment plan — without relying on medication or invasive procedures.
-        </p>
-        <a href="/about-us" class="inline-block px-6 py-2.5 bg-brand-blue text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-          Learn About Us
-        </a>
-      </div>
-      <div class="grid grid-cols-2 gap-4">
-        {[
-          { stat: 'Non-Invasive', label: 'Treatments' },
-          { stat: 'No Surgery', label: 'Required' },
-          { stat: '50-Mile', label: 'Service Radius' },
-          { stat: 'Personalized', label: 'Care Plans' },
-        ].map(({ stat, label }) => (
-          <div class="bg-white rounded-xl p-6 text-center shadow-sm">
-            <div class="text-xl font-bold text-brand-blue mb-1">{stat}</div>
-            <div class="text-sm text-gray-500">{label}</div>
+  <!-- Why Choose Morning Star -->
+  <section class="bg-brand-light py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy text-center mb-12">Why Choose Morning Star</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-8 shadow-sm text-center">
+          <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
           </div>
+          <h3 class="font-semibold text-lg text-brand-navy mb-2">Experienced Providers</h3>
+          <p class="text-gray-500 text-sm">Our medical professionals specialize in neuropathy, pain management, and regenerative medicine with years of clinical experience.</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-sm text-center">
+          <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+          </div>
+          <h3 class="font-semibold text-lg text-brand-navy mb-2">Personalized Treatment Plans</h3>
+          <p class="text-gray-500 text-sm">Every patient receives a thorough evaluation and a customized care plan designed around their unique condition, symptoms, and goals.</p>
+        </div>
+        <div class="bg-white rounded-xl p-8 shadow-sm text-center">
+          <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+          </div>
+          <h3 class="font-semibold text-lg text-brand-navy mb-2">Non-Invasive Approaches</h3>
+          <p class="text-gray-500 text-sm">We focus on treatments that avoid surgery and reduce reliance on medications, helping your body heal naturally and effectively.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conditions We Treat -->
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy text-center mb-4">Conditions We Treat</h2>
+      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+        Our clinic treats a wide range of pain conditions. Select a condition to learn more about how we can help.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {[
+          { label: 'Neuropathy', href: '/neuropathy-treatment' },
+          { label: 'Back Pain', href: '/back-pain' },
+          { label: 'Knee Pain', href: '/knee-pain' },
+          { label: 'Neck Pain', href: '/neck-pain' },
+          { label: 'Joint Pain', href: '/joint-pain' },
+          { label: 'Sciatica', href: '/sciatica-relief' },
+          { label: 'Chronic Pain', href: '/chronic-pain-management' },
+        ].map(({ label, href }) => (
+          <a href={href} class="bg-brand-light rounded-lg px-5 py-4 flex items-center gap-3 hover:shadow-md hover:bg-white transition-all group">
+            <span class="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></span>
+            <span class="text-brand-navy font-medium group-hover:text-brand-blue transition-colors">{label}</span>
+          </a>
         ))}
       </div>
     </div>
@@ -88,9 +110,9 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   <!-- CTA -->
   <section class="bg-brand-navy text-white py-16 px-4">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Ready to Live Pain-Free?</h2>
+      <h2 class="text-3xl font-bold mb-4">Find Relief Today</h2>
       <p class="text-blue-200 mb-8">
-        Schedule an appointment at our St. Peters, MO clinic. Call us at <a href="tel:6362440124" class="underline hover:text-white">(636) 244-0124</a> or book online.
+        Take the first step toward a pain-free life. Call us at <a href="tel:6362440124" class="underline hover:text-white">(636) 244-0124</a> or schedule your appointment online.
       </p>
       <a href="/schedule-appointment" class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors">
         Schedule Appointment

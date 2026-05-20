@@ -1,26 +1,253 @@
 ---
-import ServicePage from '@/layouts/ServicePage.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Neck Pain Treatment in St. Peters, MO';
+const description =
+  'Neck pain treatment at Morning Star in St. Peters, MO. Address stress-related and postural neck pain with personalized, non-invasive care plans.';
+
+const faqs = [
+  {
+    question: 'What are the most common causes of neck pain?',
+    answer:
+      'The most common causes of neck pain are stress and poor posture. Hunching over laptops, phones, and desks for extended periods strains the muscles and structures of the neck. When combined with stress — which causes muscle tension — the result is often persistent neck pain and stiffness.',
+  },
+  {
+    question: 'Will my neck pain go away on its own?',
+    answer:
+      'Minor neck pain caused by temporary muscle strain or a poor sleeping position often resolves on its own within a few days to a week. However, more severe or persistent neck pain typically requires professional treatment. If your pain is not improving after several days of self-care, it is time to see a specialist.',
+  },
+  {
+    question: 'When is neck pain considered serious?',
+    answer:
+      'Neck pain is considered serious when it involves high levels of pain, radiates into your arms or hands, is accompanied by numbness or tingling, or has a major impact on your daily life. Neck pain following a traumatic injury, or pain accompanied by headaches, dizziness, or difficulty swallowing, also warrants immediate professional evaluation.',
+  },
+  {
+    question: 'What treatment options does Morning Star offer for neck pain?',
+    answer:
+      'Morning Star offers personalized, non-invasive treatment plans for neck pain that may include regenerative therapy, neuromodulation techniques, pain management interventions, and lifestyle guidance for posture and stress management. We tailor each plan to the underlying cause and severity of your condition.',
+  },
+  {
+    question: 'How can I prevent neck pain?',
+    answer:
+      'Prevention strategies include maintaining good posture, setting up an ergonomic workstation, taking regular breaks from screens, managing stress through relaxation techniques, sleeping with proper neck support, and performing regular neck stretches and strengthening exercises.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+});
 ---
 
-<ServicePage
-  title="Neck Pain Treatment"
-  metaDescription="Advanced neck pain treatment at Morningstar RegMed. Regenerative therapies and targeted interventions for cervical pain relief."
-  h1="Neck Pain Treatment"
-  heroText="Placeholder — content coming in Phase 2."
-  faqs={[
-    {
-      question: 'What causes neck pain?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'What neck pain treatments do you offer?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-    {
-      question: 'How long does neck pain treatment take?',
-      answer: 'Placeholder — content coming in Phase 2.',
-    },
-  ]}
->
-  <p>Placeholder — content coming in Phase 2.</p>
-</ServicePage>
+<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+  <!-- Hero -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-brand-navy mb-4">Neck Pain Treatment in St.&nbsp;Peters, MO</h1>
+      <p class="text-xl text-gray-600">
+        Neck pain can make it difficult to work, sleep, and enjoy daily life. At Morning Star in
+        St.&nbsp;Peters, MO, we identify the root cause of your neck pain and create personalized,
+        non-invasive treatment plans to provide lasting relief.
+      </p>
+      <a
+        href="/schedule-appointment"
+        class="mt-8 inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Schedule a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Condition Overview -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Understanding Neck Pain</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        Stress and poor posture are the most common causes of neck pain. In our modern world,
+        hunching over laptops and phones for hours combined with the physical effects of stress
+        creates a perfect recipe for chronic neck discomfort. The muscles in your neck and shoulders
+        tense under stress, and poor posture compounds the strain on your cervical spine.
+      </p>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        Minor cases of neck pain — such as those caused by sleeping in an awkward position or a
+        brief period of tension — often resolve on their own with rest and basic self-care. However,
+        when neck pain becomes severe, persistent, or begins to interfere with your work and daily
+        activities, it is time to seek professional help from a pain management clinic.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        Higher pain levels or a major impact on your quality of life are indicators that your neck
+        pain may have a more serious underlying cause that requires targeted treatment. Conditions
+        such as cervical disc problems, pinched nerves, or degenerative changes in the spine need
+        professional diagnosis and care.
+      </p>
+    </div>
+  </section>
+
+  <!-- Common Causes -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Common Causes of Neck Pain</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Stress and Tension</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Emotional and physical stress causes the muscles in the neck and shoulders to tighten,
+            leading to chronic tension, stiffness, and pain that can become debilitating over time.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Poor Posture</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Forward head posture from looking at screens, slouching at a desk, or hunching over a
+            phone places excessive strain on the cervical spine and supporting muscles.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Cervical Disc Problems</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Herniated or degenerative discs in the cervical spine can press on nerves, causing pain
+            that may radiate into the shoulders and arms.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Injuries</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Whiplash from auto accidents, sports injuries, and falls can damage the muscles,
+            ligaments, and structures of the neck, causing acute or chronic pain.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Symptoms -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Symptoms to Watch For</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Persistent stiffness or tightness in the neck</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Pain that worsens when holding the head in one position</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Headaches originating from the base of the skull</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Pain or tingling radiating into the shoulders or arms</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Reduced ability to turn or tilt the head</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <p class="text-gray-600 text-sm">Muscle spasms in the neck and upper back</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When to Seek Help -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">When to Seek Professional Help</h2>
+      <p class="text-gray-600 mb-4 leading-relaxed">
+        While mild neck pain often resolves with rest, more serious conditions require professional
+        treatment. Contact Morning Star if you experience:
+      </p>
+      <ul class="space-y-2 text-gray-600 mb-6">
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Neck pain that persists for more than a week</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> High pain levels that disrupt your daily routine</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Pain radiating into your arms, hands, or fingers</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Numbness, tingling, or weakness in your upper extremities</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Neck pain following a car accident or injury</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Treatment Options -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Treatment Options at Morning Star</h2>
+      <p class="text-gray-600 mb-6 leading-relaxed">
+        Our team takes a comprehensive approach to neck pain, beginning with a thorough evaluation
+        to identify the underlying cause. Your personalized treatment plan may include:
+      </p>
+      <div class="space-y-4">
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Regenerative Therapy</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Advanced treatments that promote healing of damaged tissues in the cervical spine and
+            surrounding structures, reducing inflammation and pain.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Neuromodulation</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Techniques that modify nerve signaling in the cervical region to interrupt pain pathways
+            and provide lasting relief.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Pain Management</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Targeted interventions to reduce pain levels while we address the root cause of your
+            neck condition.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <h3 class="font-semibold text-brand-navy mb-2">Posture and Lifestyle Guidance</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Expert advice on ergonomics, stress management, and daily habits to prevent neck pain
+            from returning after treatment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+      <dl class="space-y-6">
+        {faqs.map(({ question, answer }) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <dt class="font-semibold text-brand-navy mb-2">{question}</dt>
+            <dd class="text-gray-600 text-sm leading-relaxed">{answer}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Find Relief From Neck Pain</h2>
+      <p class="text-blue-200 mb-8">
+        Do not let neck pain control your life. Contact Morning Star in St.&nbsp;Peters, MO today
+        to schedule your evaluation and start feeling better.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/schedule-appointment"
+          class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+        >
+          Schedule Appointment
+        </a>
+        <a
+          href="/contact"
+          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

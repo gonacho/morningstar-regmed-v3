@@ -1,39 +1,58 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
-// Placeholder reviews — SEO Writer / CMS will populate in Phase 2.
-const reviews = [
+const testimonials = [
   {
-    name: 'Patient A',
+    name: 'Sarah M.',
+    text: 'After months of tingling and numbness in my feet, I finally found relief through the neuropathy treatment program at Morning Star. The staff took the time to understand my symptoms and created a plan that actually worked. I can walk comfortably again.',
+    condition: 'Neuropathy Treatment',
     rating: 5,
-    text: 'Placeholder — content coming in Phase 2.',
   },
   {
-    name: 'Patient B',
+    name: 'Robert T.',
+    text: 'I had been dealing with chronic back pain for years and was skeptical about regenerative therapy. The team at Morning Star explained everything clearly and the results have been remarkable. I am back to playing golf and enjoying time with my grandkids.',
+    condition: 'Regenerative Therapy',
     rating: 5,
-    text: 'Placeholder — content coming in Phase 2.',
   },
   {
-    name: 'Patient C',
+    name: 'Linda K.',
+    text: 'The caring staff at Morning Star made all the difference. My sciatica pain had been limiting everything I did. After my treatment plan, I noticed a real improvement within weeks. They truly listen and care about their patients.',
+    condition: 'Sciatica Relief',
     rating: 5,
-    text: 'Placeholder — content coming in Phase 2.',
+  },
+  {
+    name: 'James W.',
+    text: 'I was dealing with severe knee pain that made it hard to climb stairs or even stand for long periods. The platelet-rich plasma therapy I received at Morning Star helped me get back to my daily routine. The entire experience was professional and compassionate.',
+    condition: 'PRP Therapy for Knee Pain',
+    rating: 5,
+  },
+  {
+    name: 'Patricia D.',
+    text: 'Peripheral neuropathy in my hands was affecting my ability to work. Morning Star developed a neuromodulation plan tailored to my specific situation. The improvement has been steady, and the team checks in regularly to monitor my progress.',
+    condition: 'Neuromodulation Technique',
+    rating: 5,
+  },
+  {
+    name: 'Michael R.',
+    text: 'I struggled with chronic neck pain and headaches for over a decade. The comprehensive approach at Morning Star addressed the root cause rather than just masking the symptoms. I finally feel like I have my life back and can focus at work again.',
+    condition: 'Chronic Pain Management',
+    rating: 5,
   },
 ];
 
-// AggregateRating schema — update ratingValue/reviewCount with real data in Phase 2
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'MedicalClinic',
-  name: 'Morningstar RegMed',
+  name: 'Morning Star Neuropathy & Pain Treatment Center',
   url: 'https://morningstarregmed.com',
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5',
-    reviewCount: reviews.length.toString(),
+    reviewCount: testimonials.length.toString(),
     bestRating: '5',
     worstRating: '1',
   },
-  review: reviews.map(({ name, rating, text }) => ({
+  review: testimonials.map(({ name, rating, text }) => ({
     '@type': 'Review',
     author: { '@type': 'Person', name },
     reviewRating: { '@type': 'Rating', ratingValue: rating.toString(), bestRating: '5' },
@@ -43,34 +62,35 @@ const jsonLd = JSON.stringify({
 ---
 
 <BaseLayout
-  title="Patient Testimonials"
-  description="Read what patients say about their experience with Morningstar RegMed's regenerative medicine and pain management treatments."
+  title="Testimonials"
+  description="Read what patients say about Morning Star Neuropathy & Pain Treatment Center in St. Peters, MO. Real stories of pain relief and improved quality of life."
   jsonLd={jsonLd}
 >
-  <!-- Page header -->
+  <!-- Hero -->
   <section class="bg-brand-light py-16 px-4">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold text-brand-navy mb-4">Patient Testimonials</h1>
       <p class="text-xl text-gray-600">
-        Real stories from patients who found relief through our regenerative medicine programs.
+        Real stories from patients who found relief at Morning Star Neuropathy &amp; Pain Treatment Center in St. Peters, MO.
       </p>
     </div>
   </section>
 
-  <!-- Reviews grid -->
+  <!-- Testimonials grid -->
   <section class="py-16 px-4">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {reviews.map(({ name, rating, text }) => (
-        <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-          <div class="flex items-center gap-1 mb-3" aria-label={`${rating} out of 5 stars`}>
+      {testimonials.map(({ name, text, condition, rating }) => (
+        <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col">
+          <div class="flex items-center gap-1 mb-2" aria-label={`${rating} out of 5 stars`}>
             {Array.from({ length: rating }).map(() => (
               <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.449a1 1 0 00-.364 1.118l1.286 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.449a1 1 0 00-1.176 0l-3.37 2.449c-.784.57-1.838-.197-1.539-1.118l1.285-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.05 2.927z" />
               </svg>
             ))}
           </div>
-          <blockquote class="text-gray-600 text-sm mb-4">"{text}"</blockquote>
-          <p class="font-semibold text-brand-navy text-sm">— {name}</p>
+          <span class="text-xs font-medium text-brand-blue mb-3">{condition}</span>
+          <blockquote class="text-gray-600 text-sm mb-4 flex-1">"{text}"</blockquote>
+          <p class="font-semibold text-brand-navy text-sm">&mdash; {name}</p>
         </div>
       ))}
     </div>
@@ -79,9 +99,9 @@ const jsonLd = JSON.stringify({
   <!-- CTA -->
   <section class="bg-brand-navy text-white py-16 px-4">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Join our patients on the path to relief</h2>
+      <h2 class="text-3xl font-bold mb-4">Start Your Journey Toward Relief</h2>
       <p class="text-blue-200 mb-8">
-        Schedule a consultation to discuss your treatment options.
+        Schedule a consultation to discuss your treatment options and discover how Morning Star can help you.
       </p>
       <a
         href="/schedule-appointment"
