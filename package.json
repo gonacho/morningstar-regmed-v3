@@ -1,0 +1,1 @@
+{"name":"morningstar-regmed-v3","version":"0.1.0","private":true,"scripts":{"dev":"astro dev","start":"astro dev","build":"astro build","preview":"astro preview","astro":"astro"},"dependencies":{"astro":"^5.8.1","@astrojs/tailwind":"^5.1.4","tailwindcss":"^3.4.17"},"devDependencies":{"@types/node":"^22.0.0"}}

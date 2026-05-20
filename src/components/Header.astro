@@ -1,0 +1,72 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <span class="text-brand-navy font-bold text-xl tracking-tight">
+          Morningstar RegMed
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8">
+        {navLinks.map(({ href, label }) => (
+          <a
+            href={href}
+            class:list={[
+              'text-sm font-medium transition-colors duration-150',
+              currentPath === href
+                ? 'text-brand-blue'
+                : 'text-gray-600 hover:text-brand-navy',
+            ]}
+          >
+            {label}
+          </a>
+        ))}
+        <a
+          href="/contact"
+          class="ml-2 px-4 py-2 bg-brand-blue text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile menu button (placeholder — JS-free toggle) -->
+      <button
+        class="md:hidden p-2 rounded-md text-gray-600 hover:text-brand-navy"
+        aria-label="Open menu"
+        onclick="this.closest('header').querySelector('#mobile-menu').classList.toggle('hidden')"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      {navLinks.map(({ href, label }) => (
+        <a
+          href={href}
+          class:list={[
+            'block py-2 text-sm font-medium',
+            currentPath === href ? 'text-brand-blue' : 'text-gray-600',
+          ]}
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,55 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home" description="Morningstar RegMed — Expert regulatory and medical affairs consulting for life sciences companies.">
+  <!-- Hero -->
+  <section class="bg-brand-light py-24 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold text-brand-navy leading-tight mb-6">
+        Regulatory Expertise for Life Sciences
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
+        Morningstar RegMed guides medical device and biotech companies through complex regulatory pathways — from strategy to submission.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/services" class="px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+          Our Services
+        </a>
+        <a href="/contact" class="px-8 py-3 border-2 border-brand-navy text-brand-navy font-semibold rounded-lg hover:bg-brand-navy hover:text-white transition-colors">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value props (placeholder) -->
+  <section class="py-20 px-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy text-center mb-12">Why Morningstar RegMed</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          { title: 'Regulatory Strategy', body: 'Placeholder — content coming in Phase 2.' },
+          { title: 'Submission Support', body: 'Placeholder — content coming in Phase 2.' },
+          { title: 'Post-Market Compliance', body: 'Placeholder — content coming in Phase 2.' },
+        ].map(({ title, body }) => (
+          <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
+            <h3 class="font-semibold text-lg text-brand-navy mb-2">{title}</h3>
+            <p class="text-gray-500 text-sm">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to move forward?</h2>
+      <p class="text-blue-200 mb-8">Placeholder CTA — content coming in Phase 2.</p>
+      <a href="/contact" class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+        Contact Us
+      </a>
+    </div>
+  </section>
+</BaseLayout>
