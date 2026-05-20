@@ -1,0 +1,24 @@
+# 301 Redirect Map — morningstarregmed.com
+# Source: MOR-2 SEO Audit (redirect map section)
+# Format: /old-url /new-url 301
+
+# 1. Align regenerative-therapy URL with page title ("Exosome Therapy")
+/regenerative-therapy /exosome-therapy 301
+
+# 2. Consolidate duplicate neuropathy pages — merge /neuropathy into /neuropathy-treatment
+/neuropathy /neuropathy-treatment 301
+
+# 3. Fix terms URL slug (missing "of")
+/terms-service /terms-of-service 301
+
+# 4. Align sciatica URL with page title ("Sciatica Treatment")
+/sciatica-relief /sciatica-treatment 301
+
+# 5. Shorten blog URL — remove periods, trim city/state cruft
+/blog/how-regenerative-therapy-in-st.-peters-mo-may-support-back-pain-recovery /blog/regenerative-therapy-back-pain-recovery 301
+
+# 6. Shorten blog URL — remove periods, trim city/state cruft
+/blog/neuropathy-treatment-in-st.-peters-mo-for-long-term-nerve-function-support /blog/neuropathy-treatment-long-term-support 301
+
+# Catch-all: redirect unmapped 404s to homepage
+/* / 301
