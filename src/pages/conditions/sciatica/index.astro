@@ -1,0 +1,240 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Sciatica Treatment in St. Peters, MO | Morning Star';
+const description =
+  'Sciatica treatment at Morning Star in St. Peters, MO. Relieve sciatic nerve pain with expert diagnosis and targeted non-invasive therapies.';
+
+const faqs = [
+  {
+    question: 'What causes sciatica?',
+    answer:
+      'Sciatica is most commonly caused by a herniated disc in the lumbar spine pressing on the sciatic nerve. Other causes include spinal stenosis (narrowing of the spinal canal), piriformis syndrome (tightness in the piriformis muscle compressing the nerve), degenerative disc disease, and spondylolisthesis. In rare cases, tumors or infections can also produce sciatic nerve compression.',
+  },
+  {
+    question: 'What can I do for short-term sciatica relief?',
+    answer:
+      'Applying ice to the affected area for the first 48 to 72 hours, followed by heat therapy, can help reduce inflammation and relax tight muscles. Gentle stretching (particularly hamstring and piriformis stretches), short walks, and over-the-counter anti-inflammatory medications may provide temporary relief. Prolonged bed rest is not recommended, as it can worsen symptoms. If your pain is severe or does not respond to these measures within a week, a professional evaluation is the next step.',
+  },
+  {
+    question: 'What is the best long-term treatment for sciatica?',
+    answer:
+      'The most effective long-term treatment addresses the underlying cause of the nerve compression. At Morning Star, we use a combination of neuromodulation technique, chronic pain management, and regenerative therapy based on your specific diagnosis. These non-invasive approaches target the source of the problem rather than simply managing symptoms, which leads to more lasting relief.',
+  },
+  {
+    question: 'What activities should I avoid with sciatica?',
+    answer:
+      'Heavy lifting, prolonged sitting without breaks, high-impact exercises (running on hard surfaces, jumping), and any movements that involve twisting the lower back under load should be avoided or modified during a sciatica flare-up. Forward-bending activities that round the lower back can increase disc pressure and worsen symptoms. Your treatment team can recommend safe alternatives that keep you active without aggravating the nerve.',
+  },
+  {
+    question: 'Can sciatica be cured permanently?',
+    answer:
+      'Many patients achieve lasting relief from sciatica with the right treatment plan. When the underlying cause (such as a herniated disc or piriformis tightness) is effectively addressed, the sciatic nerve can heal and symptoms can resolve. However, patients with degenerative spinal conditions may need ongoing management to prevent recurrence. Our goal at Morning Star is to reduce your pain, restore function, and equip you with the tools to maintain your results.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+});
+---
+
+<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+  <!-- Breadcrumb -->
+  <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
+    <ol class="flex items-center gap-1.5">
+      <li><a href="/" class="hover:text-brand-blue">Home</a></li>
+      <li>/</li>
+      <li><a href="/conditions/" class="hover:text-brand-blue">Conditions</a></li>
+      <li>/</li>
+      <li class="text-brand-navy font-medium">Sciatica</li>
+    </ol>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-brand-light py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+        Sciatica Treatment in St. Peters, MO
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl">
+        Targeted, non-invasive treatment to relieve <strong>sciatic nerve pain</strong>, restore mobility, and address the spinal conditions that cause sciatica in the first place.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <a
+          href="/schedule-appointment"
+          class="inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Schedule a Consultation
+        </a>
+        <a
+          href="tel:6362440124"
+          class="inline-block px-8 py-3 border-2 border-brand-blue text-brand-blue font-semibold rounded-lg hover:bg-brand-blue hover:text-white transition-colors"
+        >
+          Call (636) 244-0124
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Understanding Sciatica -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Understanding Sciatica</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        The <strong>sciatic nerve</strong> is the longest and thickest nerve in the human body. It runs from the lower back through the hips and buttocks, then branches down each leg. When this nerve is compressed or irritated, the result is a condition commonly called sciatica: pain that radiates from the lower back into one (or occasionally both) legs.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Sciatica is not a diagnosis in itself. It is a symptom of an underlying spinal or muscular condition that puts pressure on the sciatic nerve. The pain can range from a mild, intermittent ache to severe, shooting sensations that make standing or walking extremely difficult. Some patients also experience numbness, tingling, or muscle weakness in the affected leg.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        At Morning Star Neuropathy &amp; Pain Treatment Center in St. Peters, MO, we identify the specific cause of your sciatic nerve compression and build a treatment plan that addresses it directly. Rather than relying on pain medication alone, our approach focuses on relieving the pressure on the nerve and promoting long-term recovery.
+      </p>
+    </div>
+  </section>
+
+  <!-- Common Causes -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-8">Common Causes of Sciatica</h2>
+
+      <h3 class="text-xl font-semibold text-brand-navy mb-3">Herniated Disc</h3>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        A <strong>herniated disc</strong> (also called a slipped or ruptured disc) occurs when the soft inner material of a spinal disc pushes through the outer layer and presses on a nearby nerve root. Lumbar disc herniations are the most common cause of sciatica, accounting for roughly 90% of cases. The pain typically worsens with sitting, bending forward, or coughing.
+      </p>
+
+      <h3 class="text-xl font-semibold text-brand-navy mb-3">Spinal Stenosis</h3>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        <strong>Lumbar spinal stenosis</strong> is a narrowing of the spinal canal in the lower back that compresses the nerve roots, including the sciatic nerve. This condition develops gradually, most often in adults over 60, and tends to cause symptoms that worsen with walking or standing and improve with sitting or leaning forward.
+      </p>
+
+      <h3 class="text-xl font-semibold text-brand-navy mb-3">Piriformis Syndrome</h3>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        The piriformis is a small muscle deep in the buttock that sits directly over the sciatic nerve. When this muscle becomes tight, inflamed, or spasms, it can compress the nerve and produce sciatica-like symptoms. Piriformis syndrome is more common in runners, cyclists, and people who sit for long periods.
+      </p>
+
+      <h3 class="text-xl font-semibold text-brand-navy mb-3">Degenerative Disc Disease</h3>
+      <p class="text-gray-600 leading-relaxed">
+        As the spinal discs lose moisture and height with age, the space available for nerve roots shrinks. This natural degeneration can lead to bone spurs and disc bulges that put pressure on the sciatic nerve. <strong>Degenerative disc disease</strong> progresses slowly, so symptoms often build over months or years before patients seek treatment.
+      </p>
+    </div>
+  </section>
+
+  <!-- Symptoms -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Symptoms of Sciatica</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        Sciatica symptoms typically affect one side of the body. The specific pattern depends on which nerve root is compressed. Common symptoms include:
+      </p>
+      <ul class="space-y-2 text-gray-600 mb-6">
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Sharp, shooting, or burning pain radiating from the lower back down the leg</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Numbness or tingling in the leg, foot, or toes</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Weakness in the affected leg, making it difficult to lift the foot</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Pain that worsens with sitting, coughing, or sneezing</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> A constant ache on one side of the buttock</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Difficulty standing up from a seated position</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Pain that improves with walking but flares when standing still</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> A pins-and-needles sensation along the back of the thigh</li>
+      </ul>
+      <p class="text-gray-600 leading-relaxed">
+        If your leg pain is severe, includes progressive weakness, or is accompanied by loss of bladder or bowel control, seek medical attention immediately. These may indicate a serious condition called cauda equina syndrome that requires urgent care.
+      </p>
+    </div>
+  </section>
+
+  <!-- Treatment at Morning Star -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Sciatica Treatment at Morning Star</h2>
+      <p class="text-gray-600 leading-relaxed mb-8">
+        Effective sciatica treatment starts with an accurate diagnosis. Our clinical team evaluates your symptoms, reviews imaging when available, and performs targeted assessments to determine exactly where and why the sciatic nerve is being compressed. Treatment is then tailored to the underlying cause.
+      </p>
+
+      <h3 class="text-xl font-semibold text-brand-navy mb-3">Neuromodulation Technique</h3>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        <a href="/pain-management/neuromodulation-technique/" class="text-brand-blue hover:underline">Neuromodulation technique</a> delivers controlled electrical stimulation to disrupt the pain signals traveling along the sciatic nerve. This therapy can significantly reduce radiating leg pain and improve your ability to sit, stand, and walk comfortably, all without surgery or ongoing medication.
+      </p>
+
+      <h3 class="text-xl font-semibold text-brand-navy mb-3">Chronic Pain Management</h3>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        For patients with persistent or recurring sciatica, our <a href="/pain-management/chronic-pain-management/" class="text-brand-blue hover:underline">chronic pain management</a> program coordinates multiple therapies into a single plan. This may include neuromodulation, targeted stretching protocols, ergonomic guidance, and activity modification designed to relieve nerve pressure and prevent flare-ups.
+      </p>
+
+      <h3 class="text-xl font-semibold text-brand-navy mb-3">Regenerative Therapy</h3>
+      <p class="text-gray-600 leading-relaxed">
+        When disc degeneration or tissue damage is contributing to your sciatica, <a href="/regenerative-medicine/regenerative-therapy/" class="text-brand-blue hover:underline">regenerative therapy</a> can support the body's natural repair processes at the cellular level. This treatment option is especially valuable for patients who want to avoid surgery while still addressing the structural cause of their nerve compression.
+      </p>
+    </div>
+  </section>
+
+  <!-- Lifestyle + When to Seek Help -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Lifestyle Tips &amp; When to Seek Help</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Certain daily habits can make a meaningful difference in managing sciatica symptoms. Regular, gentle movement (walking, swimming) keeps the muscles around the spine flexible and reduces stiffness. Avoiding prolonged sitting, maintaining good posture, and using proper lifting technique all help take pressure off the lower back.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Stretching the hamstrings, hip flexors, and piriformis muscle for a few minutes each day can reduce nerve irritation over time. Sleeping on your side with a pillow between your knees may also relieve nighttime discomfort.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        You should seek professional care if your sciatica:
+      </p>
+      <ul class="space-y-2 text-gray-600 mb-6">
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Lasts longer than four to six weeks</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Includes progressive weakness in the leg or foot</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Makes it difficult to walk, stand, or perform daily activities</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Develops suddenly after an injury or fall</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Is accompanied by bladder or bowel changes (seek care immediately)</li>
+      </ul>
+      <p class="text-gray-600 leading-relaxed">
+        The team at Morning Star in St. Peters is here to help you identify the cause of your sciatica and build a path toward lasting relief. Early treatment often produces the best outcomes.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+      <dl class="space-y-6">
+        {faqs.map(({ question, answer }) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <dt class="font-semibold text-brand-navy mb-2">{question}</dt>
+            <dd class="text-gray-600 text-sm leading-relaxed">{answer}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Stop Living with Sciatic Nerve Pain</h2>
+      <p class="text-blue-200 mb-8">
+        Call <a href="tel:6362440124" class="underline hover:text-white">(636) 244-0124</a> or schedule online. Our St. Peters team will pinpoint the cause of your sciatica and explain every treatment option available.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/schedule-appointment"
+          class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+        >
+          Schedule Appointment
+        </a>
+        <a
+          href="tel:6362440124"
+          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
+        >
+          Call (636) 244-0124
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,146 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'New Patients | Morning Star in St. Peters, MO';
+const description =
+  'What to expect at your first visit to Morning Star in St. Peters, MO. New patient information, forms, and appointment preparation guide.';
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero -->
+  <section class="bg-brand-light py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+        New Patient Information
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl">
+        Walking into a new clinic can feel uncertain, especially when you have been dealing with pain for a long time. We want to make your first visit as straightforward as possible. Here is exactly what to expect when you come to Morning Star in St. Peters.
+      </p>
+      <a
+        href="/schedule-appointment"
+        class="mt-8 inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Schedule Your First Visit
+      </a>
+    </div>
+  </section>
+
+  <!-- What to Expect -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">What to Expect at Your First Visit</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        Your initial appointment at Morning Star is a consultation, not a sales pitch. We spend 45 to 60 minutes with every new patient to understand your situation before recommending anything.
+      </p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">1. Health History Review</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We review your complete medical history, current medications, previous treatments, and diagnostic imaging. Bring any relevant medical records, imaging results, or medication lists.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">2. Physical Evaluation</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Our provider performs a hands-on examination focused on your pain areas, nerve function, joint mobility, and range of motion. Additional diagnostic testing may be ordered based on findings.
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">3. Treatment Discussion</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We explain our diagnosis, discuss all available treatment options, and work with you to build a personalized care plan. You will leave with a clear understanding of next steps.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Prepare -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">How to Prepare for Your Appointment</h2>
+      <ul class="space-y-3 text-gray-600">
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-1">&#10003;</span>
+          <span>Bring your insurance card and a valid photo ID</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-1">&#10003;</span>
+          <span>Bring a list of current medications and supplements</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-1">&#10003;</span>
+          <span>Bring any recent imaging (X-rays, MRIs) or lab results related to your condition</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-1">&#10003;</span>
+          <span>Write down your main questions or concerns so you do not forget them</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-1">&#10003;</span>
+          <span>Arrive 15 minutes early to complete any remaining paperwork</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-1">&#10003;</span>
+          <span>Wear comfortable clothing that allows easy access to the affected area</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Insurance & Payment -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Insurance and Payment</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Morning Star accepts major medical insurance plans. We recommend contacting your insurance provider before your first visit to confirm coverage for the services discussed. Our front desk team can also help verify your benefits.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        For patients who prefer financing, we accept CareCredit. Visit our <a href="/insurance/" class="text-brand-blue hover:underline">insurance and payment page</a> for more details on accepted plans and payment options.
+      </p>
+    </div>
+  </section>
+
+  <!-- Office Information -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Office Information</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-semibold text-brand-navy mb-2">Location</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            4710 Mexico Rd, Suite C<br />
+            St. Peters, MO 63376
+          </p>
+          <p class="text-gray-600 text-sm">
+            Located near Mid Rivers Mall with easy access from I-70 and Highway 94. Free parking is available on-site.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-brand-navy mb-2">Hours</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            Monday through Thursday: 8:00 AM to 5:00 PM<br />
+            Friday through Sunday: Closed
+          </p>
+          <h3 class="font-semibold text-brand-navy mb-2 mt-4">Phone</h3>
+          <p class="text-gray-600 text-sm">
+            <a href="tel:6362440124" class="text-brand-blue hover:underline">(636) 244-0124</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+      <p class="text-blue-200 mb-8">
+        Call <a href="tel:6362440124" class="underline hover:text-white">(636) 244-0124</a> or schedule your first evaluation online. Our team in St. Peters, MO looks forward to helping you find relief.
+      </p>
+      <a href="/schedule-appointment" class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+        Schedule Your First Visit
+      </a>
+    </div>
+  </section>
+</BaseLayout>

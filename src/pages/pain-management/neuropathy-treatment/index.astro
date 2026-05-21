@@ -1,0 +1,274 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Neuropathy Treatment in St. Peters, MO | Morning Star';
+const description =
+  'Advanced neuropathy treatment at Morning Star in St. Peters, MO. Customized plans to restore nerve health, relieve pain, and improve mobility. Call today.';
+
+const faqs = [
+  {
+    question: 'What is the main cause of neuropathy?',
+    answer:
+      'Diabetes is the most common cause of peripheral neuropathy, accounting for roughly 60% of cases. Chronically elevated blood sugar damages the small blood vessels that supply nerves, leading to tingling, numbness, and pain, especially in the feet and hands. Other causes include autoimmune disorders, infections, nutritional deficiencies, and certain medications.',
+  },
+  {
+    question: 'Can neuropathy be cured?',
+    answer:
+      'In most cases, neuropathy is managed rather than cured. However, early intervention can slow progression, significantly reduce symptoms, and in some instances partially reverse nerve damage. Our treatment plans focus on addressing the underlying cause, restoring nerve function, and improving your quality of life through therapies such as neuromodulation and regenerative options.',
+  },
+  {
+    question: 'What makes neuropathy worse?',
+    answer:
+      'Poor blood sugar control is the leading factor that worsens neuropathy, particularly in diabetic patients. Smoking restricts blood flow to the nerves, alcohol is directly toxic to nerve tissue, and nutritional deficiencies (especially B vitamins) accelerate damage. Avoiding these triggers is a critical part of any effective treatment plan.',
+  },
+  {
+    question: 'Can prolonged sitting cause nerve damage?',
+    answer:
+      'Yes. Sitting for extended periods can compress the sciatic nerve, peroneal nerve, and other peripheral nerves, leading to numbness, tingling, or pain in the legs and feet. Over time, chronic compression may contribute to lasting nerve injury. Regular movement breaks and ergonomic adjustments can help reduce this risk.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+});
+---
+
+<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+  <!-- Breadcrumb -->
+  <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
+    <ol class="flex items-center gap-1.5">
+      <li><a href="/" class="hover:text-brand-blue">Home</a></li>
+      <li>/</li>
+      <li><a href="/pain-management/" class="hover:text-brand-blue">Pain Management</a></li>
+      <li>/</li>
+      <li class="text-brand-navy font-medium">Neuropathy Treatment</li>
+    </ol>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-brand-light py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+        Neuropathy Treatment in St. Peters, MO
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl">
+        Customized treatment plans designed to restore <strong>peripheral nerve health</strong>, relieve neuropathic pain, and help you regain the quality of life you deserve.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <a
+          href="/schedule-appointment"
+          class="inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Schedule a Consultation
+        </a>
+        <a
+          href="tel:6362440124"
+          class="inline-block px-8 py-3 border-2 border-brand-blue text-brand-blue font-semibold rounded-lg hover:bg-brand-blue hover:text-white transition-colors"
+        >
+          Call (636) 244-0124
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Understanding Neuropathy -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Understanding Neuropathy</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        <strong>Peripheral neuropathy</strong> occurs when the nerves outside the brain and spinal cord are damaged, causing weakness, numbness, and pain. Symptoms most often appear in the hands and feet, ranging from mild tingling to debilitating burning sensations and muscle weakness that interfere with daily activities.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        The causes are varied. Diabetes accounts for roughly 60% of neuropathy cases, but autoimmune disorders, infections, nutritional deficiencies, and certain medications can also damage nerves over time. Regardless of the cause, the result is the same: your nerves struggle to send accurate signals, and the pain, numbness, or balance problems that follow can limit everything from walking to sleeping.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        At Morning Star Neuropathy &amp; Pain Treatment Center in St. Peters, MO, we take an approach that goes beyond masking symptoms. Our clinical team evaluates the root causes of your nerve damage and builds a personalized plan to slow progression, repair nerve pathways, and restore function. Learn more about the condition itself on our <a href="/conditions/neuropathy/" class="text-brand-blue hover:underline">neuropathy condition page</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- How Our Treatment Works -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-8">How Our Treatment Works</h2>
+      <p class="text-gray-600 leading-relaxed mb-8">
+        Our three-step process is designed to identify what is driving your neuropathy, deliver targeted treatment, and track your progress over time.
+      </p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">1. In-Depth Evaluation</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We perform detailed nerve function testing and review your medical history to identify the specific type and cause of your neuropathy. This evaluation shapes every recommendation that follows.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">2. Customized Treatment Plan</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Based on your evaluation, we develop a multi-faceted plan that may include <a href="/pain-management/neuromodulation-technique/" class="text-brand-blue hover:underline">neuromodulation</a>, regenerative therapies, and lifestyle modifications targeted at the root cause of your nerve damage.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">3. Ongoing Monitoring</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We track your progress with follow-up assessments, adjusting your treatment as your nerve health improves and symptoms decrease. The plan evolves with you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits of Treatment -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-8">Benefits of Treatment</h2>
+      <ul class="grid md:grid-cols-2 gap-4">
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Reduced tingling, numbness, and burning sensations</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Improved balance and mobility</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Addresses root causes, not just symptoms</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Non-surgical options including neuromodulation</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Regenerative therapies to support nerve repair</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Personalized plans tailored to your condition</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">No daily medications required</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Progress tracked and plan adjusted over time</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Who Should Consider Treatment -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Who Should Consider Neuropathy Treatment?</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        If you experience persistent numbness, tingling, or burning in your feet or hands, neuropathy may be the cause. Many patients wait too long before seeking treatment, and nerve damage can progress if left unaddressed.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        You should consider scheduling an evaluation if you notice any of the following:
+      </p>
+      <ul class="space-y-2 text-gray-600 mb-6">
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Tingling or pins-and-needles sensations in your extremities</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Numbness that makes it difficult to feel your feet while walking</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Sharp, shooting, or burning pain in your feet or legs</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Difficulty with balance or coordination</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Muscle weakness in the affected areas</li>
+        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> A diabetes diagnosis with any nerve-related symptoms</li>
+      </ul>
+      <p class="text-gray-600 leading-relaxed">
+        Early treatment gives your nerves the best chance of recovery. The team at Morning Star is here to help patients throughout St. Peters and the surrounding communities take that first step.
+      </p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-8">What Our Patients Say</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <blockquote class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            "I found out I had neuropathy in my feet. I had no idea where to go. I Googled neuropathy places and came across Morningstar. I am so thankful I did! I felt welcome the 1st time I went there. When I first started treatments, they had to wheel me in from the car to the treatment room in a wheelchair. I have been going for about 2 months. I went from arriving in a wheelchair to walking with a cane! Marvelous improvement from not being able to walk at all. I owe all this to the wonderful staff of Morningstar! I love these people, Heather, Mandy, Rochelle, Brad and Ron. They are such caring people. Please give them a try if you need help with neuropathy."
+          </p>
+          <footer class="text-brand-navy font-semibold">Brenda Landers</footer>
+        </blockquote>
+        <blockquote class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            "I had neuropathy in my feet and now it's about gone with the treatment they're giving me and they do actually work. They know what they're doing this is a very good place if you have neuropathy. The treatments are helping very much so and I really love it's starting to help."
+          </p>
+          <footer class="text-brand-navy font-semibold">Arthur Brewer</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Related Pain Management Services</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        Neuropathy treatment is one part of our broader <a href="/pain-management/" class="text-brand-blue hover:underline">pain management program</a> at Morning Star. Depending on your condition, your treatment plan may also involve:
+      </p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/pain-management/neuromodulation-technique/" class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md hover:border-brand-blue transition-all group">
+          <h3 class="font-semibold text-brand-navy mb-2 group-hover:text-brand-blue">Neuromodulation Technique</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Controlled electrical stimulation that restores nerve signaling and reduces chronic pain without surgery or medication.
+          </p>
+        </a>
+        <a href="/pain-management/chronic-pain-management/" class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md hover:border-brand-blue transition-all group">
+          <h3 class="font-semibold text-brand-navy mb-2 group-hover:text-brand-blue">Chronic Pain Management</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Personalized plans combining regenerative, neuromodulation, and lifestyle therapies for persistent pain conditions.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+      <dl class="space-y-6">
+        {faqs.map(({ question, answer }) => (
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <dt class="font-semibold text-brand-navy mb-2">{question}</dt>
+            <dd class="text-gray-600 text-sm leading-relaxed">{answer}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-navy text-white py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Take the First Step Toward Relief</h2>
+      <p class="text-blue-200 mb-8">
+        Do not let neuropathy control your life. Contact Morning Star in St. Peters today to discuss a treatment plan personalized to your needs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/schedule-appointment"
+          class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+        >
+          Schedule Appointment
+        </a>
+        <a
+          href="tel:6362440124"
+          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
+        >
+          Call (636) 244-0124
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

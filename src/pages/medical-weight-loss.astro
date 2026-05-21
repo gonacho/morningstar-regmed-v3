@@ -1,35 +1,40 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
-const title = 'Medical Weight Loss in St. Peters, MO';
+const title = 'Medical Weight Loss in St. Peters, MO | Morning Star';
 const description =
-  'Medically supervised weight loss in St. Peters, MO using semaglutide and tirzepatide. Personalized plans to suppress appetite and support long-term health.';
+  'Medically supervised weight loss in St. Peters, MO using semaglutide and tirzepatide. Personalized plans for lasting results at Morning Star.';
 
 const faqs = [
   {
-    question: 'How does semaglutide work for weight loss?',
+    question: 'Who qualifies for medical weight loss?',
     answer:
-      'Semaglutide mimics a natural hormone called GLP-1 that regulates appetite and blood sugar. It increases feelings of fullness, helping you eat less without constant hunger. When combined with regular exercise and dietary adjustments, semaglutide can produce significant, sustained weight loss. Our team monitors your progress and adjusts dosing to maximize results.',
+      'Adults with a BMI of 30 or higher are generally candidates for GLP-1 medications. Adults with a BMI of 27 or higher may also qualify if they have a weight-related condition such as type 2 diabetes, high blood pressure, or sleep apnea. During your initial evaluation, our clinical team reviews your full medical history and current health markers to determine whether semaglutide or tirzepatide is appropriate for you.',
   },
   {
-    question: 'What kind of weight loss results can I expect with tirzepatide?',
+    question: 'How long does treatment last?',
     answer:
-      'Most patients using tirzepatide lose approximately 1 to 3 pounds per week, though individual results vary based on starting weight, adherence to the program, and lifestyle factors. Clinical studies have shown tirzepatide to be among the most effective weight loss medications available. Our team sets realistic goals tailored to your health profile.',
+      'Most patients follow a structured program for 3 to 6 months, though some continue longer depending on their goals and progress. Medication dosing increases gradually over the first several weeks to reduce side effects. Our team reassesses your plan at every visit and adjusts the timeline based on how your body responds.',
   },
   {
-    question: 'What foods should I avoid while on these medications?',
+    question: 'What are the common side effects of semaglutide and tirzepatide?',
     answer:
-      'We recommend limiting high-sugar foods, fried and high-fat dishes, and processed snacks, as these can reduce the effectiveness of your medication and cause gastrointestinal discomfort. Patients taking tirzepatide should also avoid alcohol, which can intensify side effects. Our team provides detailed nutritional guidance as part of your personalized plan.',
+      'The most frequently reported side effects include mild nausea, reduced appetite, and occasional digestive discomfort. These symptoms typically appear during the dose-escalation phase and improve within a few weeks as your body adjusts. Our clinical team monitors you closely and can modify your dosing schedule if side effects become bothersome.',
   },
   {
-    question: 'Who is a candidate for medical weight loss?',
+    question: 'Does insurance cover medical weight loss medications?',
     answer:
-      'Medical weight loss may be appropriate for adults with a BMI of 30 or higher, or a BMI of 27 or higher with weight-related health conditions such as type 2 diabetes, high blood pressure, or sleep apnea. During your consultation, our team evaluates your medical history, current health, and goals to determine the best approach.',
+      'Coverage varies by plan and carrier. Some insurers cover GLP-1 medications for weight management, while others limit coverage to diabetes treatment. Our staff can help verify your benefits before you begin. For patients without coverage, we offer transparent pricing so you know exactly what to expect.',
   },
   {
-    question: 'Are the weight loss results permanent?',
+    question: 'How quickly will I see results?',
     answer:
-      'Long-term results depend on maintaining healthy habits after completing the program. Semaglutide and tirzepatide help retrain your appetite and metabolism, but lasting success requires ongoing commitment to nutrition and physical activity. Our program includes lifestyle coaching to help you sustain your progress well beyond the treatment period.',
+      'Many patients notice reduced appetite and early weight changes within the first 2 to 4 weeks. Typical weight loss ranges from 1 to 3 pounds per week once you reach your target dose. Clinical studies show that patients using these medications alongside dietary and activity changes achieve significantly more weight loss than with lifestyle changes alone. Our team sets realistic milestones based on your starting point and health profile.',
+  },
+  {
+    question: 'Will I regain the weight after stopping medication?',
+    answer:
+      'Long-term success depends on the habits you build during treatment. Semaglutide and tirzepatide help retrain your appetite signals and relationship with food, giving you a foundation to maintain progress. Our program includes nutritional guidance and lifestyle coaching specifically designed to help you sustain results after the medication phase ends.',
   },
 ];
 
@@ -49,54 +54,90 @@ const faqSchema = JSON.stringify({
   <section class="bg-brand-light py-20 px-4">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
-        Medical Weight Loss
+        Medical Weight Loss in St. Peters, MO
       </h1>
       <p class="text-xl text-gray-600 max-w-2xl">
-        Medically supervised weight loss programs using semaglutide and tirzepatide injections. Personalized plans designed to suppress appetite, regulate metabolism, and support long-term health.
+        You have tried the diets. You have counted the calories. If willpower alone were enough, you would not be reading this page. At Morning Star, we treat weight loss as a medical condition, not a personal failure.
       </p>
-      <a
-        href="/schedule-appointment"
-        class="mt-8 inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
-      >
-        Schedule a Consultation
-      </a>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <a
+          href="/schedule-appointment"
+          class="inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-center"
+        >
+          Schedule a Consultation
+        </a>
+        <a
+          href="tel:+16362440124"
+          class="inline-block px-8 py-3 border-2 border-brand-blue text-brand-blue font-semibold rounded-lg hover:bg-brand-blue hover:text-white transition-colors text-center"
+        >
+          Call (636) 244-0124
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Overview -->
+  <!-- What Is Medical Weight Loss -->
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-brand-navy mb-6">A Medical Approach to Weight Loss</h2>
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">What Is Medical Weight Loss?</h2>
       <p class="text-gray-600 leading-relaxed mb-4">
-        Losing weight and keeping it off requires more than willpower. At Morning Star Neuropathy &amp; Pain Treatment Center, our medical weight loss program combines FDA-approved medications — semaglutide and tirzepatide — with personalized nutritional guidance and lifestyle coaching to help you achieve sustainable results.
+        <strong>Medical weight loss</strong> is a physician-supervised program that uses FDA-approved medications, lab-based monitoring, and structured lifestyle guidance to help patients lose weight safely. It is not a diet plan sold in a box. It is not a meal replacement shake. It is a clinical treatment backed by research and overseen by a medical team.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Most commercial diet programs ignore the hormonal and metabolic factors that make sustained weight loss so difficult. When your body fights back with increased hunger signals and a slowing metabolism, discipline alone cannot overcome biology. That is where medical intervention changes the equation.
       </p>
       <p class="text-gray-600 leading-relaxed">
-        These injectable medications work by targeting the hormones that control appetite and blood sugar, making it easier to eat less, feel satisfied, and stay on track. Every plan is supervised by our clinical team, with regular check-ins to monitor your progress and adjust your treatment as needed.
+        At <a href="/" class="text-brand-blue hover:underline">our St. Peters medical clinic</a>, we pair proven medications with ongoing clinical oversight. Every patient receives an individualized plan, regular progress assessments, and dosing adjustments based on how their body responds. The goal is not just weight loss. The goal is weight loss that lasts.
       </p>
     </div>
   </section>
 
-  <!-- How It Works -->
+  <!-- How Semaglutide & Tirzepatide Work -->
   <section class="bg-gray-50 py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-brand-navy mb-8">How Our Program Works</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">How Semaglutide &amp; Tirzepatide Work</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        <strong>Semaglutide</strong> and <strong>tirzepatide</strong> belong to a class of medications called <strong>GLP-1 receptor agonists</strong>. They mimic a natural hormone your gut produces after eating, sending signals to your brain that you are full. The result: reduced appetite, fewer cravings, and a more regulated relationship with food.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        These medications also help regulate blood sugar levels, which is especially relevant for patients with insulin resistance or prediabetes. By stabilizing blood sugar, they reduce the energy crashes and intense hunger spikes that often derail conventional diets.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Tirzepatide works on two receptor pathways (GLP-1 and GIP), which clinical trials have shown may produce greater weight loss in some patients compared to single-receptor medications. Semaglutide targets the GLP-1 pathway alone and has its own strong track record in published research.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        Both medications are administered as weekly injections. Our clinical team determines which medication fits your health profile, then adjusts dosing gradually to minimize side effects and maximize results.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Process -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-8">The Process: From Evaluation to Results</h2>
+      <div class="grid md:grid-cols-2 gap-8">
         <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <div class="text-brand-blue font-bold text-lg mb-2">1. Health Evaluation</div>
+          <div class="text-brand-blue font-bold text-lg mb-2">1. Medical Evaluation</div>
           <p class="text-gray-600 text-sm leading-relaxed">
-            We assess your medical history, current health markers, and weight loss goals to determine whether semaglutide or tirzepatide is the right fit for you.
+            Your program begins with a thorough review of your medical history, current medications, lab work, and weight loss goals. We identify any underlying conditions that could affect treatment, then determine whether semaglutide or tirzepatide is the right fit.
           </p>
         </div>
         <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <div class="text-brand-blue font-bold text-lg mb-2">2. Personalized Plan</div>
+          <div class="text-brand-blue font-bold text-lg mb-2">2. Medication Selection &amp; Dosing</div>
           <p class="text-gray-600 text-sm leading-relaxed">
-            Your treatment plan includes medication dosing, nutritional recommendations, and exercise guidelines tailored to your lifestyle and health profile.
+            Based on your evaluation, we prescribe the medication best suited to your body and health profile. Dosing starts low and increases over several weeks, allowing your system to adjust while we monitor for any side effects.
           </p>
         </div>
         <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <div class="text-brand-blue font-bold text-lg mb-2">3. Ongoing Support</div>
+          <div class="text-brand-blue font-bold text-lg mb-2">3. Ongoing Monitoring</div>
           <p class="text-gray-600 text-sm leading-relaxed">
-            Regular follow-up visits allow us to track your progress, adjust medication as needed, and provide the coaching and accountability to keep you on course.
+            Regular follow-up visits let us track your weight, vitals, and overall response to treatment. We adjust your medication dosage and plan as needed. You are never left to figure things out on your own.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="text-brand-blue font-bold text-lg mb-2">4. Lifestyle Guidance</div>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Medication works best alongside sustainable habits. Our team provides nutritional recommendations, activity guidance, and practical strategies for maintaining your progress long after the prescription ends.
           </p>
         </div>
       </div>
@@ -104,35 +145,59 @@ const faqSchema = JSON.stringify({
   </section>
 
   <!-- Benefits -->
-  <section class="py-16 px-4">
+  <section class="bg-gray-50 py-16 px-4">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold text-brand-navy mb-8">Benefits of Medical Weight Loss</h2>
       <ul class="grid md:grid-cols-2 gap-4">
         <li class="flex items-start gap-3">
           <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
-          <span class="text-gray-600">FDA-approved medications (semaglutide and tirzepatide)</span>
+          <span class="text-gray-600">FDA-approved <strong>semaglutide</strong> and <strong>tirzepatide</strong> injections</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
-          <span class="text-gray-600">Suppresses appetite and reduces cravings</span>
+          <span class="text-gray-600">Clinically proven appetite suppression and craving reduction</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
-          <span class="text-gray-600">Medically supervised for safety and efficacy</span>
+          <span class="text-gray-600">Improved blood sugar regulation and metabolic function</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
-          <span class="text-gray-600">Personalized plans for lasting results</span>
+          <span class="text-gray-600">Physician-supervised treatment with regular progress tracking</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
-          <span class="text-gray-600">Helps regulate metabolism and blood sugar</span>
+          <span class="text-gray-600">Personalized dosing adjusted to your body and response</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
-          <span class="text-gray-600">Includes nutritional guidance and lifestyle coaching</span>
+          <span class="text-gray-600">Nutritional guidance and lifestyle coaching included</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Reduced joint stress, lower inflammation, and better mobility</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-brand-blue font-bold mt-0.5">&#10003;</span>
+          <span class="text-gray-600">Lower risk of weight-related conditions (hypertension, sleep apnea, type 2 diabetes)</span>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <!-- Why Weight Loss Matters for Pain Patients -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Why Weight Loss Matters for Pain &amp; Neuropathy Patients</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        If you live with chronic pain or <strong>peripheral neuropathy</strong>, carrying extra weight makes both conditions harder to manage. Every additional pound increases the mechanical load on your knees, hips, and lower back. Over time, that added stress accelerates joint degeneration and amplifies pain signals.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Excess weight also fuels systemic inflammation, a known driver of neuropathic symptoms. Fat tissue produces inflammatory markers that can worsen nerve damage and slow recovery from treatment. For patients already dealing with numbness, tingling, or burning in their feet, this creates a cycle that is difficult to break without medical support.
+      </p>
+      <p class="text-gray-600 leading-relaxed">
+        Losing even 10 to 15 percent of body weight has been shown to reduce inflammatory markers, improve nerve function, and decrease pain severity. For many of our patients in St. Peters, medical weight loss is not a cosmetic decision. It is a critical part of their overall treatment plan.
+      </p>
     </div>
   </section>
 
@@ -154,9 +219,9 @@ const faqSchema = JSON.stringify({
   <!-- CTA -->
   <section class="bg-brand-navy text-white py-16 px-4">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Start Your Weight Loss Journey</h2>
+      <h2 class="text-3xl font-bold mb-4">Ready to Lose Weight Under Medical Supervision?</h2>
       <p class="text-blue-200 mb-8">
-        Contact Morning Star to learn how our medically supervised programs can help you reach and maintain a healthier weight.
+        Schedule a consultation at Morning Star Neuropathy &amp; Pain Treatment Center. Our team will evaluate your health, discuss your goals, and build a plan designed for results that last.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
@@ -166,10 +231,10 @@ const faqSchema = JSON.stringify({
           Schedule Appointment
         </a>
         <a
-          href="/contact"
+          href="tel:+16362440124"
           class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
         >
-          Contact Us
+          Call (636) 244-0124
         </a>
       </div>
     </div>
