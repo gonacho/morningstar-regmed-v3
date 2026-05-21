@@ -16,6 +16,8 @@ const {
   description = 'Morning Star Neuropathy & Pain Treatment Center in St. Peters, MO — advanced neuropathy care, regenerative therapy, and pain management.',
   jsonLd,
 } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, 'https://morningstarregmed.com').href;
 ---
 
 <!doctype html>
@@ -25,13 +27,24 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalUrl} />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Morning Star Neuropathy & Pain Treatment Center" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>{title} | Morning Star</title>
+    <title>{title}</title>
     {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
     <!-- JSON-LD slot: child pages may inject additional structured data here -->
     <slot name="head" />
