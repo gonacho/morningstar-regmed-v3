@@ -32,6 +32,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          ASTRO_BASE: /morningstar-regmed-v3
 
       - name: Rewrite absolute paths for GitHub Pages subpath
         run: node scripts/rewrite-for-gh-pages.mjs /morningstar-regmed-v3
@@ -43,3 +45,15 @@ jobs:
           publish_dir: ./dist
           destination_dir: .
           enable_jekyll: false
+
+      - name: Enable GitHub Pages (gh-pages branch)
+        run: |
+          curl -s -X POST "https://api.github.com/repos/${{ github.repository }}/pages" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"source":{"branch":"gh-pages","path":"/"}}' || \
+          curl -s -X PUT "https://api.github.com/repos/${{ github.repository }}/pages" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"source":{"branch":"gh-pages","path":"/"}}'
+          echo "Preview URL: https://${{ github.repository_owner }}.github.io/$(echo ${{ github.repository }} | cut -d/ -f2)/"
