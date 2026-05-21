@@ -33,13 +33,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build for GitHub Pages
+      - name: Build
         run: npm run build
-        env:
-          ASTRO_BASE: /morningstar-regmed-v3
+
+      - name: Rewrite absolute paths for GitHub Pages subpath
+        run: node scripts/rewrite-for-gh-pages.mjs /morningstar-regmed-v3
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
