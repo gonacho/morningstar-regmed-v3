@@ -38,13 +38,17 @@ const breadcrumbs = [
   </nav>
 
   <!-- Hero -->
-  <section class="bg-bg-warm py-24 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl sm:text-5xl font-bold text-dark leading-tight mb-6">
+  <section class="relative bg-dark py-24 px-4 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-dark via-dark-muted to-primary/30"></div>
+    <div class="relative section-container text-center">
+      <span class="inline-flex items-center gap-1.5 bg-accent/20 text-accent border border-accent/30 text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full mb-5">
+        Morning Star · St. Peters, MO
+      </span>
+      <h1 class="font-heading font-bold text-4xl sm:text-5xl text-white leading-tight mb-5">
         About Morning Star Neuropathy &amp; Pain Treatment Center
       </h1>
-      <p class="text-xl text-body max-w-2xl mx-auto">
-        Helping patients in St. Peters and the greater St. Louis area find lasting relief from neuropathy and chronic pain through advanced, non-invasive care since opening our doors.
+      <p class="text-white/75 text-lg max-w-2xl mx-auto">
+        Helping patients in St. Peters and the greater St. Louis area find lasting relief from neuropathy and chronic pain through advanced, non-invasive care since 2009.
       </p>
     </div>
   </section>
@@ -116,15 +120,16 @@ const breadcrumbs = [
   </section>
 
   <!-- CTA -->
-  <section class="bg-dark text-white py-16 px-4">
+  <section class="bg-primary py-20 px-4">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-      <p class="text-white/70 mb-8">
-        Schedule an appointment today and take the first step toward lasting relief. Call us at <a href="tel:6362440124" class="underline hover:text-white">(636) 244-0124</a> or book online.
+      <h2 class="font-heading font-bold text-4xl text-white mb-4">Ready to Start Your Recovery?</h2>
+      <p class="text-white/80 text-lg mb-8">
+        Take the first step toward lasting pain relief. Consultations are free — no obligation.
       </p>
-      <a href="/schedule-appointment/" class="px-8 py-3 bg-white text-dark font-semibold rounded-xl hover:bg-blue-50 transition-colors">
-        Schedule Your Evaluation
+      <a href="/schedule-appointment/" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-heading font-semibold text-base px-8 py-4 rounded-full transition-all duration-200 shadow-lg">
+        Schedule Free Consultation →
       </a>
+      <p class="text-white/50 text-sm mt-4">📞 (636) 244-0124 · Mon–Thu 8am–5pm</p>
     </div>
   </section>
 </BaseLayout>

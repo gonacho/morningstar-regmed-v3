@@ -7,11 +7,17 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   description="Schedule your appointment at Morning Star in St. Peters, MO. Take the first step toward neuropathy relief and pain management. Call (636) 244-0124."
 >
   <!-- Hero -->
-  <section class="bg-bg-warm py-16 px-4">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl font-bold text-dark mb-4">Schedule Your Appointment</h1>
-      <p class="text-xl text-body">
-        Take the first step toward lasting relief. Whether you are dealing with neuropathy, chronic pain, or exploring regenerative therapy options, our team is ready to help you find the right path forward.
+  <section class="relative bg-dark py-20 px-4 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-dark via-dark-muted to-primary/30"></div>
+    <div class="relative section-container">
+      <span class="inline-flex items-center gap-1.5 bg-accent/20 text-accent border border-accent/30 text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full mb-5">
+        Free Consultation · No Obligation
+      </span>
+      <h1 class="font-heading font-bold text-4xl lg:text-5xl text-white mb-5 max-w-2xl">
+        Schedule Your Free Consultation
+      </h1>
+      <p class="text-white/75 text-lg leading-relaxed max-w-xl">
+        Take the first step toward lasting relief. Our team is ready to help you find the right path forward for neuropathy, chronic pain, or regenerative therapy.
       </p>
     </div>
   </section>
@@ -103,7 +109,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 
           <button
             type="submit"
-            class="w-full px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors"
+            class="w-full px-6 py-3.5 bg-accent hover:bg-accent-dark text-white font-heading font-semibold rounded-full transition-all duration-200 shadow-md"
           >
             Request Appointment
           </button>
@@ -144,7 +150,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           </ul>
         </div>
 
-        <div class="border border-blue-200 bg-blue-50 rounded-2xl p-6">
+        <div class="border border-primary/30 bg-primary/10 rounded-2xl p-6">
           <p class="text-dark text-sm font-medium">
             New patients welcome. Most consultations take about 30 minutes.
           </p>
