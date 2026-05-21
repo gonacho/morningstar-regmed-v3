@@ -90,28 +90,57 @@
 
 ## Review Data (Semantic-Filtered — PENDING Administrator Approval)
 
-### Review Candidate Pool (from client-brief.md + web research)
+### Verbatim Reviews — Administrator-Provided (from GBP)
 
-The following real GBP reviewers were identified. Verbatim review text must be pulled from the actual GBP listing and verified before schema injection.
+4 verbatim reviews provided by administrator. Semantic page bindings assigned below.
 
-| Reviewer | Topic/Service Mentioned | Proposed Page Binding | Status |
-|----------|------------------------|----------------------|--------|
-| Arthur Brewer | Neuropathy treatment result | `/pain-management/neuropathy-treatment/` | PENDING verbatim text |
+#### Review 1 — Brenda Landers
+- **Verbatim text:** "I found out I had neuropathy in my feet. I had no idea where to go. I Googled neuropathy places and came across Morningstar. I am so thankful I did! I felt welcome the 1st time I went there. When I first started treatments, they had to wheel me in from the car to the treatment room in a wheelchair. I have been going for about 2 months. I went from arriving in a wheelchair to walking with a cane! Marvelous improvement from not being able to walk at all. I owe all this to the wonderful staff of Morningstar! I love these people, Heather, Mandy, Rochelle, Brad and Ron. They are such caring people. Please give them a try if you need help with neuropathy."
+- **Service/Condition mentioned:** Neuropathy treatment (dramatic outcome — wheelchair to cane)
+- **Schema page binding:** `/pain-management/neuropathy-treatment/` (TherapeuticProcedure.review)
+- **Secondary binding:** `/conditions/neuropathy/` (contextual testimonial in body)
+- **Status:** APPROVED — verbatim text confirmed
+
+#### Review 2 — John Brantley
+- **Verbatim text:** "I have had two separate rounds of treatment done with the team at Morningstar. First, I had hyaluronic acid gel injections done on my knee. My pain went from an 8/10 to at most a 2/10. Great success if you ask me! Kay's bedside manner is absolutely wonderful and the admin staff made me feel welcomed and stress-free. After I finished with my knee, I did PRP treatments to both of my shoulders. My shoulders have been very weak and causing me a lot of pain due to what I do for a living, and this has been the only thing to help so far. Definitely helped me avoid shoulder surgery and now my pain is maybe a 2/10 on a bad day! These people work absolute miracles for non-invasive pain management options, and I recommend them hands down to anyone looking for relief! 5 stars!"
+- **Service/Condition mentioned:** Hyaluronic acid injections (knee, 8→2 pain scale), PRP therapy (shoulders, avoided surgery)
+- **Schema page binding (primary):** `/regenerative-medicine/hyaluronic-acid-injections/` (TherapeuticProcedure.review)
+- **Schema page binding (secondary):** `/regenerative-medicine/platelet-rich-plasma-therapy/` (TherapeuticProcedure.review)
+- **Tertiary binding:** `/conditions/knee-pain/` (contextual testimonial in body)
+- **Status:** APPROVED — verbatim text confirmed
+
+#### Review 3 — Arthur Brewer
+- **Verbatim text:** "I had neuropathy in my feet and now it's about gone with the treatment they're giving me and they do actually work. They know what they're doing this is a very good place if you have neuropathy. The treatments are helping very much so and I really love it's starting to help."
+- **Service/Condition mentioned:** Neuropathy treatment (feet, "about gone")
+- **Schema page binding:** `/conditions/neuropathy/` (MedicalCondition page — contextual testimonial)
+- **Secondary binding:** `/pain-management/neuropathy-treatment/` (contextual testimonial in body)
+- **Status:** APPROVED — verbatim text confirmed
+
+#### Review 4 — Clyde Steese
+- **Verbatim text:** "The people working here are fantastic. They are great help with everything. The treatments were just fantastic. They started off slow but then they started picking up and they have finished and I am 100% very very happy with everything. Thank you so very much the end."
+- **Service/Condition mentioned:** General positive (no specific service named)
+- **Schema page binding:** Homepage (LocalBusiness.review — general practice endorsement)
+- **Status:** APPROVED — verbatim text confirmed
+
+### Semantic Review Binding Summary
+
+| Page | Reviews Bound | Reviewer(s) |
+|------|--------------|-------------|
+| Homepage (LocalBusiness.review) | 1 | Clyde Steese |
+| `/pain-management/neuropathy-treatment/` | 2 | Brenda Landers (primary), Arthur Brewer (secondary) |
+| `/regenerative-medicine/hyaluronic-acid-injections/` | 1 | John Brantley (primary — knee HA) |
+| `/regenerative-medicine/platelet-rich-plasma-therapy/` | 1 | John Brantley (secondary — shoulder PRP) |
+| `/conditions/neuropathy/` | 2 | Arthur Brewer (primary), Brenda Landers (secondary) |
+| `/conditions/knee-pain/` | 1 | John Brantley (tertiary — knee HA outcome) |
+
+### Still Pending (from client-brief.md — not yet provided verbatim)
+
+| Reviewer | Topic | Proposed Binding | Status |
+|----------|-------|-----------------|--------|
 | Deb Schneider | Medical weight loss (223.6 → 150.4 lbs) | `/medical-weight-loss/` | PENDING verbatim text |
-| John Brantley | PRP + HA injections | `/regenerative-medicine/platelet-rich-plasma-therapy/` | PENDING verbatim text |
-| Leah Dubin | Non-invasive treatments (general) | Homepage (LocalBusiness) | PENDING verbatim text |
+| Leah Dubin | Non-invasive treatments | Homepage (LocalBusiness) | PENDING verbatim text |
 | Tarak Patel | Positive / staff mentioned | Homepage (LocalBusiness) | PENDING verbatim text |
 | Marilyn Adams-Hayden | General positive | Homepage (LocalBusiness) | PENDING verbatim text |
-
-**Additional reviews found via web search:**
-- Anonymous reviewer: "went from wheelchair to walking with cane in ~2 months" — topic: neuropathy → bind to `/pain-management/neuropathy-treatment/`
-- Anonymous reviewer: "neuropathy in feet nearly resolved" — topic: neuropathy → bind to `/conditions/neuropathy/`
-
-> **Action Required:** Administrator must:
-> 1. Pull verbatim review text from the GBP listing for each reviewer above
-> 2. Confirm star rating and date for each
-> 3. Select 3-5 reviews for schema injection
-> 4. Approve per-page bindings
 
 ### CRITICAL: Fabricated Reviews Must Be Removed
 The existing `/testimonials` page contains fabricated reviews (Sarah M., Robert T., Linda K., James W., Patricia D.). These are NOT real GBP reviews. They must be replaced with administrator-approved verbatim reviews or the page must be removed. Zero fabrication rule applies.
