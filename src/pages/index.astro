@@ -36,12 +36,12 @@ const faqs = [
 ];
 
 const services = [
-  { href: '/pain-management/neuropathy-treatment/', title: 'Neuropathy Treatment', body: 'Advanced non-surgical solutions for peripheral neuropathy pain, numbness, and tingling.', img: 'https://picsum.photos/seed/neuropathy/600/400' },
-  { href: '/pain-management/chronic-pain-management/', title: 'Chronic Pain Management', body: 'Personalized plans combining regenerative, neuromodulation, and lifestyle therapies.', img: 'https://picsum.photos/seed/chronicpain/600/400' },
-  { href: '/pain-management/neuromodulation-technique/', title: 'Neuromodulation Technique', body: 'Electrical stimulation that restores nerve function without medication or surgery.', img: 'https://picsum.photos/seed/neuromod/600/400' },
-  { href: '/regenerative-medicine/regenerative-therapy/', title: 'Regenerative Therapy', body: 'Exosome-based treatments that reduce inflammation and support cellular repair.', img: 'https://picsum.photos/seed/regen/600/400' },
-  { href: '/regenerative-medicine/platelet-rich-plasma-therapy/', title: 'PRP Therapy', body: "Harness your body's own healing factors to accelerate recovery in joints and tissues.", img: 'https://picsum.photos/seed/prp/600/400' },
-  { href: '/medical-weight-loss/', title: 'Medical Weight Loss', body: 'Clinically supervised semaglutide and tirzepatide programs for lasting results.', img: 'https://picsum.photos/seed/weightloss/600/400' },
+  { href: '/pain-management/neuropathy-treatment/', title: 'Neuropathy Treatment', body: 'Advanced non-surgical solutions for peripheral neuropathy pain, numbness, and tingling.', img: '/images/pain-management/neuropathy-treatment-st-peters-mo.webp' },
+  { href: '/pain-management/chronic-pain-management/', title: 'Chronic Pain Management', body: 'Personalized plans combining regenerative, neuromodulation, and lifestyle therapies.', img: '/images/pain-management/chronic-pain-management-st-peters-mo.webp' },
+  { href: '/pain-management/neuromodulation-technique/', title: 'Neuromodulation Technique', body: 'Electrical stimulation that restores nerve function without medication or surgery.', img: '/images/pain-management/neuromodulation-technique-st-peters-mo.webp' },
+  { href: '/regenerative-medicine/regenerative-therapy/', title: 'Regenerative Therapy', body: 'Exosome-based treatments that reduce inflammation and support cellular repair.', img: '/images/regenerative-medicine/regenerative-therapy-st-peters-mo.webp' },
+  { href: '/regenerative-medicine/platelet-rich-plasma-therapy/', title: 'PRP Therapy', body: "Harness your body's own healing factors to accelerate recovery in joints and tissues.", img: '/images/regenerative-medicine/platelet-rich-plasma-therapy-st-peters-mo.webp' },
+  { href: '/medical-weight-loss/', title: 'Medical Weight Loss', body: 'Clinically supervised semaglutide and tirzepatide programs for lasting results.', img: '/images/medical-weight-loss/medical-weight-loss-st-peters-mo.webp' },
 ];
 
 const testimonials = [
@@ -79,7 +79,7 @@ const breadcrumbItems = [{ name: 'Home', url: SITE_URL }];
 
   <!-- HERO -->
   <section class="relative min-h-[90vh] flex items-center overflow-hidden">
-    <img src="https://picsum.photos/seed/clinic-hero/1600/900" alt="Morning Star clinic — warm, welcoming care in St. Peters" data-placeholder="true" class="absolute inset-0 w-full h-full object-cover" />
+    <img src="/images/homepage/medical-clinic-st-peters-mo-hero.webp" alt="Morning Star clinic — warm, welcoming care in St. Peters" fetchpriority="high" loading="eager" class="absolute inset-0 w-full h-full object-cover" />
     <div class="absolute inset-0 bg-gradient-to-r from-dark/85 via-dark/55 to-transparent"></div>
     <div class="relative section-container py-24 lg:py-32">
       <div class="max-w-xl">
@@ -133,9 +133,9 @@ const breadcrumbItems = [{ name: 'Home', url: SITE_URL }];
     <div class="section-container">
       <div class="grid lg:grid-cols-2 gap-14 items-center">
         <div class="relative">
-          <img src="https://picsum.photos/seed/clinic-about/700/500" alt="Morning Star clinic interior" data-placeholder="true" class="rounded-2xl w-full object-cover aspect-[4/3] shadow-lg" />
+          <img src="/images/about/about-morning-star-st-peters-mo.webp" alt="Morning Star clinic exterior in St. Peters, MO" class="rounded-2xl w-full object-cover aspect-[4/3] shadow-lg" />
           <div class="absolute -bottom-6 -right-6 w-40 h-40 rounded-2xl overflow-hidden border-4 border-white shadow-xl hidden sm:block">
-            <img src="https://picsum.photos/seed/doctor-team/300/300" alt="Morning Star care team" data-placeholder="true" class="w-full h-full object-cover" />
+            <img src="/images/new-patients/new-patients-st-peters-mo.webp" alt="Morning Star welcoming reception" class="w-full h-full object-cover" />
           </div>
           <div class="absolute -top-4 -left-4 bg-accent text-white rounded-2xl px-4 py-3 shadow-xl hidden sm:block">
             <p class="font-heading font-bold text-lg leading-none">15+</p>
@@ -169,7 +169,7 @@ const breadcrumbItems = [{ name: 'Home', url: SITE_URL }];
         {services.map(({ href, title: sTitle, body, img }) => (
           <a href={href} class="bg-white rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
             <div class="aspect-video overflow-hidden">
-              <img src={img} alt={sTitle} data-placeholder="true" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <img src={img} alt={sTitle} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
             <div class="p-6">
               <h3 class="font-heading font-semibold text-xl text-dark mb-2">{sTitle}</h3>
