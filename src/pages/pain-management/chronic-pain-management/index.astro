@@ -65,21 +65,21 @@ const faqs = [
     <FAQPageSchema faqs={faqs} />
   </Fragment>
   <!-- Breadcrumb -->
-  <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
+  <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-muted" aria-label="Breadcrumb">
     <ol class="flex items-center gap-1.5">
-      <li><a href="/" class="hover:text-brand-blue">Home</a></li>
+      <li><a href="/" class="hover:text-primary">Home</a></li>
       <li>/</li>
-      <li><a href="/pain-management/" class="hover:text-brand-blue">Pain Management</a></li>
+      <li><a href="/pain-management/" class="hover:text-primary">Pain Management</a></li>
       <li>/</li>
-      <li class="text-brand-navy font-medium">Chronic Pain Management</li>
+      <li class="text-dark font-medium">Chronic Pain Management</li>
     </ol>
   </nav>
 
   <!-- Hero -->
-  <section class="bg-brand-light py-16 px-4">
+  <section class="relative bg-dark py-20 px-4 overflow-hidden">
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Chronic Pain Management in St. Peters, MO</h1>
-      <p class="text-xl text-gray-600">
+      <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4">Chronic Pain Management in St. Peters, MO</h1>
+      <p class="text-white/80 text-lg leading-relaxed">
         Living with chronic pain can feel overwhelming, but you do not have to face it alone. At
         Morning Star in St.&nbsp;Peters, MO, we specialize in personalized <strong>pain management</strong> plans
         designed to reduce your pain and help you reclaim your quality of life.
@@ -87,13 +87,13 @@ const faqs = [
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
         <a
           href="/schedule-appointment/"
-          class="inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+          class="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors"
         >
           Schedule a Consultation
         </a>
         <a
           href="tel:6362440124"
-          class="inline-block px-8 py-3 border-2 border-brand-blue text-brand-blue font-semibold rounded-lg hover:bg-brand-blue hover:text-white transition-colors"
+          class="inline-block px-8 py-3 border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary hover:text-white transition-colors"
         >
           Call (636) 244-0124
         </a>
@@ -104,19 +104,19 @@ const faqs = [
   <!-- What Is Chronic Pain -->
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">What Is Chronic Pain?</h2>
-      <p class="text-gray-600 mb-4 leading-relaxed">
+      <h2 class="text-2xl font-bold text-dark mb-6">What Is Chronic Pain?</h2>
+      <p class="text-body mb-4 leading-relaxed">
         <strong>Chronic pain</strong> is any pain that lasts longer than three months. By this point, the pain has
         persisted well beyond the time most injuries and conditions need to heal, which means the
         pain itself has become the primary medical concern.
       </p>
-      <p class="text-gray-600 mb-4 leading-relaxed">
+      <p class="text-body mb-4 leading-relaxed">
         While there is no single cure for chronic pain, it is highly manageable through a combination
         of medical treatments and lifestyle changes. Modern pain management has advanced
         significantly, offering patients more effective options than ever before to reduce pain
         levels and restore daily function.
       </p>
-      <p class="text-gray-600 leading-relaxed">
+      <p class="text-body leading-relaxed">
         At Morning Star, we understand that chronic pain is deeply personal. It affects every
         aspect of your life, from work and sleep to relationships and mental health. That is why we
         take an individualized approach to every patient who walks through our doors.
@@ -125,36 +125,36 @@ const faqs = [
   </section>
 
   <!-- Common Causes -->
-  <section class="bg-brand-light py-16 px-4">
+  <section class="relative bg-dark py-20 px-4 overflow-hidden">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">Common Causes of Chronic Pain</h2>
+      <h2 class="text-2xl font-bold text-dark mb-6">Common Causes of Chronic Pain</h2>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Previous Injuries</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+        <div class="bg-white rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Previous Injuries</h3>
+          <p class="text-body text-sm leading-relaxed">
             Injuries from accidents, surgeries, or physical trauma can lead to chronic pain even
             after the original injury has healed, due to lasting nerve or tissue damage.
           </p>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Nerve Damage</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            <a href="/conditions/neuropathy/" class="text-brand-blue hover:underline">Neuropathy</a> and other nerve conditions cause ongoing pain signals even when no active
+        <div class="bg-white rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Nerve Damage</h3>
+          <p class="text-body text-sm leading-relaxed">
+            <a href="/conditions/neuropathy/" class="text-primary hover:underline">Neuropathy</a> and other nerve conditions cause ongoing pain signals even when no active
             injury is present, creating persistent discomfort that interferes with daily activities.
           </p>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Arthritis &amp; Joint Conditions</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+        <div class="bg-white rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Arthritis &amp; Joint Conditions</h3>
+          <p class="text-body text-sm leading-relaxed">
             Osteoarthritis, rheumatoid arthritis, and other joint conditions cause progressive
             inflammation and pain that worsens without proper management.
           </p>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Spinal Conditions</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+        <div class="bg-white rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Spinal Conditions</h3>
+          <p class="text-body text-sm leading-relaxed">
             Degenerative disc disease, spinal stenosis, and herniated discs are common sources of
-            chronic <a href="/conditions/back-pain/" class="text-brand-blue hover:underline">back pain</a> and <a href="/conditions/neck-pain/" class="text-brand-blue hover:underline">neck pain</a>.
+            chronic <a href="/conditions/back-pain/" class="text-primary hover:underline">back pain</a> and <a href="/conditions/neck-pain/" class="text-primary hover:underline">neck pain</a>.
           </p>
         </div>
       </div>
@@ -164,50 +164,50 @@ const faqs = [
   <!-- Signs and Symptoms -->
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">Signs You May Be Dealing With Chronic Pain</h2>
-      <p class="text-gray-600 mb-6 leading-relaxed">
+      <h2 class="text-2xl font-bold text-dark mb-6">Signs You May Be Dealing With Chronic Pain</h2>
+      <p class="text-body mb-6 leading-relaxed">
         Chronic pain presents differently for every person. The following are some of the most common indicators that your pain may require professional management:
       </p>
       <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-          <p class="text-gray-600 text-sm">Pain that persists for more than three months</p>
+        <div class="bg-bg-cream rounded-xl p-4 border border-border">
+          <p class="text-body text-sm">Pain that persists for more than three months</p>
         </div>
-        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-          <p class="text-gray-600 text-sm">Pain that returns repeatedly after treatment</p>
+        <div class="bg-bg-cream rounded-xl p-4 border border-border">
+          <p class="text-body text-sm">Pain that returns repeatedly after treatment</p>
         </div>
-        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-          <p class="text-gray-600 text-sm">Fatigue and difficulty sleeping due to pain</p>
+        <div class="bg-bg-cream rounded-xl p-4 border border-border">
+          <p class="text-body text-sm">Fatigue and difficulty sleeping due to pain</p>
         </div>
-        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-          <p class="text-gray-600 text-sm">Reduced mobility and limited daily activities</p>
+        <div class="bg-bg-cream rounded-xl p-4 border border-border">
+          <p class="text-body text-sm">Reduced mobility and limited daily activities</p>
         </div>
-        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-          <p class="text-gray-600 text-sm">Mood changes, including anxiety or depression</p>
+        <div class="bg-bg-cream rounded-xl p-4 border border-border">
+          <p class="text-body text-sm">Mood changes, including anxiety or depression</p>
         </div>
-        <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-          <p class="text-gray-600 text-sm">Increased sensitivity to pain or touch</p>
+        <div class="bg-bg-cream rounded-xl p-4 border border-border">
+          <p class="text-body text-sm">Increased sensitivity to pain or touch</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- When to Seek Help -->
-  <section class="bg-brand-light py-16 px-4">
+  <section class="relative bg-dark py-20 px-4 overflow-hidden">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">When to Seek Professional Help</h2>
-      <p class="text-gray-600 mb-4 leading-relaxed">
+      <h2 class="text-2xl font-bold text-dark mb-6">When to Seek Professional Help</h2>
+      <p class="text-body mb-4 leading-relaxed">
         If your pain has lasted longer than three months, it has persisted beyond the time most
         injuries need to heal. This is a clear signal that professional pain management is needed.
         You should also seek help if:
       </p>
-      <ul class="space-y-2 text-gray-600 mb-6">
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Over-the-counter medications no longer provide relief</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Pain is interfering with your work, relationships, or sleep</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> You are relying on pain medication more frequently</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Your pain is getting progressively worse</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> You feel hopeless or depressed because of your pain</li>
+      <ul class="space-y-2 text-body mb-6">
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Over-the-counter medications no longer provide relief</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Pain is interfering with your work, relationships, or sleep</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> You are relying on pain medication more frequently</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Your pain is getting progressively worse</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> You feel hopeless or depressed because of your pain</li>
       </ul>
-      <p class="text-gray-600 leading-relaxed">
+      <p class="text-body leading-relaxed">
         The earlier you begin a structured pain management program, the better your outcomes are
         likely to be. Morning Star is located at 4710 Mexico Rd, Suite C in St. Peters, and we welcome patients from across St. Charles County.
       </p>
@@ -217,36 +217,36 @@ const faqs = [
   <!-- Treatment Options -->
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">Treatment Options at Morning Star</h2>
-      <p class="text-gray-600 mb-6 leading-relaxed">
+      <h2 class="text-2xl font-bold text-dark mb-6">Treatment Options at Morning Star</h2>
+      <p class="text-body mb-6 leading-relaxed">
         Our chronic pain management programs combine multiple treatment modalities to address pain
         from every angle. Your personalized treatment plan may include:
       </p>
       <div class="space-y-4">
-        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Regenerative Therapy</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+        <div class="bg-bg-cream rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Regenerative Therapy</h3>
+          <p class="text-body text-sm leading-relaxed">
             Treatments that harness your body's natural healing abilities to repair
             damaged tissues and reduce chronic inflammation at the source.
           </p>
         </div>
-        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Neuromodulation</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            <a href="/pain-management/neuromodulation-technique/" class="text-brand-blue hover:underline">Advanced techniques</a> that alter nerve activity to interrupt chronic pain signals and
+        <div class="bg-bg-cream rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Neuromodulation</h3>
+          <p class="text-body text-sm leading-relaxed">
+            <a href="/pain-management/neuromodulation-technique/" class="text-primary hover:underline">Advanced techniques</a> that alter nerve activity to interrupt chronic pain signals and
             provide lasting relief without surgery.
           </p>
         </div>
-        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Platelet-Rich Plasma Therapy</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+        <div class="bg-bg-cream rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Platelet-Rich Plasma Therapy</h3>
+          <p class="text-body text-sm leading-relaxed">
             Concentrated growth factors from your own blood are used to accelerate healing in areas
             of chronic pain and inflammation.
           </p>
         </div>
-        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Lifestyle &amp; Wellness Support</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+        <div class="bg-bg-cream rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Lifestyle &amp; Wellness Support</h3>
+          <p class="text-body text-sm leading-relaxed">
             Guidance on exercise, nutrition, stress management, and daily habits that complement
             your medical treatments and support long-term pain reduction.
           </p>
@@ -256,32 +256,32 @@ const faqs = [
   </section>
 
   <!-- Conditions We Help With -->
-  <section class="bg-gray-50 py-16 px-4">
+  <section class="bg-bg-cream py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">Conditions Linked to Chronic Pain</h2>
-      <p class="text-gray-600 leading-relaxed mb-6">
+      <h2 class="text-2xl font-bold text-dark mb-6">Conditions Linked to Chronic Pain</h2>
+      <p class="text-body leading-relaxed mb-6">
         Chronic pain rarely exists in isolation. It is often connected to specific underlying conditions. Our team treats patients dealing with:
       </p>
       <div class="grid sm:grid-cols-2 gap-4">
-        <a href="/conditions/back-pain/" class="bg-white rounded-lg px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></span>
-          <span class="text-brand-navy font-medium group-hover:text-brand-blue">Back Pain</span>
+        <a href="/conditions/back-pain/" class="bg-white rounded-xl px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-border">
+          <span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+          <span class="text-dark font-medium group-hover:text-primary">Back Pain</span>
         </a>
-        <a href="/conditions/neck-pain/" class="bg-white rounded-lg px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></span>
-          <span class="text-brand-navy font-medium group-hover:text-brand-blue">Neck Pain</span>
+        <a href="/conditions/neck-pain/" class="bg-white rounded-xl px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-border">
+          <span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+          <span class="text-dark font-medium group-hover:text-primary">Neck Pain</span>
         </a>
-        <a href="/conditions/sciatica/" class="bg-white rounded-lg px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></span>
-          <span class="text-brand-navy font-medium group-hover:text-brand-blue">Sciatica</span>
+        <a href="/conditions/sciatica/" class="bg-white rounded-xl px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-border">
+          <span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+          <span class="text-dark font-medium group-hover:text-primary">Sciatica</span>
         </a>
-        <a href="/conditions/neuropathy/" class="bg-white rounded-lg px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></span>
-          <span class="text-brand-navy font-medium group-hover:text-brand-blue">Neuropathy</span>
+        <a href="/conditions/neuropathy/" class="bg-white rounded-xl px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-border">
+          <span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+          <span class="text-dark font-medium group-hover:text-primary">Neuropathy</span>
         </a>
       </div>
-      <p class="text-gray-600 leading-relaxed mt-6">
-        Visit our <a href="/pain-management/" class="text-brand-blue hover:underline">pain management overview</a> to see the full range of services available at Morning Star.
+      <p class="text-body leading-relaxed mt-6">
+        Visit our <a href="/pain-management/" class="text-primary hover:underline">pain management overview</a> to see the full range of services available at Morning Star.
       </p>
     </div>
   </section>
@@ -289,12 +289,12 @@ const faqs = [
   <!-- FAQ -->
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+      <h2 class="text-2xl font-bold text-dark mb-8">Frequently Asked Questions</h2>
       <dl class="space-y-6">
         {faqs.map(({ question, answer }) => (
-          <div class="bg-white rounded-xl p-6 border border-gray-200">
-            <dt class="font-semibold text-brand-navy mb-2">{question}</dt>
-            <dd class="text-gray-600 text-sm leading-relaxed">{answer}</dd>
+          <div class="bg-white rounded-2xl p-6 border border-border">
+            <dt class="font-semibold text-dark mb-2">{question}</dt>
+            <dd class="text-body text-sm leading-relaxed">{answer}</dd>
           </div>
         ))}
       </dl>
@@ -302,23 +302,23 @@ const faqs = [
   </section>
 
   <!-- CTA -->
-  <section class="bg-brand-navy text-white py-16 px-4">
+  <section class="bg-dark text-white py-16 px-4">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4">Take Control of Your Pain</h2>
-      <p class="text-blue-200 mb-8">
+      <p class="text-white/70 mb-8">
         You deserve a life with less pain. Contact Morning Star in St.&nbsp;Peters, MO today to
         start your personalized chronic pain management plan.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="/schedule-appointment/"
-          class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+          class="px-8 py-3 bg-white text-dark font-semibold rounded-xl hover:bg-blue-50 transition-colors"
         >
           Schedule Appointment
         </a>
         <a
           href="tel:6362440124"
-          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
+          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-dark transition-colors"
         >
           Call (636) 244-0124
         </a>

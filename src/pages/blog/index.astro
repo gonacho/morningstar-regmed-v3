@@ -22,10 +22,10 @@ const posts = [
   description="Health tips and insights from Morning Star in St. Peters, MO. Learn about neuropathy, pain management, regenerative therapy, and wellness strategies."
 >
   <!-- Hero -->
-  <section class="bg-brand-light py-16 px-4">
+  <section class="bg-bg-warm py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl font-bold text-brand-navy mb-4">Morning Star Blog</h1>
-      <p class="text-xl text-gray-600">
+      <h1 class="text-4xl font-bold text-dark mb-4">Morning Star Blog</h1>
+      <p class="text-xl text-body">
         Health tips and insights on neuropathy, pain management, regenerative therapy, and wellness strategies from our team in St. Peters, MO.
       </p>
     </div>
@@ -35,19 +35,19 @@ const posts = [
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
       {posts.map(({ slug, title, date, excerpt }) => (
-        <article class="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col">
-          <time class="text-sm text-gray-400 mb-2 block">
+        <article class="border border-border rounded-2xl p-6 hover:shadow-md transition-shadow flex flex-col">
+          <time class="text-sm text-muted mb-2 block">
             {new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </time>
-          <h2 class="text-xl font-bold text-brand-navy mb-3">
-            <a href={`/blog/${slug}`} class="hover:text-brand-blue transition-colors">
+          <h2 class="text-xl font-bold text-dark mb-3">
+            <a href={`/blog/${slug}`} class="hover:text-primary transition-colors">
               {title}
             </a>
           </h2>
-          <p class="text-gray-600 text-sm mb-4 flex-1">{excerpt}</p>
+          <p class="text-body text-sm mb-4 flex-1">{excerpt}</p>
           <a
             href={`/blog/${slug}`}
-            class="text-brand-blue text-sm font-medium hover:underline"
+            class="text-primary text-sm font-medium hover:underline"
           >
             Read more &rarr;
           </a>

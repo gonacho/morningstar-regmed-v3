@@ -30,22 +30,26 @@ const breadcrumbs = [
   </Fragment>
 
   <!-- Breadcrumb -->
-  <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
+  <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-muted" aria-label="Breadcrumb">
     <ol class="flex items-center gap-1.5">
-      <li><a href="/" class="hover:text-brand-blue">Home</a></li>
+      <li><a href="/" class="hover:text-primary">Home</a></li>
       <li>/</li>
-      <li class="text-brand-navy font-medium">Contact</li>
+      <li class="text-dark font-medium">Contact</li>
     </ol>
   </nav>
 
   <!-- Hero -->
-  <section class="bg-brand-light py-20 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl sm:text-5xl font-bold text-brand-navy leading-tight mb-6">
+  <section class="relative bg-dark py-20 px-4 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-dark via-dark-muted to-primary/30"></div>
+    <div class="relative section-container text-center">
+      <span class="inline-flex items-center gap-1.5 bg-accent/20 text-accent border border-accent/30 text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full mb-5">
+        Morning Star · St. Peters, MO
+      </span>
+      <h1 class="font-heading font-bold text-4xl sm:text-5xl text-white leading-tight mb-5">
         Contact Morning Star
       </h1>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        Whether you are ready to schedule an evaluation or have questions about a specific treatment, our team in St. Peters is here to help. Reach out by phone, online, or in person.
+      <p class="text-white/75 text-lg max-w-2xl mx-auto">
+        Whether you are ready to schedule an evaluation or have questions about a specific treatment, our team in St. Peters is here to help.
       </p>
     </div>
   </section>
@@ -55,34 +59,34 @@ const breadcrumbs = [
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
       <!-- Form -->
       <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-6">Send Us a Message</h2>
+        <h2 class="text-2xl font-bold text-dark mb-6">Send Us a Message</h2>
         <form class="space-y-5" action="#" method="post">
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1" for="name">Name</label>
+            <label class="block text-sm font-medium text-dark mb-1" for="name">Name</label>
             <input id="name" name="name" type="text" required
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              class="w-full px-4 py-2 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30"
               placeholder="Your full name" />
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email</label>
+            <label class="block text-sm font-medium text-dark mb-1" for="email">Email</label>
             <input id="email" name="email" type="email" required
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              class="w-full px-4 py-2 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30"
               placeholder="you@example.com" />
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Phone</label>
+            <label class="block text-sm font-medium text-dark mb-1" for="phone">Phone</label>
             <input id="phone" name="phone" type="tel"
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              class="w-full px-4 py-2 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30"
               placeholder="(636) 555-0123" />
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1" for="message">Message</label>
+            <label class="block text-sm font-medium text-dark mb-1" for="message">Message</label>
             <textarea id="message" name="message" rows="5" required
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue resize-none"
+              class="w-full px-4 py-2 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
               placeholder="Tell us about your condition or questions..."></textarea>
           </div>
           <button type="submit"
-            class="w-full px-6 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+            class="w-full px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors">
             Send Message
           </button>
         </form>
@@ -90,34 +94,34 @@ const breadcrumbs = [
 
       <!-- Contact info -->
       <div>
-        <h2 class="text-2xl font-bold text-brand-navy mb-6">Get in Touch</h2>
-        <div class="space-y-6 text-gray-600">
+        <h2 class="text-2xl font-bold text-dark mb-6">Get in Touch</h2>
+        <div class="space-y-6 text-body">
           <div>
-            <h3 class="font-semibold text-brand-navy mb-1">Phone</h3>
-            <p class="text-sm"><a href="tel:6362440124" class="text-brand-blue hover:underline">(636) 244-0124</a></p>
+            <h3 class="font-semibold text-dark mb-1">Phone</h3>
+            <p class="text-sm"><a href="tel:6362440124" class="text-primary hover:underline">(636) 244-0124</a></p>
           </div>
           <div>
-            <h3 class="font-semibold text-brand-navy mb-1">Address</h3>
+            <h3 class="font-semibold text-dark mb-1">Address</h3>
             <p class="text-sm">4710 Mexico Rd, Suite C</p>
             <p class="text-sm">St. Peters, MO 63376</p>
           </div>
           <div>
-            <h3 class="font-semibold text-brand-navy mb-1">Office Hours</h3>
+            <h3 class="font-semibold text-dark mb-1">Office Hours</h3>
             <p class="text-sm">Monday through Thursday: 8:00 AM to 5:00 PM</p>
             <p class="text-sm">Friday through Sunday: Closed</p>
           </div>
           <div>
-            <h3 class="font-semibold text-brand-navy mb-1">Directions</h3>
+            <h3 class="font-semibold text-dark mb-1">Directions</h3>
             <p class="text-sm leading-relaxed">
               Morning Star is located on Mexico Rd in St. Peters, near the Mid Rivers Mall area. From I-70, take the Mid Rivers Mall Drive exit and head north on Mexico Rd. Our suite is in the medical office complex at 4710 Mexico Rd. Free parking is available on-site.
             </p>
           </div>
           <div class="pt-2 space-y-3">
-            <a href="/schedule-appointment/" class="inline-block px-6 py-2.5 bg-brand-blue text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+            <a href="/schedule-appointment/" class="inline-block px-6 py-2.5 bg-primary text-white font-medium rounded-xl hover:bg-primary-dark transition-colors">
               Schedule an Evaluation
             </a>
             <p class="text-sm">
-              <a href="/new-patients/" class="text-brand-blue hover:underline">New patient? See what to expect at your first visit &rarr;</a>
+              <a href="/new-patients/" class="text-primary hover:underline">New patient? See what to expect at your first visit &rarr;</a>
             </p>
           </div>
         </div>
@@ -126,20 +130,20 @@ const breadcrumbs = [
   </section>
 
   <!-- Service Area -->
-  <section class="bg-brand-light py-16 px-4">
+  <section class="bg-bg-warm py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">Serving the Greater St. Peters Area</h2>
-      <p class="text-gray-600 leading-relaxed mb-6">
-        Morning Star welcomes patients from across St. Charles County and the St. Louis metro area. Our St. Peters clinic provides <a href="/pain-management/" class="text-brand-blue hover:underline">pain management</a>, <a href="/regenerative-medicine/" class="text-brand-blue hover:underline">regenerative medicine</a>, <a href="/pain-management/neuropathy-treatment/" class="text-brand-blue hover:underline">neuropathy treatment</a>, and <a href="/medical-weight-loss/" class="text-brand-blue hover:underline">medical weight loss</a> for patients in:
+      <h2 class="text-2xl font-bold text-dark mb-6">Serving the Greater St. Peters Area</h2>
+      <p class="text-body leading-relaxed mb-6">
+        Morning Star welcomes patients from across St. Charles County and the St. Louis metro area. Our St. Peters clinic provides <a href="/pain-management/" class="text-primary hover:underline">pain management</a>, <a href="/regenerative-medicine/" class="text-primary hover:underline">regenerative medicine</a>, <a href="/pain-management/neuropathy-treatment/" class="text-primary hover:underline">neuropathy treatment</a>, and <a href="/medical-weight-loss/" class="text-primary hover:underline">medical weight loss</a> for patients in:
       </p>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
         {[
           'St. Peters', "O'Fallon", 'St. Charles', 'Wentzville',
           'Lake St. Louis', 'Cottleville', 'Dardenne Prairie', 'Chesterfield',
         ].map((city) => (
-          <div class="bg-white rounded-lg px-4 py-3 flex items-center gap-3 shadow-sm">
-            <span class="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></span>
-            <span class="text-brand-navy font-medium text-sm">{city}</span>
+          <div class="bg-white rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+            <span class="text-dark font-medium text-sm">{city}</span>
           </div>
         ))}
       </div>
@@ -147,13 +151,13 @@ const breadcrumbs = [
   </section>
 
   <!-- CTA -->
-  <section class="bg-brand-navy text-white py-16 px-4">
+  <section class="bg-dark text-white py-16 px-4">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4">Ready to Find Relief?</h2>
-      <p class="text-blue-200 mb-8">
+      <p class="text-white/70 mb-8">
         Call us at <a href="tel:6362440124" class="underline hover:text-white">(636) 244-0124</a> or schedule your evaluation online. Our St. Peters, MO clinic is accepting new patients Monday through Thursday.
       </p>
-      <a href="/schedule-appointment/" class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+      <a href="/schedule-appointment/" class="px-8 py-3 bg-white text-dark font-semibold rounded-xl hover:bg-blue-50 transition-colors">
         Schedule Your Evaluation
       </a>
     </div>

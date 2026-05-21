@@ -61,10 +61,10 @@ const faqs = [
     <FAQPageSchema faqs={faqs} />
   </Fragment>
   <!-- Hero -->
-  <section class="bg-brand-light py-16 px-4">
+  <section class="relative bg-dark py-20 px-4 overflow-hidden">
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl font-bold text-brand-navy mb-4">Neuropathy Treatment in St.&nbsp;Peters, MO</h1>
-      <p class="text-xl text-gray-600">
+      <h1 class="font-heading font-bold text-4xl lg:text-5xl text-white mb-5">Neuropathy Treatment in St.&nbsp;Peters, MO</h1>
+      <p class="text-white/80 text-lg leading-relaxed">
         Neuropathy affects millions of Americans every year, causing tingling, numbness, weakness, and
         pain that can disrupt sleep, work, and everyday activities. At Morning Star Neuropathy &amp; Pain
         Treatment Center in St.&nbsp;Peters, MO, we help patients understand their condition and find a
@@ -72,7 +72,7 @@ const faqs = [
       </p>
       <a
         href="/schedule-appointment/"
-        class="mt-8 inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+        class="mt-8 btn-primary inline-flex"
       >
         Schedule a Consultation
       </a>
@@ -82,55 +82,55 @@ const faqs = [
   <!-- What Is Neuropathy -->
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">What Is Neuropathy?</h2>
-      <p class="text-gray-600 mb-4 leading-relaxed">
+      <h2 class="text-2xl font-bold text-dark mb-6">What Is Neuropathy?</h2>
+      <p class="text-body mb-4 leading-relaxed">
         <strong>Neuropathy</strong> (also called <strong>peripheral neuropathy</strong>) is a condition
         that develops when the peripheral nerves become damaged. These nerves form a vast communication
         network between the brain, spinal cord, and the rest of the body. When they are compromised, the
         signals they carry become distorted or interrupted entirely.
       </p>
-      <p class="text-gray-600 mb-4 leading-relaxed">
+      <p class="text-body mb-4 leading-relaxed">
         The result is a range of symptoms that typically begin in the hands and feet: tingling, burning
         sensations, sharp pain, numbness, and muscle weakness. Over time, untreated neuropathy can lead
         to balance problems, difficulty walking, and a significant decline in quality of life.
       </p>
-      <p class="text-gray-600 leading-relaxed">
+      <p class="text-body leading-relaxed">
         This page focuses on understanding the condition itself. For details on how we treat neuropathy
         at our St.&nbsp;Peters clinic, visit our
-        <a href="/pain-management/neuropathy-treatment/" class="text-brand-blue underline hover:text-blue-700">neuropathy treatment</a> page.
+        <a href="/pain-management/neuropathy-treatment/" class="text-primary underline hover:text-primary-dark">neuropathy treatment</a> page.
       </p>
     </div>
   </section>
 
   <!-- Types of Neuropathy -->
-  <section class="bg-brand-light py-16 px-4">
+  <section class="relative bg-dark py-20 px-4 overflow-hidden">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">Types of Neuropathy</h2>
+      <h2 class="text-2xl font-bold text-dark mb-6">Types of Neuropathy</h2>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Sensory Neuropathy</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+        <div class="bg-white rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Sensory Neuropathy</h3>
+          <p class="text-body text-sm leading-relaxed">
             Affects the nerves that carry sensations such as pain, temperature, and touch. Symptoms
             include tingling, numbness, and burning pain in the extremities.
           </p>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Motor Neuropathy</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+        <div class="bg-white rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Motor Neuropathy</h3>
+          <p class="text-body text-sm leading-relaxed">
             Damages the nerves that control muscle movement, leading to weakness, muscle wasting, and
             difficulty with coordination and balance.
           </p>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Autonomic Neuropathy</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+        <div class="bg-white rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Autonomic Neuropathy</h3>
+          <p class="text-body text-sm leading-relaxed">
             Affects involuntary body functions such as heart rate, blood pressure, digestion, and
             bladder control. This type can cause dizziness, digestive issues, and abnormal sweating.
           </p>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Combination Neuropathy</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+        <div class="bg-white rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Combination Neuropathy</h3>
+          <p class="text-body text-sm leading-relaxed">
             Many patients experience a mix of sensory, motor, and autonomic nerve damage simultaneously.
             A comprehensive evaluation is essential for building an effective treatment plan.
           </p>
@@ -142,35 +142,35 @@ const faqs = [
   <!-- Common Causes -->
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">Common Causes of Neuropathy</h2>
+      <h2 class="text-2xl font-bold text-dark mb-6">Common Causes of Neuropathy</h2>
 
-      <h3 class="text-lg font-semibold text-brand-navy mb-2">Diabetes</h3>
-      <p class="text-gray-600 mb-4 leading-relaxed">
+      <h3 class="text-lg font-semibold text-dark mb-2">Diabetes</h3>
+      <p class="text-body mb-4 leading-relaxed">
         <strong>Diabetic neuropathy</strong> is the leading cause, responsible for roughly 60 percent
         of all peripheral neuropathy cases. High blood sugar levels gradually damage the small blood
         vessels that supply nerves, especially in the feet and lower legs.
       </p>
 
-      <h3 class="text-lg font-semibold text-brand-navy mb-2">Infections</h3>
-      <p class="text-gray-600 mb-4 leading-relaxed">
+      <h3 class="text-lg font-semibold text-dark mb-2">Infections</h3>
+      <p class="text-body mb-4 leading-relaxed">
         Lyme disease, shingles, hepatitis, and HIV can each trigger nerve inflammation and damage.
         Post-infectious neuropathy sometimes persists long after the initial illness resolves.
       </p>
 
-      <h3 class="text-lg font-semibold text-brand-navy mb-2">Autoimmune Disorders</h3>
-      <p class="text-gray-600 mb-4 leading-relaxed">
+      <h3 class="text-lg font-semibold text-dark mb-2">Autoimmune Disorders</h3>
+      <p class="text-body mb-4 leading-relaxed">
         Conditions such as lupus, rheumatoid arthritis, and Guillain-Barr&eacute; syndrome cause the
         immune system to attack healthy nerve tissue, resulting in progressive damage.
       </p>
 
-      <h3 class="text-lg font-semibold text-brand-navy mb-2">Toxins and Medications</h3>
-      <p class="text-gray-600 mb-4 leading-relaxed">
+      <h3 class="text-lg font-semibold text-dark mb-2">Toxins and Medications</h3>
+      <p class="text-body mb-4 leading-relaxed">
         Heavy metals, industrial chemicals, and certain chemotherapy drugs are known to damage
         peripheral nerves. Chronic alcohol use is also directly toxic to nerve tissue.
       </p>
 
-      <h3 class="text-lg font-semibold text-brand-navy mb-2">Vitamin Deficiencies and Trauma</h3>
-      <p class="text-gray-600 leading-relaxed">
+      <h3 class="text-lg font-semibold text-dark mb-2">Vitamin Deficiencies and Trauma</h3>
+      <p class="text-body leading-relaxed">
         B-vitamin deficiencies (particularly B12) starve nerves of essential nutrients. Physical
         trauma from accidents, falls, or repetitive stress injuries can damage nerves at the site of
         impact.
@@ -179,21 +179,21 @@ const faqs = [
   </section>
 
   <!-- Symptoms -->
-  <section class="bg-brand-light py-16 px-4">
+  <section class="relative bg-dark py-20 px-4 overflow-hidden">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">Symptoms of Neuropathy</h2>
-      <p class="text-gray-600 mb-6 leading-relaxed">
+      <h2 class="text-2xl font-bold text-dark mb-6">Symptoms of Neuropathy</h2>
+      <p class="text-body mb-6 leading-relaxed">
         <strong>Neuropathy symptoms</strong> vary depending on which nerves are affected, but commonly
         include:
       </p>
-      <ul class="space-y-3 text-gray-600">
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Tingling or a pins-and-needles sensation in hands and feet</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Numbness or reduced ability to feel pain or temperature changes</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Sharp, burning, or stabbing pain (often worse at night)</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Muscle weakness and loss of coordination</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Extreme sensitivity to touch, even light pressure</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Balance problems and difficulty walking</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Cramping or muscle twitching</li>
+      <ul class="space-y-3 text-body">
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Tingling or a pins-and-needles sensation in hands and feet</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Numbness or reduced ability to feel pain or temperature changes</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Sharp, burning, or stabbing pain (often worse at night)</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Muscle weakness and loss of coordination</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Extreme sensitivity to touch, even light pressure</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Balance problems and difficulty walking</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Cramping or muscle twitching</li>
       </ul>
     </div>
   </section>
@@ -201,34 +201,34 @@ const faqs = [
   <!-- Treatment Options at Morning Star -->
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">Treatment Options at Morning Star</h2>
-      <p class="text-gray-600 mb-6 leading-relaxed">
+      <h2 class="text-2xl font-bold text-dark mb-6">Treatment Options at Morning Star</h2>
+      <p class="text-body mb-6 leading-relaxed">
         Our team in St.&nbsp;Peters specializes in advanced, non-invasive approaches to neuropathy
         care. We focus on reducing pain, restoring function, and slowing disease progression through
         targeted therapies.
       </p>
 
       <div class="space-y-4">
-        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Neuropathy Treatment Program</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Our specialized <a href="/pain-management/neuropathy-treatment/" class="text-brand-blue underline hover:text-blue-700">neuropathy treatment program</a>
+        <div class="bg-bg-cream rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Neuropathy Treatment Program</h3>
+          <p class="text-body text-sm leading-relaxed">
+            Our specialized <a href="/pain-management/neuropathy-treatment/" class="text-primary underline hover:text-primary-dark">neuropathy treatment program</a>
             combines multiple modalities to address nerve damage at its source. This comprehensive
             protocol targets pain relief, improved circulation, and nerve regeneration.
           </p>
         </div>
-        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Neuromodulation Technique</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Our <a href="/pain-management/neuromodulation-technique/" class="text-brand-blue underline hover:text-blue-700">neuromodulation technique</a>
+        <div class="bg-bg-cream rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Neuromodulation Technique</h3>
+          <p class="text-body text-sm leading-relaxed">
+            Our <a href="/pain-management/neuromodulation-technique/" class="text-primary underline hover:text-primary-dark">neuromodulation technique</a>
             modifies nerve activity to reduce pain signals and restore more normal nerve function.
             This therapy is particularly effective for patients with chronic neuropathic pain.
           </p>
         </div>
-        <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-          <h3 class="font-semibold text-brand-navy mb-2">Regenerative Therapy</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Advanced <a href="/regenerative-medicine/regenerative-therapy/" class="text-brand-blue underline hover:text-blue-700">regenerative therapy</a>
+        <div class="bg-bg-cream rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-dark mb-2">Regenerative Therapy</h3>
+          <p class="text-body text-sm leading-relaxed">
+            Advanced <a href="/regenerative-medicine/regenerative-therapy/" class="text-primary underline hover:text-primary-dark">regenerative therapy</a>
             supports nerve repair and reduces inflammation at the cellular level, giving damaged
             nerves the biological resources they need to heal.
           </p>
@@ -238,21 +238,21 @@ const faqs = [
   </section>
 
   <!-- Testimonials -->
-  <section class="bg-brand-light py-16 px-4">
+  <section class="relative bg-dark py-20 px-4 overflow-hidden">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-8">What Our Patients Say</h2>
+      <h2 class="text-2xl font-bold text-dark mb-8">What Our Patients Say</h2>
       <div class="space-y-6">
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <p class="text-gray-600 leading-relaxed mb-3 italic">
+        <div class="bg-white rounded-2xl p-6 border border-border">
+          <p class="text-body leading-relaxed mb-3 italic">
             "I had neuropathy in my feet and now it's about gone with the treatment they're giving me and they do actually work. They know what they're doing this is a very good place if you have neuropathy. The treatments are helping very much so and I really love it's starting to help."
           </p>
-          <p class="font-semibold text-brand-navy text-sm">Arthur Brewer</p>
+          <p class="font-semibold text-dark text-sm">Arthur Brewer</p>
         </div>
-        <div class="bg-white rounded-xl p-6 border border-gray-200">
-          <p class="text-gray-600 leading-relaxed mb-3 italic">
+        <div class="bg-white rounded-2xl p-6 border border-border">
+          <p class="text-body leading-relaxed mb-3 italic">
             "I found out I had neuropathy in my feet. I had no idea where to go. I Googled neuropathy places and came across Morningstar. I am so thankful I did! I felt welcome the 1st time I went there. When I first started treatments, they had to wheel me in from the car to the treatment room in a wheelchair. I have been going for about 2 months. I went from arriving in a wheelchair to walking with a cane! Marvelous improvement from not being able to walk at all. I owe all this to the wonderful staff of Morningstar! I love these people, Heather, Mandy, Rochelle, Brad and Ron. They are such caring people. Please give them a try if you need help with neuropathy."
           </p>
-          <p class="font-semibold text-brand-navy text-sm">Brenda Landers</p>
+          <p class="font-semibold text-dark text-sm">Brenda Landers</p>
         </div>
       </div>
     </div>
@@ -261,37 +261,37 @@ const faqs = [
   <!-- When to Seek Help -->
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6">When to Seek Help</h2>
-      <p class="text-gray-600 mb-4 leading-relaxed">
+      <h2 class="text-2xl font-bold text-dark mb-6">When to Seek Help</h2>
+      <p class="text-body mb-4 leading-relaxed">
         Early treatment is critical for neuropathy. The longer nerve damage goes unaddressed, the
         harder it becomes to manage symptoms and prevent further deterioration. You should seek
         professional care if you experience:
       </p>
-      <ul class="space-y-2 text-gray-600 mb-6">
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Persistent tingling or numbness that does not resolve on its own</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Pain that interferes with sleep, work, or daily activities</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Weakness in your hands or feet that affects grip or balance</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> Symptoms that are gradually worsening over time</li>
-        <li class="flex items-start gap-2"><span class="text-brand-blue">&#8226;</span> New symptoms appearing in additional areas of the body</li>
+      <ul class="space-y-2 text-body mb-6">
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Persistent tingling or numbness that does not resolve on its own</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Pain that interferes with sleep, work, or daily activities</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Weakness in your hands or feet that affects grip or balance</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> Symptoms that are gradually worsening over time</li>
+        <li class="flex items-start gap-2"><span class="text-primary">&#8226;</span> New symptoms appearing in additional areas of the body</li>
       </ul>
-      <p class="text-gray-600 leading-relaxed">
+      <p class="text-body leading-relaxed">
         At Morning Star, we provide thorough evaluations to identify the underlying cause of your
         neuropathy and develop a personalized care plan tailored to your needs. Call us at
-        <a href="tel:+16362440124" class="text-brand-blue underline hover:text-blue-700">(636) 244-0124</a>
+        <a href="tel:+16362440124" class="text-primary underline hover:text-primary-dark">(636) 244-0124</a>
         to get started.
       </p>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="bg-gray-50 py-16 px-4">
+  <section class="bg-bg-cream py-16 px-4">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-bold text-brand-navy mb-8">Frequently Asked Questions</h2>
+      <h2 class="text-2xl font-bold text-dark mb-8">Frequently Asked Questions</h2>
       <dl class="space-y-6">
         {faqs.map(({ question, answer }) => (
-          <div class="bg-white rounded-xl p-6 border border-gray-200">
-            <dt class="font-semibold text-brand-navy mb-2">{question}</dt>
-            <dd class="text-gray-600 text-sm leading-relaxed">{answer}</dd>
+          <div class="bg-white rounded-2xl p-6 border border-border">
+            <dt class="font-semibold text-dark mb-2">{question}</dt>
+            <dd class="text-body text-sm leading-relaxed">{answer}</dd>
           </div>
         ))}
       </dl>
@@ -299,10 +299,10 @@ const faqs = [
   </section>
 
   <!-- CTA -->
-  <section class="bg-brand-navy text-white py-16 px-4">
+  <section class="bg-dark text-white py-16 px-4">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4">Take the First Step Toward Relief</h2>
-      <p class="text-blue-200 mb-8">
+      <p class="text-white/70 mb-8">
         Do not let neuropathy control your life. Contact Morning Star Neuropathy &amp; Pain Treatment
         Center in St.&nbsp;Peters, MO today to schedule your consultation and begin your journey to
         better nerve health.
@@ -310,13 +310,13 @@ const faqs = [
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="/schedule-appointment/"
-          class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+          class="px-8 py-3 bg-white text-dark font-semibold rounded-xl hover:bg-blue-50 transition-colors"
         >
           Schedule Appointment
         </a>
         <a
           href="/contact/"
-          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-navy transition-colors"
+          class="px-8 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-dark transition-colors"
         >
           Contact Us
         </a>

@@ -25,13 +25,13 @@ const jsonLd = JSON.stringify({
 
 <BaseLayout title={title} description={description} jsonLd={jsonLd}>
   <!-- Article header -->
-  <section class="bg-brand-light py-16 px-4">
+  <section class="bg-bg-warm py-16 px-4">
     <div class="max-w-3xl mx-auto">
-      <a href="/blog" class="text-sm text-brand-blue hover:underline mb-4 inline-block">
+      <a href="/blog" class="text-sm text-primary hover:underline mb-4 inline-block">
         &larr; Back to Blog
       </a>
-      <h1 class="text-4xl font-bold text-brand-navy mb-4">How Regenerative Therapy in St. Peters, MO, May Support Back Pain Recovery</h1>
-      <time class="text-sm text-gray-500" datetime={publishedDate}>
+      <h1 class="text-4xl font-bold text-dark mb-4">How Regenerative Therapy in St. Peters, MO, May Support Back Pain Recovery</h1>
+      <time class="text-sm text-muted" datetime={publishedDate}>
         {new Date(publishedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
       </time>
     </div>
@@ -39,7 +39,7 @@ const jsonLd = JSON.stringify({
 
   <!-- Article body -->
   <article class="py-16 px-4">
-    <div class="max-w-3xl mx-auto prose prose-lg prose-headings:text-brand-navy prose-a:text-brand-blue">
+    <div class="max-w-3xl mx-auto prose prose-lg prose-headings:text-dark prose-a:text-primary">
       <p>
         At Morning Star Neuropathy &amp; Pain Treatment Center, patients often arrive looking for practical ways to return to daily routines that persistent back issues have disrupted. Whether the challenge involves difficulty sitting through a workday, discomfort while lifting a child, or stiffness that builds overnight, back pain can reach into every corner of a person's life. Understanding how regenerative therapy works can help patients make informed decisions about their recovery path.
       </p>
@@ -84,13 +84,13 @@ const jsonLd = JSON.stringify({
   </article>
 
   <!-- CTA -->
-  <section class="bg-brand-light py-12 px-4">
+  <section class="bg-bg-warm py-12 px-4">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl font-bold text-brand-navy mb-4">Ready to Explore Your Recovery Options?</h2>
-      <p class="text-gray-600 mb-6">Contact Morning Star to schedule a consultation and learn how regenerative therapy may support your back pain recovery.</p>
+      <h2 class="text-2xl font-bold text-dark mb-4">Ready to Explore Your Recovery Options?</h2>
+      <p class="text-body mb-6">Contact Morning Star to schedule a consultation and learn how regenerative therapy may support your back pain recovery.</p>
       <a
         href="/schedule-appointment/"
-        class="px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+        class="px-8 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors"
       >
         Schedule Appointment
       </a>
