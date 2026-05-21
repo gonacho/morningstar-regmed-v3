@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/morningstar-regmed-v3",
+    "/morningstar-regmed-v3/_astro/*",
+    "/morningstar-regmed-v3/llms.txt",
+    "/morningstar-regmed-v3/robots.txt",
+    "/morningstar-regmed-v3/images/*",
+    "/morningstar-regmed-v3/about",
+    "/morningstar-regmed-v3/blog/*",
+    "/morningstar-regmed-v3/conditions/*",
+    "/morningstar-regmed-v3/contact",
+    "/morningstar-regmed-v3/insurance",
+    "/morningstar-regmed-v3/medical-weight-loss",
+    "/morningstar-regmed-v3/new-patients",
+    "/morningstar-regmed-v3/pain-management/*",
+    "/morningstar-regmed-v3/privacy-policy",
+    "/morningstar-regmed-v3/regenerative-medicine/*",
+    "/morningstar-regmed-v3/schedule-appointment",
+    "/morningstar-regmed-v3/terms-of-service"
+  ]
+}
