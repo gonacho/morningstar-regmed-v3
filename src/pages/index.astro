@@ -1,12 +1,60 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import OrganizationSchema from '@/components/schemas/OrganizationSchema.astro';
+import LocalBusinessSchema from '@/components/schemas/LocalBusinessSchema.astro';
+import WebSiteSchema from '@/components/schemas/WebSiteSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
+const SITE_URL = 'https://morningstarregmed.com';
 const title = 'Neuropathy & Pain Treatment in St. Peters, MO | Morning Star';
 const description =
   'Morning Star provides advanced neuropathy treatment, regenerative therapy, and pain management in St. Peters, MO. Non-surgical relief. Call (636) 244-0124.';
+
+const faqs = [
+  {
+    question: 'What conditions does Morning Star treat?',
+    answer:
+      'Morning Star treats peripheral neuropathy, chronic pain, knee pain, back pain, neck pain, joint pain, and sciatica using non-surgical approaches including neuromodulation, regenerative therapy, PRP, and hyaluronic acid injections.',
+  },
+  {
+    question: 'Where is Morning Star located?',
+    answer:
+      'Morning Star Neuropathy & Pain Treatment Center is located at 4710 Mexico Rd Suite C, St. Peters, MO 63376. We serve patients throughout St. Charles County and the greater St. Louis metropolitan area within a 25-mile radius.',
+  },
+  {
+    question: 'What are Morning Star\'s office hours?',
+    answer:
+      'Morning Star is open Monday through Thursday, 8am to 5pm. Call (636) 244-0124 or schedule online at any time.',
+  },
+  {
+    question: 'Does Morning Star accept insurance?',
+    answer:
+      'Morning Star accepts major medical insurance. We also offer CareCredit financing. Contact our office for details about your specific plan.',
+  },
+];
+
+const breadcrumbItems = [{ name: 'Home', url: SITE_URL }];
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <OrganizationSchema />
+    <LocalBusinessSchema includeReviews={true} />
+    <WebSiteSchema />
+    <MedicalWebPageSchema
+      url={SITE_URL}
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId={`${SITE_URL}/#localbusiness`}
+    />
+    <BreadcrumbSchema items={breadcrumbItems} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
+
   <!-- Hero -->
   <section class="bg-brand-light py-24 px-4">
     <div class="max-w-4xl mx-auto text-center">
@@ -20,7 +68,7 @@ const description =
         Get back to the life you love, from family dinners to morning walks, with personalized care from a team that treats the whole patient.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/schedule-appointment" class="px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+        <a href="/schedule-appointment/" class="px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
           Schedule Your Evaluation
         </a>
         <a href="tel:6362440124" class="px-8 py-3 border-2 border-brand-navy text-brand-navy font-semibold rounded-lg hover:bg-brand-navy hover:text-white transition-colors">
@@ -178,7 +226,7 @@ const description =
     </div>
   </section>
 
-  <!-- Testimonial -->
+  <!-- Testimonial — Clyde Steese (verbatim, approved) -->
   <section class="py-20 px-4">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold text-brand-navy text-center mb-10">What Our Patients Say</h2>
@@ -189,7 +237,25 @@ const description =
         <blockquote class="text-gray-600 leading-relaxed mb-4">
           &ldquo;The people working here are fantastic. They are great help with everything. The treatments were just fantastic. They started off slow but then they started picking up and they have finished and I am 100% very very happy with everything. Thank you so very much the end.&rdquo;
         </blockquote>
-        <p class="text-brand-navy font-semibold">Clyde S.</p>
+        <p class="text-brand-navy font-semibold">— Clyde Steese, St. Peters patient</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="bg-brand-light py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-brand-navy text-center mb-10">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map(({ question, answer }) => (
+          <details class="bg-white rounded-xl border border-gray-200 group">
+            <summary class="flex justify-between items-center px-6 py-4 cursor-pointer font-medium text-brand-navy list-none">
+              {question}
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">{answer}</div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
@@ -201,7 +267,7 @@ const description =
       <p class="text-blue-200 mb-8">
         Take the first step toward a life with less pain. Call us at <a href="tel:6362440124" class="underline hover:text-white">(636) 244-0124</a> or schedule your evaluation online. Morning Star is open Monday through Thursday, 8am to 5pm.
       </p>
-      <a href="/schedule-appointment" class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+      <a href="/schedule-appointment/" class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors">
         Schedule Your Evaluation
       </a>
     </div>

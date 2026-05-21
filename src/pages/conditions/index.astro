@@ -1,12 +1,30 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
 
+const SITE_URL = 'https://morningstarregmed.com';
+const pageUrl = `${SITE_URL}/conditions/`;
 const title = 'Conditions We Treat in St. Peters, MO | Morning Star';
 const description =
   'Find relief for neuropathy, knee pain, back pain, neck pain, joint pain, and sciatica at Morning Star in St. Peters, MO. Learn about your condition.';
+const breadcrumbs = [
+  { name: 'Home', url: SITE_URL },
+  { name: 'Conditions', url: pageUrl },
+];
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <MedicalWebPageSchema
+      url={pageUrl}
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+    />
+    <BreadcrumbSchema items={breadcrumbs} />
+  </Fragment>
   <!-- Hero -->
   <section class="bg-brand-light py-20 px-4">
     <div class="max-w-4xl mx-auto">

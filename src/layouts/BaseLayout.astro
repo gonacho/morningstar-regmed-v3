@@ -43,4 +43,121 @@ const {
     </main>
     <Footer />
   </body>
+
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    gsap.registerPlugin(ScrollTrigger);
+
+    function initAnimations() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      // ── Hero section entrance ──────────────────────────────────────────────
+      const heroSection = document.querySelector('main section:first-child');
+      if (heroSection) {
+        const heroH1 = heroSection.querySelector('h1');
+        const heroP = heroSection.querySelector('p');
+        const heroCta = heroSection.querySelector('a');
+
+        if (heroH1) {
+          gsap.from(heroH1, {
+            opacity: 0,
+            y: 24,
+            duration: 0.7,
+            ease: 'power3.out',
+          });
+        }
+        if (heroP) {
+          gsap.from(heroP, {
+            opacity: 0,
+            y: 16,
+            duration: 0.6,
+            delay: 0.2,
+            ease: 'power3.out',
+          });
+        }
+        if (heroCta) {
+          gsap.from(heroCta, {
+            opacity: 0,
+            y: 12,
+            duration: 0.5,
+            delay: 0.35,
+            ease: 'power3.out',
+          });
+        }
+      }
+
+      // ── Section reveal on scroll ───────────────────────────────────────────
+      const sections = document.querySelectorAll('main section:not(:first-child)');
+      sections.forEach((section) => {
+        const heading = section.querySelector('h2');
+        if (heading) {
+          gsap.from(heading, {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: heading,
+              start: 'top 85%',
+              toggleActions: 'play none none none',
+            },
+          });
+        }
+
+        const paras = section.querySelectorAll('p');
+        paras.forEach((p, i) => {
+          gsap.from(p, {
+            opacity: 0,
+            y: 16,
+            duration: 0.5,
+            delay: i * 0.08,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: p,
+              start: 'top 90%',
+              toggleActions: 'play none none none',
+            },
+          });
+        });
+      });
+
+      // ── Card grids: stagger entrance ──────────────────────────────────────
+      document.querySelectorAll('.grid').forEach((grid) => {
+        const cards = grid.querySelectorAll('a, > div');
+        if (cards.length > 1) {
+          gsap.from(cards, {
+            opacity: 0,
+            y: 20,
+            duration: 0.5,
+            stagger: 0.08,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: grid,
+              start: 'top 85%',
+              toggleActions: 'play none none none',
+            },
+          });
+        }
+      });
+
+      // ── Header: subtle elevation on scroll ────────────────────────────────
+      const header = document.getElementById('site-header');
+      if (header) {
+        ScrollTrigger.create({
+          start: 'top -60',
+          onEnter: () => header.classList.add('shadow-brand'),
+          onLeaveBack: () => header.classList.remove('shadow-brand'),
+        });
+      }
+    }
+
+    // Run on initial load and after Astro view transitions
+    document.addEventListener('astro:page-load', initAnimations);
+
+    // Clean up ScrollTriggers between page navigations
+    document.addEventListener('astro:after-swap', () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    });
+  </script>
 </html>

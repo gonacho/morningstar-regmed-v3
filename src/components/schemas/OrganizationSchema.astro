@@ -1,0 +1,51 @@
+---
+/**
+ * Block A — MedicalOrganization
+ * Used on: Homepage only
+ * CID/PlaceID: PENDING administrator approval — placeholders used
+ */
+
+const SITE_URL = 'https://morningstarregmed.com';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalOrganization',
+  '@id': `${SITE_URL}/#organization`,
+  name: 'Morning Star Neuropathy & Pain Treatment Center',
+  legalName: 'Morningstar Neuropathy & Pain Treatment Center, LLC',
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/logo.png`,
+  telephone: '+16362440124',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '4710 Mexico Rd Suite C',
+    addressLocality: 'St. Peters',
+    addressRegion: 'MO',
+    postalCode: '63376',
+    addressCountry: 'US',
+  },
+  naics: '621399',
+  medicalSpecialty: [
+    {
+      '@type': 'MedicalSpecialty',
+      name: 'Pain Medicine',
+      sameAs: 'https://en.wikipedia.org/wiki/Pain_management',
+    },
+    {
+      '@type': 'MedicalSpecialty',
+      name: 'Musculoskeletal Medicine',
+      sameAs: 'https://en.wikipedia.org/wiki/Musculoskeletal_medicine',
+    },
+  ],
+  sameAs: [
+    'https://www.facebook.com/p/Morningstar-Neuropathy-Pain-Treatment-Center-St-Peters-100070536960997/',
+    'https://www.carecredit.com/doctor-locator/st-peters-mo/morningstar-neuropathy-pain-treatment-center-llc-854dgw/',
+    'https://npiregistry.cms.hhs.gov/provider-view/1073184248',
+    'https://reviews.birdeye.com/morningstar-neuropathy-pain-treatment-center-llc-168923824805952',
+    // CID URL: PENDING administrator approval
+    // 'https://www.google.com/maps?cid=PENDING',
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

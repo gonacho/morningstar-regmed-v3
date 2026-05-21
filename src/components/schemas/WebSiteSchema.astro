@@ -1,0 +1,29 @@
+---
+/**
+ * Block F — WebSite with SearchAction
+ * Used on: Homepage only
+ */
+
+const SITE_URL = 'https://morningstarregmed.com';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: 'Morning Star Neuropathy & Pain Treatment Center',
+  description:
+    'Advanced non-surgical neuropathy treatment, regenerative therapy, and pain management in St. Peters, MO.',
+  publisher: { '@id': `${SITE_URL}/#organization` },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${SITE_URL}/?s={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import TherapeuticProcedureSchema from '@/components/schemas/TherapeuticProcedureSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
 const title = 'Medical Weight Loss in St. Peters, MO | Morning Star';
 const description =
@@ -37,19 +41,34 @@ const faqs = [
       'Long-term success depends on the habits you build during treatment. Semaglutide and tirzepatide help retrain your appetite signals and relationship with food, giving you a foundation to maintain progress. Our program includes nutritional guidance and lifestyle coaching specifically designed to help you sustain results after the medication phase ends.',
   },
 ];
-
-const faqSchema = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map(({ question, answer }) => ({
-    '@type': 'Question',
-    name: question,
-    acceptedAnswer: { '@type': 'Answer', text: answer },
-  })),
-});
 ---
 
-<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <TherapeuticProcedureSchema
+      id="service-medical-weight-loss"
+      name="Medical Weight Loss"
+      description="Medically supervised weight loss in St. Peters, MO using semaglutide and tirzepatide for lasting, clinically guided results."
+      url="https://morningstarregmed.com/medical-weight-loss/"
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      
+      bodyLocation={["body weight"]}
+      
+      
+    />
+    <MedicalWebPageSchema
+      url="https://morningstarregmed.com/medical-weight-loss/"
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId="https://morningstarregmed.com/#service-medical-weight-loss"
+      aspect="Treatment"
+    />
+    <BreadcrumbSchema items={[{"name":"Home","url":"https://morningstarregmed.com"},{"name":"Medical Weight Loss","url":"https://morningstarregmed.com/medical-weight-loss/"}]} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
   <!-- Hero -->
   <section class="bg-brand-light py-20 px-4">
     <div class="max-w-4xl mx-auto">

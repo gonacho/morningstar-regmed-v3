@@ -3,11 +3,31 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --header-height: 64px;
+    --brand-accent: #1e4d8c;
+    --color-primary-rgb: 30, 77, 140;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
     @apply text-gray-800 antialiased;
+    overflow-x: clip; /* NEVER hidden — breaks position: sticky in descendants */
+  }
+}
+
+/* Brand-colored shadow utilities */
+@layer utilities {
+  .shadow-brand-sm {
+    box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.15);
+  }
+  .shadow-brand {
+    box-shadow: 0 4px 16px rgba(var(--color-primary-rgb), 0.2);
+  }
+  .shadow-brand-lg {
+    box-shadow: 0 8px 24px rgba(var(--color-primary-rgb), 0.25);
   }
 }

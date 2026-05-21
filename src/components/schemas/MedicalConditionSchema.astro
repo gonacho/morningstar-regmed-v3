@@ -1,0 +1,87 @@
+---
+/**
+ * Block I — MedicalCondition
+ * Used on: All condition pages
+ */
+
+interface Props {
+  id: string;             // @id fragment — e.g. 'condition-neuropathy'
+  name: string;
+  description: string;
+  url: string;
+  publishDate: string;
+  lastEdited: string;
+  possibleTreatments?: string[];   // @id fragments of TherapeuticProcedure entities
+  causes?: string[];
+  signOrSymptom?: string[];
+  associatedAnatomy?: string;
+  naturalProgression?: string;
+  riskFactor?: string[];
+}
+
+const {
+  id,
+  name,
+  description,
+  url,
+  publishDate,
+  lastEdited,
+  possibleTreatments = [],
+  causes = [],
+  signOrSymptom = [],
+  associatedAnatomy,
+  naturalProgression,
+  riskFactor = [],
+} = Astro.props;
+
+const SITE_URL = 'https://morningstarregmed.com';
+
+const schema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalCondition',
+  '@id': `${SITE_URL}/#${id}`,
+  name,
+  description,
+  url,
+  recognizingAuthority: { '@id': `${SITE_URL}/#organization` },
+  datePublished: publishDate,
+  dateModified: lastEdited,  // v3: from lastEdited prop — NEVER new Date()
+};
+
+if (possibleTreatments.length > 0) {
+  schema.possibleTreatment = possibleTreatments.map((svcId) => ({
+    '@id': `${SITE_URL}/#${svcId}`,
+  }));
+}
+
+if (causes.length > 0) {
+  schema.cause = causes.map((c) => ({
+    '@type': 'MedicalCause',
+    name: c,
+  }));
+}
+
+if (signOrSymptom.length > 0) {
+  schema.signOrSymptom = signOrSymptom.map((s) => ({
+    '@type': 'MedicalSymptom',
+    name: s,
+  }));
+}
+
+if (associatedAnatomy) {
+  schema.associatedAnatomy = { '@type': 'AnatomicalStructure', name: associatedAnatomy };
+}
+
+if (naturalProgression) {
+  schema.naturalProgression = naturalProgression;
+}
+
+if (riskFactor.length > 0) {
+  schema.riskFactor = riskFactor.map((r) => ({
+    '@type': 'MedicalRiskFactor',
+    name: r,
+  }));
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

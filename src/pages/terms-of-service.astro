@@ -1,0 +1,99 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import WebPageSchema from '@/components/schemas/WebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+
+const SITE_URL = 'https://morningstarregmed.com';
+const pageUrl = `${SITE_URL}/terms-of-service/`;
+const effectiveDate = '2026-01-01';
+const breadcrumbs = [
+  { name: 'Home', url: SITE_URL },
+  { name: 'Terms of Service', url: pageUrl },
+];
+---
+
+<BaseLayout
+  title="Terms of Service | Morning Star"
+  description="Terms of service for the Morning Star website. Review our policies on website use, medical disclaimers, and intellectual property in St. Peters, MO."
+>
+  <Fragment slot="head">
+    <WebPageSchema
+      url={pageUrl}
+      name="Terms of Service | Morning Star"
+      description="Terms of service for Morning Star Neuropathy &amp; Pain Treatment Center."
+      publishDate="2024-01-01"
+      lastEdited="2026-01-01"
+    />
+    <BreadcrumbSchema items={breadcrumbs} />
+  </Fragment>
+
+  <!-- Breadcrumb -->
+  <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
+    <ol class="flex items-center gap-1.5">
+      <li><a href="/" class="hover:text-brand-blue">Home</a></li>
+      <li>/</li>
+      <li class="text-brand-navy font-medium">Terms of Service</li>
+    </ol>
+  </nav>
+
+  <!-- Page header -->
+  <section class="bg-brand-light py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-brand-navy mb-4">Terms of Service</h1>
+      <p class="text-gray-500 text-sm">
+        Effective date:{' '}
+        {new Date(effectiveDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </p>
+    </div>
+  </section>
+
+  <!-- Terms body -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto prose prose-lg prose-headings:text-brand-navy">
+      <p>
+        Welcome to the website of Morning Star Neuropathy &amp; Pain Treatment Center ("Morning Star," "we," "us," or "our"). By accessing or using our website, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our website.
+      </p>
+
+      <h2>Acceptance of Terms</h2>
+      <p>
+        By accessing, browsing, or using this website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our <a href="/privacy-policy/">Privacy Policy</a>. We reserve the right to modify these terms at any time, and your continued use of the website following any changes constitutes your acceptance of the updated terms.
+      </p>
+
+      <h2>Medical Disclaimer</h2>
+      <p>
+        The information provided on this website is for educational and informational purposes only. It is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider with any questions you may have regarding a medical condition.
+      </p>
+      <p>
+        Never disregard professional medical advice or delay in seeking it because of something you have read on this website. If you think you may have a medical emergency, call your doctor or 911 immediately. Morning Star does not recommend or endorse any specific tests, physicians, products, procedures, opinions, or other information that may be mentioned on this website.
+      </p>
+
+      <h2>Use of Website</h2>
+      <p>
+        You agree to use this website only for lawful purposes and in a manner that does not infringe the rights of, or restrict or inhibit the use of this website by, any third party.
+      </p>
+
+      <h2>Intellectual Property</h2>
+      <p>
+        All content on this website, including text, graphics, logos, images, and software, is the property of Morning Star Neuropathy &amp; Pain Treatment Center or its content suppliers and is protected by applicable intellectual property laws.
+      </p>
+
+      <h2>Limitation of Liability</h2>
+      <p>
+        To the fullest extent permitted by applicable law, Morning Star and its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of this website.
+      </p>
+
+      <h2>Changes to Terms</h2>
+      <p>
+        We reserve the right to update these Terms of Service at any time without prior notice. Changes are effective immediately upon posting.
+      </p>
+
+      <h2>Contact Information</h2>
+      <p>
+        If you have any questions about these Terms of Service, please contact us:<br />
+        Morning Star Neuropathy &amp; Pain Treatment Center<br />
+        4710 Mexico Rd Suite C, St. Peters, MO 63376<br />
+        Phone: <a href="tel:+16362440124">(636) 244-0124</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

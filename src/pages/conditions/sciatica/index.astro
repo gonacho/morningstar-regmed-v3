@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import MedicalConditionSchema from '@/components/schemas/MedicalConditionSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
 const title = 'Sciatica Treatment in St. Peters, MO | Morning Star';
 const description =
@@ -32,19 +36,35 @@ const faqs = [
       'Many patients achieve lasting relief from sciatica with the right treatment plan. When the underlying cause (such as a herniated disc or piriformis tightness) is effectively addressed, the sciatic nerve can heal and symptoms can resolve. However, patients with degenerative spinal conditions may need ongoing management to prevent recurrence. Our goal at Morning Star is to reduce your pain, restore function, and equip you with the tools to maintain your results.',
   },
 ];
-
-const faqSchema = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map(({ question, answer }) => ({
-    '@type': 'Question',
-    name: question,
-    acceptedAnswer: { '@type': 'Answer', text: answer },
-  })),
-});
 ---
 
-<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <MedicalConditionSchema
+      id="condition-sciatica"
+      name="Sciatica"
+      description="Sciatica causes shooting leg pain from a compressed sciatic nerve. Discover non-surgical sciatica treatment options in St. Peters, MO."
+      url="https://morningstarregmed.com/conditions/sciatica/"
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      possibleTreatments={["service-neuromodulation-technique","service-chronic-pain-management","service-regenerative-therapy"]}
+      causes={["Herniated lumbar disc","Spinal stenosis","Piriformis syndrome","Degenerative disc disease"]}
+      signOrSymptom={["Shooting leg pain","Numbness in leg or foot","Tingling","Weakness in leg","Pain when sitting"]}
+      associatedAnatomy="Sciatic nerve"
+      riskFactor={["Age 30-50","Sedentary lifestyle","Prolonged sitting","Obesity","Diabetes"]}
+    />
+    <MedicalWebPageSchema
+      url="https://morningstarregmed.com/conditions/sciatica/"
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId="https://morningstarregmed.com/#condition-sciatica"
+      aspect="Symptom"
+    />
+    <BreadcrumbSchema items={[{"name":"Home","url":"https://morningstarregmed.com"},{"name":"Conditions","url":"https://morningstarregmed.com/conditions/"},{"name":"Sciatica","url":"https://morningstarregmed.com/conditions/sciatica/"}]} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
   <!-- Breadcrumb -->
   <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
     <ol class="flex items-center gap-1.5">

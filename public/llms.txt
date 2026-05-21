@@ -1,0 +1,44 @@
+# Morning Star Neuropathy & Pain Treatment Center
+# https://morningstarregmed.com
+# Generated from ENTITY-VARIABLES.md — do not hand-edit
+
+## About
+
+Morning Star Neuropathy & Pain Treatment Center provides advanced non-surgical neuropathy treatment, regenerative therapy, and chronic pain management for adults in St. Peters, MO and the greater St. Louis area.
+
+Morning Star Neuropathy & Pain Treatment Center is located in St. Peters, Missouri, serving patients throughout St. Charles County and the St. Louis metropolitan area. The clinic specializes in non-surgical neuropathy treatment, regenerative therapies including PRP and exosome therapy, hyaluronic acid injections, neuromodulation, and medically supervised weight loss using semaglutide and tirzepatide.
+
+## Location & Service Area
+
+St. Peters, Missouri. Service radius: 25 miles. Serving St. Peters, O'Fallon, St. Charles, Wentzville, Lake St. Louis, Cottleville, Dardenne Prairie, and the greater St. Louis metro area.
+
+Address: 4710 Mexico Rd Suite C, St. Peters, MO 63376
+Phone: (636) 244-0124
+Hours: Monday–Thursday 8:00 AM–5:00 PM. Closed Friday–Sunday.
+
+## Services
+
+- Neuropathy Treatment: Customized treatment plans to restore peripheral nerve health and relieve neuropathic pain.
+  URL: https://morningstarregmed.com/pain-management/neuropathy-treatment/
+
+- Chronic Pain Management: Personalized pain management combining regenerative, neuromodulation, and lifestyle therapies.
+  URL: https://morningstarregmed.com/pain-management/chronic-pain-management/
+
+- Neuromodulation Technique: Controlled electrical stimulation to restore nerve function and reduce chronic pain signals.
+  URL: https://morningstarregmed.com/pain-management/neuromodulation-technique/
+
+- Regenerative Therapy: Exosome-based treatments that reduce inflammation and support cellular tissue repair.
+  URL: https://morningstarregmed.com/regenerative-medicine/regenerative-therapy/
+
+- Platelet Rich Plasma Therapy: PRP injections using your own platelets to accelerate joint and soft tissue healing.
+  URL: https://morningstarregmed.com/regenerative-medicine/platelet-rich-plasma-therapy/
+
+- Hyaluronic Acid Injections: Minimally invasive joint lubrication injections for improved mobility and pain relief.
+  URL: https://morningstarregmed.com/regenerative-medicine/hyaluronic-acid-injections/
+
+- Medical Weight Loss: Medically supervised weight loss using semaglutide and tirzepatide for lasting results.
+  URL: https://morningstarregmed.com/medical-weight-loss/
+
+## Schedule
+
+Book online: https://morningstarregmed.com/schedule-appointment/

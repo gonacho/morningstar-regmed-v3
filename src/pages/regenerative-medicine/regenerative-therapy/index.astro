@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import TherapeuticProcedureSchema from '@/components/schemas/TherapeuticProcedureSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
 const title = 'Regenerative Therapy in St. Peters, MO | Morning Star';
 const description =
@@ -67,7 +71,32 @@ const jsonLd = JSON.stringify({
 });
 ---
 
-<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <TherapeuticProcedureSchema
+      id="service-regenerative-therapy"
+      name="Regenerative Therapy"
+      description="Exosome-based regenerative therapy that reduces inflammation and supports cellular tissue repair for joints, nerves, and soft tissue."
+      url="https://morningstarregmed.com/regenerative-medicine/regenerative-therapy/"
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      indication={["condition-neuropathy","condition-knee-pain","condition-back-pain","condition-joint-pain"]}
+      bodyLocation={["joints","soft tissue","peripheral nerves"]}
+      
+      
+    />
+    <MedicalWebPageSchema
+      url="https://morningstarregmed.com/regenerative-medicine/regenerative-therapy/"
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId="https://morningstarregmed.com/#service-regenerative-therapy"
+      aspect="Treatment"
+    />
+    <BreadcrumbSchema items={[{"name":"Home","url":"https://morningstarregmed.com"},{"name":"Regenerative Medicine","url":"https://morningstarregmed.com/regenerative-medicine/"},{"name":"Regenerative Therapy","url":"https://morningstarregmed.com/regenerative-medicine/regenerative-therapy/"}]} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
   <!-- Breadcrumb -->
   <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
     <ol class="flex items-center gap-1.5">

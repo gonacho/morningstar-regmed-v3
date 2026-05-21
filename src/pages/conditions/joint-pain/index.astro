@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import MedicalConditionSchema from '@/components/schemas/MedicalConditionSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
 const title = 'Joint Pain Treatment in St. Peters, MO | Morning Star';
 const description =
@@ -32,19 +36,35 @@ const faqs = [
       'Staying active with joint-friendly exercises, maintaining a healthy body weight, protecting joints during repetitive activities, and addressing early symptoms before they progress are the most effective prevention strategies. Patients who complete treatment at Morning Star receive specific guidance on exercises and lifestyle modifications designed to protect their joints long-term.',
   },
 ];
-
-const faqSchema = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map(({ question, answer }) => ({
-    '@type': 'Question',
-    name: question,
-    acceptedAnswer: { '@type': 'Answer', text: answer },
-  })),
-});
 ---
 
-<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <MedicalConditionSchema
+      id="condition-joint-pain"
+      name="Joint Pain"
+      description="Joint pain from arthritis or wear and tear limits daily activity. Explore non-surgical joint pain treatment options at Morning Star in St. Peters, MO."
+      url="https://morningstarregmed.com/conditions/joint-pain/"
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      possibleTreatments={["service-platelet-rich-plasma-therapy","service-hyaluronic-acid-injections","service-regenerative-therapy"]}
+      causes={["Osteoarthritis","Rheumatoid arthritis","Bursitis","Gout","Joint injury"]}
+      signOrSymptom={["Joint stiffness","Swelling","Warmth at joint","Reduced range of motion","Aching pain"]}
+      associatedAnatomy="Synovial joints"
+      riskFactor={["Age","Prior joint injury","Overweight","Family history of arthritis"]}
+    />
+    <MedicalWebPageSchema
+      url="https://morningstarregmed.com/conditions/joint-pain/"
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId="https://morningstarregmed.com/#condition-joint-pain"
+      aspect="Symptom"
+    />
+    <BreadcrumbSchema items={[{"name":"Home","url":"https://morningstarregmed.com"},{"name":"Conditions","url":"https://morningstarregmed.com/conditions/"},{"name":"Joint Pain","url":"https://morningstarregmed.com/conditions/joint-pain/"}]} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
   <!-- Breadcrumb -->
   <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
     <ol class="flex items-center gap-1.5">

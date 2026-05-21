@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import TherapeuticProcedureSchema from '@/components/schemas/TherapeuticProcedureSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
 const title = 'Hyaluronic Acid Injections in St. Peters, MO | Morning Star';
 const description =
@@ -67,7 +71,39 @@ const jsonLd = JSON.stringify({
 });
 ---
 
-<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <TherapeuticProcedureSchema
+      id="service-hyaluronic-acid-injections"
+      name="Hyaluronic Acid Injections"
+      description="Minimally invasive hyaluronic acid joint lubrication injections for improved mobility and reduced knee and joint pain."
+      url="https://morningstarregmed.com/regenerative-medicine/hyaluronic-acid-injections/"
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      indication={["condition-knee-pain","condition-joint-pain"]}
+      bodyLocation={["knee joint","hip joint"]}
+      reviews={[
+  {
+    "author": "John Brantley",
+    "datePublished": "2024-01-01",
+    "reviewBody": "I have had two separate rounds of treatment done with the team at Morningstar. First, I had hyaluronic acid gel injections done on my knee. My pain went from an 8/10 to at most a 2/10. Great success if you ask me! Kay's bedside manner is absolutely wonderful and the admin staff made me feel welcomed and stress-free. After I finished with my knee, I did PRP treatments to both of my shoulders. My shoulders have been very weak and causing me a lot of pain due to what I do for a living, and this has been the only thing to help so far. Definitely helped me avoid shoulder surgery and now my pain is maybe a 2/10 on a bad day! These people work absolute miracles for non-invasive pain management options, and I recommend them hands down to anyone looking for relief! 5 stars!",
+    "ratingValue": "5"
+  }
+]}
+      aggregateRating={{"ratingValue":"5","reviewCount":"1"}}
+    />
+    <MedicalWebPageSchema
+      url="https://morningstarregmed.com/regenerative-medicine/hyaluronic-acid-injections/"
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId="https://morningstarregmed.com/#service-hyaluronic-acid-injections"
+      aspect="Treatment"
+    />
+    <BreadcrumbSchema items={[{"name":"Home","url":"https://morningstarregmed.com"},{"name":"Regenerative Medicine","url":"https://morningstarregmed.com/regenerative-medicine/"},{"name":"Hyaluronic Acid Injections","url":"https://morningstarregmed.com/regenerative-medicine/hyaluronic-acid-injections/"}]} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
   <!-- Breadcrumb -->
   <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
     <ol class="flex items-center gap-1.5">

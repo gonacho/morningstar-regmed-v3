@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import MedicalConditionSchema from '@/components/schemas/MedicalConditionSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
 const title = 'Back Pain Treatment in St. Peters, MO | Morning Star';
 const description =
@@ -32,19 +36,35 @@ const faqs = [
       'Morning Star offers a range of non-invasive treatments for back pain, including regenerative therapy to promote tissue healing, chronic pain management programs, and platelet-rich plasma (PRP) therapy to accelerate recovery. Our team creates personalized treatment plans based on the source and severity of your pain.',
   },
 ];
-
-const faqSchema = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map(({ question, answer }) => ({
-    '@type': 'Question',
-    name: question,
-    acceptedAnswer: { '@type': 'Answer', text: answer },
-  })),
-});
 ---
 
-<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <MedicalConditionSchema
+      id="condition-back-pain"
+      name="Back Pain"
+      description="Chronic back pain affects millions of adults. Learn about causes, symptoms, and non-surgical back pain treatment options in St. Peters, MO."
+      url="https://morningstarregmed.com/conditions/back-pain/"
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      possibleTreatments={["service-regenerative-therapy","service-chronic-pain-management","service-platelet-rich-plasma-therapy"]}
+      causes={["Herniated disc","Degenerative disc disease","Muscle strain","Spinal stenosis","Osteoarthritis"]}
+      signOrSymptom={["Lower back pain","Radiating leg pain","Muscle spasm","Limited mobility","Pain when sitting"]}
+      associatedAnatomy="Lumbar spine"
+      riskFactor={["Sedentary lifestyle","Poor posture","Age","Overweight","Heavy lifting"]}
+    />
+    <MedicalWebPageSchema
+      url="https://morningstarregmed.com/conditions/back-pain/"
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId="https://morningstarregmed.com/#condition-back-pain"
+      aspect="Symptom"
+    />
+    <BreadcrumbSchema items={[{"name":"Home","url":"https://morningstarregmed.com"},{"name":"Conditions","url":"https://morningstarregmed.com/conditions/"},{"name":"Back Pain","url":"https://morningstarregmed.com/conditions/back-pain/"}]} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
   <!-- Hero -->
   <section class="bg-brand-light py-16 px-4">
     <div class="max-w-4xl mx-auto">

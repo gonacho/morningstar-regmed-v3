@@ -1,0 +1,38 @@
+---
+/**
+ * Block E — WebPage (non-YMYL pages only: Contact, Insurance, Privacy, Terms, Schedule)
+ * For healthcare/YMYL pages use MedicalWebPageSchema.astro
+ */
+
+interface Props {
+  url: string;
+  name: string;
+  description: string;
+  publishDate: string;
+  lastEdited: string;
+  breadcrumbId?: string;
+}
+
+const { url, name, description, publishDate, lastEdited, breadcrumbId } = Astro.props;
+
+const SITE_URL = 'https://morningstarregmed.com';
+
+const schema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${url}#webpage`,
+  url,
+  name,
+  description,
+  datePublished: publishDate,
+  dateModified: lastEdited,
+  inLanguage: 'en-US',
+  isPartOf: { '@id': `${SITE_URL}/#website` },
+};
+
+if (breadcrumbId) {
+  schema.breadcrumb = { '@id': breadcrumbId };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

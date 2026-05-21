@@ -1,27 +1,33 @@
 # Cloudflare Pages 301 redirects — morningstarregmed.com
-# Source: MOR-2 SEO Audit + MOR-5 implementation
-# Format: /old-url  /new-url  301
-#
-# IMPORTANT: On Cloudflare Pages, static files take precedence over redirect
-# rules for exact path matches. Redirects below only fire when no static asset
-# exists at that path.
+# Source: ARCHITECTURE.md §301 Redirect Map
+# Format: /old-path  /new-path  301
+# WARNING: No catch-all rule — explicit per-URL mappings only
 
-# ── Blog slugs (remove period-separated city/state cruft) ────────────────────
-# These are the 2 existing posts migrated from the old site (MOR-5 deliverable).
+# ── Service page migrations (flat → nested) ──────────────────────────────────
+/neuropathy-treatment        /pain-management/neuropathy-treatment/        301
+/chronic-pain-management     /pain-management/chronic-pain-management/     301
+/neuromodulation-technique   /pain-management/neuromodulation-technique/   301
+/regenerative-therapy        /regenerative-medicine/regenerative-therapy/  301
+/platelet-rich-plasma-therapy /regenerative-medicine/platelet-rich-plasma-therapy/ 301
+/hyaluronic-acid-injections  /regenerative-medicine/hyaluronic-acid-injections/ 301
+
+# ── Condition page migrations (flat → /conditions/) ──────────────────────────
+/neuropathy     /conditions/neuropathy/   301
+/knee-pain      /conditions/knee-pain/    301
+/back-pain      /conditions/back-pain/    301
+/neck-pain      /conditions/neck-pain/    301
+/joint-pain     /conditions/joint-pain/   301
+/sciatica-relief /conditions/sciatica/    301
+
+# ── Standard page slug changes ────────────────────────────────────────────────
+/about-us       /about/             301
+/contact-us     /contact/           301
+/terms-service  /terms-of-service/  301
+/terms          /terms-of-service/  301
+
+# ── Testimonials page (fabricated reviews — consolidated into homepage) ───────
+/testimonials   /                   301
+
+# ── Blog slug corrections (period-separated city/state cruft) ─────────────────
 /blog/how-regenerative-therapy-in-st.-peters-mo-may-support-back-pain-recovery  /blog/regenerative-therapy-back-pain-recovery  301
 /blog/neuropathy-treatment-in-st.-peters-mo-for-long-term-nerve-function-support /blog/neuropathy-treatment-long-term-support   301
-
-# ── Terms slug correction ────────────────────────────────────────────────────
-/terms-service  /terms-of-service  301
-/terms          /terms-of-service  301
-
-# ── URL changes ON HOLD pending SEO Writer backlink report (MOR-5 note) ──────
-# Uncomment once the SEO Writer confirms link-equity priority is acceptable.
-#
-# /regenerative-therapy  /exosome-therapy     301
-# /neuropathy            /neuropathy-treatment 301
-# /sciatica-relief       /sciatica-treatment   301
-
-# ── Catch-all: unmapped 404s → homepage ──────────────────────────────────────
-# Remove or tighten this rule once all redirects are confirmed (it masks 404s).
-/*  /  301

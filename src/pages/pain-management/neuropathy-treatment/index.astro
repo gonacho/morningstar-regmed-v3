@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import TherapeuticProcedureSchema from '@/components/schemas/TherapeuticProcedureSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
 const title = 'Neuropathy Treatment in St. Peters, MO | Morning Star';
 const description =
@@ -27,19 +31,47 @@ const faqs = [
       'Yes. Sitting for extended periods can compress the sciatic nerve, peroneal nerve, and other peripheral nerves, leading to numbness, tingling, or pain in the legs and feet. Over time, chronic compression may contribute to lasting nerve injury. Regular movement breaks and ergonomic adjustments can help reduce this risk.',
   },
 ];
-
-const faqSchema = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map(({ question, answer }) => ({
-    '@type': 'Question',
-    name: question,
-    acceptedAnswer: { '@type': 'Answer', text: answer },
-  })),
-});
 ---
 
-<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <TherapeuticProcedureSchema
+      id="service-neuropathy-treatment"
+      name="Neuropathy Treatment"
+      description="Customized neuropathy treatment plans to restore peripheral nerve health, relieve pain, and improve mobility."
+      url="https://morningstarregmed.com/pain-management/neuropathy-treatment/"
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      indication={["condition-neuropathy"]}
+      bodyLocation={["feet","hands","peripheral nerves"]}
+      reviews={[
+  {
+    "author": "Brenda Landers",
+    "datePublished": "2024-01-01",
+    "reviewBody": "I found out I had neuropathy in my feet. I had no idea where to go. I Googled neuropathy places and came across Morningstar. I am so thankful I did! I felt welcome the 1st time I went there. When I first started treatments, they had to wheel me in from the car to the treatment room in a wheelchair. I have been going for about 2 months. I went from arriving in a wheelchair to walking with a cane! Marvelous improvement from not being able to walk at all. I owe all this to the wonderful staff of Morningstar! I love these people, Heather, Mandy, Rochelle, Brad and Ron. They are such caring people. Please give them a try if you need help with neuropathy.",
+    "ratingValue": "5"
+  },
+  {
+    "author": "Arthur Brewer",
+    "datePublished": "2024-01-01",
+    "reviewBody": "I had neuropathy in my feet and now it's about gone with the treatment they're giving me and they do actually work. They know what they're doing this is a very good place if you have neuropathy. The treatments are helping very much so and I really love it's starting to help.",
+    "ratingValue": "5"
+  }
+]}
+      aggregateRating={{"ratingValue":"5","reviewCount":"2"}}
+    />
+    <MedicalWebPageSchema
+      url="https://morningstarregmed.com/pain-management/neuropathy-treatment/"
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId="https://morningstarregmed.com/#service-neuropathy-treatment"
+      aspect="Treatment"
+    />
+    <BreadcrumbSchema items={[{"name":"Home","url":"https://morningstarregmed.com"},{"name":"Pain Management","url":"https://morningstarregmed.com/pain-management/"},{"name":"Neuropathy Treatment","url":"https://morningstarregmed.com/pain-management/neuropathy-treatment/"}]} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
   <!-- Breadcrumb -->
   <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
     <ol class="flex items-center gap-1.5">

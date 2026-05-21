@@ -1,12 +1,60 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import OfferCatalogSchema from '@/components/schemas/OfferCatalogSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
 
+const SITE_URL = 'https://morningstarregmed.com';
+const pageUrl = `${SITE_URL}/regenerative-medicine/`;
 const title = 'Alternative Medicine Practitioner in St. Peters, MO | Morning Star';
 const description =
   'Regenerative medicine in St. Peters, MO. PRP therapy, exosome therapy, and hyaluronic acid injections. Advanced non-surgical healing at Morning Star.';
+
+const services = [
+  {
+    name: 'Regenerative Therapy',
+    url: `${SITE_URL}/regenerative-medicine/regenerative-therapy/`,
+    description: 'Exosome-based treatments that reduce inflammation and support cellular tissue repair.',
+    serviceId: 'service-regenerative-therapy',
+  },
+  {
+    name: 'Platelet Rich Plasma Therapy',
+    url: `${SITE_URL}/regenerative-medicine/platelet-rich-plasma-therapy/`,
+    description: 'PRP injections using your own platelets to accelerate joint and soft tissue healing.',
+    serviceId: 'service-platelet-rich-plasma-therapy',
+  },
+  {
+    name: 'Hyaluronic Acid Injections',
+    url: `${SITE_URL}/regenerative-medicine/hyaluronic-acid-injections/`,
+    description: 'Minimally invasive joint lubrication injections for improved mobility and pain relief.',
+    serviceId: 'service-hyaluronic-acid-injections',
+  },
+];
+const breadcrumbs = [
+  { name: 'Home', url: SITE_URL },
+  { name: 'Regenerative Medicine', url: pageUrl },
+];
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <OfferCatalogSchema
+      id="catalog-regenerative-medicine"
+      name="Regenerative Medicine Services"
+      description={description}
+      url={pageUrl}
+      services={services}
+    />
+    <MedicalWebPageSchema
+      url={pageUrl}
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId={`${SITE_URL}/#catalog-regenerative-medicine`}
+    />
+    <BreadcrumbSchema items={breadcrumbs} />
+  </Fragment>
   <!-- Hero -->
   <section class="bg-brand-light py-20 px-4">
     <div class="max-w-4xl mx-auto">

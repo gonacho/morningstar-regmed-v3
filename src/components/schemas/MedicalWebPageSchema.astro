@@ -1,0 +1,71 @@
+---
+/**
+ * Block E — MedicalWebPage (YMYL wrapper for all healthcare pages)
+ * For Contact/Insurance/Privacy/Terms use WebPageSchema.astro instead
+ */
+
+interface Props {
+  url: string;
+  name: string;
+  description: string;
+  publishDate: string;      // ISO date string: YYYY-MM-DD
+  lastEdited: string;       // ISO date string: YYYY-MM-DD — NEVER new Date()
+  mainEntityId?: string;    // @id of the primary entity on this page
+  aspect?: 'Treatment' | 'Cause' | 'Symptom' | 'Prevention' | 'Diagnosis';
+  breadcrumbId?: string;
+  mentions?: Array<{ '@type': string; name: string; sameAs?: string }>;
+}
+
+const {
+  url,
+  name,
+  description,
+  publishDate,
+  lastEdited,
+  mainEntityId,
+  aspect,
+  breadcrumbId,
+  mentions = [],
+} = Astro.props;
+
+const SITE_URL = 'https://morningstarregmed.com';
+
+// Base landmark mentions (always included for geo-relevance)
+const baseMentions = [
+  {
+    '@type': 'City',
+    name: 'St. Peters',
+    sameAs: 'https://en.wikipedia.org/wiki/St._Peters,_Missouri',
+  },
+  ...mentions,
+];
+
+const schema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  '@id': `${url}#webpage`,
+  url,
+  name,
+  description,
+  datePublished: publishDate,
+  dateModified: lastEdited,  // v3: from lastEdited prop — NEVER new Date()
+  inLanguage: 'en-US',
+  isPartOf: { '@id': `${SITE_URL}/#website` },
+  about: { '@id': `${SITE_URL}/#localbusiness` },
+  mentions: baseMentions,
+};
+
+if (mainEntityId) {
+  schema.mainEntity = { '@id': mainEntityId };
+}
+
+if (aspect) {
+  schema.aspect = aspect;
+}
+
+if (breadcrumbId) {
+  schema.breadcrumb = { '@id': breadcrumbId };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

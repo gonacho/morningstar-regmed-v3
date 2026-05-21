@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import TherapeuticProcedureSchema from '@/components/schemas/TherapeuticProcedureSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
 const title = 'Neuromodulation Treatment in St. Peters, MO | Morning Star';
 const description =
@@ -32,19 +36,34 @@ const faqs = [
       'The number of sessions varies depending on your condition and how you respond to treatment. Many patients notice improvement within the first few sessions, though a full course of treatment is typically recommended for lasting results. Our clinical team will outline a personalized schedule during your consultation.',
   },
 ];
-
-const faqSchema = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map(({ question, answer }) => ({
-    '@type': 'Question',
-    name: question,
-    acceptedAnswer: { '@type': 'Answer', text: answer },
-  })),
-});
 ---
 
-<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <TherapeuticProcedureSchema
+      id="service-neuromodulation-technique"
+      name="Neuromodulation Technique"
+      description="Non-invasive neuromodulation therapy using controlled electrical stimulation to restore nerve function and reduce chronic pain signals."
+      url="https://morningstarregmed.com/pain-management/neuromodulation-technique/"
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      indication={["condition-neuropathy","condition-neck-pain","condition-sciatica"]}
+      bodyLocation={["peripheral nerves","spinal cord"]}
+      
+      
+    />
+    <MedicalWebPageSchema
+      url="https://morningstarregmed.com/pain-management/neuromodulation-technique/"
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId="https://morningstarregmed.com/#service-neuromodulation-technique"
+      aspect="Treatment"
+    />
+    <BreadcrumbSchema items={[{"name":"Home","url":"https://morningstarregmed.com"},{"name":"Pain Management","url":"https://morningstarregmed.com/pain-management/"},{"name":"Neuromodulation Technique","url":"https://morningstarregmed.com/pain-management/neuromodulation-technique/"}]} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
   <!-- Breadcrumb -->
   <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
     <ol class="flex items-center gap-1.5">

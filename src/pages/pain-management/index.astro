@@ -1,12 +1,60 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import OfferCatalogSchema from '@/components/schemas/OfferCatalogSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
 
+const SITE_URL = 'https://morningstarregmed.com';
+const pageUrl = `${SITE_URL}/pain-management/`;
 const title = 'Pain Control Clinic in St. Peters, MO | Morning Star';
 const description =
   'Expert pain management in St. Peters, MO. Neuropathy treatment, chronic pain management, and neuromodulation therapy. Non-surgical relief at Morning Star.';
+
+const services = [
+  {
+    name: 'Neuropathy Treatment',
+    url: `${SITE_URL}/pain-management/neuropathy-treatment/`,
+    description: 'Customized plans to restore peripheral nerve health and relieve neuropathic pain.',
+    serviceId: 'service-neuropathy-treatment',
+  },
+  {
+    name: 'Chronic Pain Management',
+    url: `${SITE_URL}/pain-management/chronic-pain-management/`,
+    description: 'Personalized pain management combining regenerative, neuromodulation, and lifestyle therapies.',
+    serviceId: 'service-chronic-pain-management',
+  },
+  {
+    name: 'Neuromodulation Technique',
+    url: `${SITE_URL}/pain-management/neuromodulation-technique/`,
+    description: 'Controlled electrical stimulation to restore nerve function and reduce chronic pain signals.',
+    serviceId: 'service-neuromodulation-technique',
+  },
+];
+const breadcrumbs = [
+  { name: 'Home', url: SITE_URL },
+  { name: 'Pain Management', url: pageUrl },
+];
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <OfferCatalogSchema
+      id="catalog-pain-management"
+      name="Pain Control Clinic Services"
+      description={description}
+      url={pageUrl}
+      services={services}
+    />
+    <MedicalWebPageSchema
+      url={pageUrl}
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId={`${SITE_URL}/#catalog-pain-management`}
+    />
+    <BreadcrumbSchema items={breadcrumbs} />
+  </Fragment>
   <!-- Hero -->
   <section class="bg-brand-light py-20 px-4">
     <div class="max-w-4xl mx-auto">

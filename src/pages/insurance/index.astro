@@ -1,12 +1,30 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import WebPageSchema from '@/components/schemas/WebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
 
+const SITE_URL = 'https://morningstarregmed.com';
+const pageUrl = `${SITE_URL}/insurance/`;
 const title = 'Insurance & Payment Options | Morning Star in St. Peters, MO';
 const description =
   'Morning Star in St. Peters, MO accepts major medical insurance. Learn about payment options including CareCredit financing.';
+const breadcrumbs = [
+  { name: 'Home', url: SITE_URL },
+  { name: 'Insurance & Payment', url: pageUrl },
+];
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <WebPageSchema
+      url={pageUrl}
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+    />
+    <BreadcrumbSchema items={breadcrumbs} />
+  </Fragment>
   <!-- Hero -->
   <section class="bg-brand-light py-20 px-4">
     <div class="max-w-4xl mx-auto">

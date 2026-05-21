@@ -1,12 +1,42 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
 
+const SITE_URL = 'https://morningstarregmed.com';
+const pageUrl = `${SITE_URL}/about/`;
 const title = 'About Morning Star | Pain & Neuropathy Clinic in St. Peters, MO';
 const description =
   'Learn about Morning Star Neuropathy & Pain Treatment Center in St. Peters, MO. Our approach to non-surgical pain relief and regenerative care.';
+
+const breadcrumbs = [
+  { name: 'Home', url: SITE_URL },
+  { name: 'About', url: pageUrl },
+];
 ---
 
 <BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <MedicalWebPageSchema
+      url={pageUrl}
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId={`${SITE_URL}/#organization`}
+    />
+    <BreadcrumbSchema items={breadcrumbs} />
+  </Fragment>
+
+  <!-- Breadcrumb -->
+  <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
+    <ol class="flex items-center gap-1.5">
+      <li><a href="/" class="hover:text-brand-blue">Home</a></li>
+      <li>/</li>
+      <li class="text-brand-navy font-medium">About</li>
+    </ol>
+  </nav>
+
   <!-- Hero -->
   <section class="bg-brand-light py-24 px-4">
     <div class="max-w-4xl mx-auto text-center">
@@ -92,7 +122,7 @@ const description =
       <p class="text-blue-200 mb-8">
         Schedule an appointment today and take the first step toward lasting relief. Call us at <a href="tel:6362440124" class="underline hover:text-white">(636) 244-0124</a> or book online.
       </p>
-      <a href="/schedule-appointment" class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+      <a href="/schedule-appointment/" class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors">
         Schedule Your Evaluation
       </a>
     </div>

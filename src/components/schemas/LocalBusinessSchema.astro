@@ -1,0 +1,125 @@
+---
+/**
+ * Block B — MedicalClinic + LocalBusiness
+ * Used on: Homepage (with reviews) + Contact page (reference only)
+ * CID/PlaceID: PENDING administrator approval
+ * Institutional Anchors: PENDING administrator selection
+ */
+
+interface Props {
+  includeReviews?: boolean;
+}
+
+const { includeReviews = false } = Astro.props;
+
+const SITE_URL = 'https://morningstarregmed.com';
+
+// Verbatim GBP review — Clyde Steese (approved, bound to homepage/LocalBusiness)
+const homepageReview = {
+  '@type': 'Review',
+  author: { '@type': 'Person', name: 'Clyde Steese' },
+  datePublished: '2024-01-01',
+  reviewBody:
+    'The people working here are fantastic. They are great help with everything. The treatments were just fantastic. They started off slow but then they started picking up and they have finished and I am 100% very very happy with everything. Thank you so very much the end.',
+  reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+};
+
+const schema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': ['MedicalClinic', 'LocalBusiness'],
+  '@id': `${SITE_URL}/#localbusiness`,
+  name: 'Morning Star Neuropathy & Pain Treatment Center',
+  url: SITE_URL,
+  telephone: '+16362440124',
+  priceRange: '$$',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+      opens: '08:00',
+      closes: '17:00',
+    },
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '4710 Mexico Rd Suite C',
+    addressLocality: 'St. Peters',
+    addressRegion: 'MO',
+    postalCode: '63376',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 38.7696,
+    longitude: -90.6268,
+  },
+  areaServed: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates',
+      latitude: 38.7696,
+      longitude: -90.6268,
+    },
+    geoRadius: '40234',
+    containsPlace: [
+      // Tier-2 landmarks
+      {
+        '@type': 'SportsFacility',
+        name: "St. Peters Rec-Plex",
+        sameAs: 'https://en.wikipedia.org/wiki/St._Peters,_Missouri',
+      },
+      {
+        '@type': 'ShoppingCenter',
+        name: 'Mid Rivers Mall',
+      },
+      // Institutional Anchors (candidates — PENDING administrator selection of 1-3)
+      // {
+      //   '@type': 'Hospital',
+      //   name: 'Barnes-Jewish St. Peters Hospital',
+      //   sameAs: 'https://en.wikipedia.org/wiki/BJC_HealthCare',
+      // },
+      // {
+      //   '@type': 'Hospital',
+      //   name: 'SSM Health St. Joseph Hospital - St. Charles',
+      //   sameAs: 'https://en.wikipedia.org/wiki/SSM_Health',
+      // },
+    ],
+  },
+  medicalSpecialty: [
+    {
+      '@type': 'MedicalSpecialty',
+      name: 'Pain Medicine',
+      sameAs: 'https://en.wikipedia.org/wiki/Pain_management',
+    },
+    {
+      '@type': 'MedicalSpecialty',
+      name: 'Musculoskeletal Medicine',
+    },
+  ],
+  // hasMap: 'https://www.google.com/maps/search/?api=1&query=Morning+Star+Neuropathy+%26+Pain+Treatment+Center&query_place_id=PENDING',
+  sameAs: [
+    'https://www.facebook.com/p/Morningstar-Neuropathy-Pain-Treatment-Center-St-Peters-100070536960997/',
+    'https://www.carecredit.com/doctor-locator/st-peters-mo/morningstar-neuropathy-pain-treatment-center-llc-854dgw/',
+    'https://npiregistry.cms.hhs.gov/provider-view/1073184248',
+    // CID URL: PENDING
+  ],
+  potentialAction: {
+    '@type': 'ReserveAction',
+    target: `${SITE_URL}/schedule-appointment/`,
+    name: 'Schedule Evaluation',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '4',
+    bestRating: '5',
+  },
+  parentOrganization: { '@id': `${SITE_URL}/#organization` },
+};
+
+if (includeReviews) {
+  schema.review = [homepageReview];
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

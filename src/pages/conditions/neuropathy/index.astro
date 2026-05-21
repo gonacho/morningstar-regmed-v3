@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import MedicalConditionSchema from '@/components/schemas/MedicalConditionSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
 const title = 'Neuropathy Treatment in St. Peters, MO | Morning Star';
 const description =
@@ -27,19 +31,35 @@ const faqs = [
       'Yes, prolonged sitting can contribute to nerve damage through compression. Sitting for extended periods puts pressure on nerves in the legs and lower back, which can lead to numbness, tingling, and pain. This is especially problematic for people who already have neuropathy. Taking regular breaks to stand, stretch, and walk is important for maintaining nerve health and circulation.',
   },
 ];
-
-const faqSchema = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map(({ question, answer }) => ({
-    '@type': 'Question',
-    name: question,
-    acceptedAnswer: { '@type': 'Answer', text: answer },
-  })),
-});
 ---
 
-<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <MedicalConditionSchema
+      id="condition-neuropathy"
+      name="Peripheral Neuropathy"
+      description="Peripheral neuropathy causes nerve damage leading to numbness, tingling, and pain, most often in the feet and hands. Learn about causes, symptoms, and treatment options in St. Peters, MO."
+      url="https://morningstarregmed.com/conditions/neuropathy/"
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      possibleTreatments={["service-neuropathy-treatment","service-neuromodulation-technique","service-regenerative-therapy"]}
+      causes={["Diabetes mellitus","Autoimmune disorders","Nutritional deficiencies","Certain medications","Physical trauma"]}
+      signOrSymptom={["Numbness in feet and hands","Burning sensation","Tingling","Muscle weakness","Balance problems"]}
+      associatedAnatomy="Peripheral nervous system"
+      riskFactor={["Diabetes","Alcohol use disorder","Vitamin B12 deficiency","Chemotherapy"]}
+    />
+    <MedicalWebPageSchema
+      url="https://morningstarregmed.com/conditions/neuropathy/"
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId="https://morningstarregmed.com/#condition-neuropathy"
+      aspect="Symptom"
+    />
+    <BreadcrumbSchema items={[{"name":"Home","url":"https://morningstarregmed.com"},{"name":"Conditions","url":"https://morningstarregmed.com/conditions/"},{"name":"Neuropathy","url":"https://morningstarregmed.com/conditions/neuropathy/"}]} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
   <!-- Hero -->
   <section class="bg-brand-light py-16 px-4">
     <div class="max-w-4xl mx-auto">

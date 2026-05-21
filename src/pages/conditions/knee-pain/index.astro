@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import MedicalConditionSchema from '@/components/schemas/MedicalConditionSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
 const title = 'Knee Pain Treatment in St. Peters, MO | Morning Star';
 const description =
@@ -32,19 +36,35 @@ const faqs = [
       'Knee pain reaches its peak prevalence between ages 55 and 64, primarily due to osteoarthritis and accumulated wear on the joint. However, knee pain can occur at any age. Younger adults frequently experience knee injuries from sports and high-impact activities, while middle-aged adults may develop pain from overuse or early-stage arthritis.',
   },
 ];
-
-const faqSchema = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map(({ question, answer }) => ({
-    '@type': 'Question',
-    name: question,
-    acceptedAnswer: { '@type': 'Answer', text: answer },
-  })),
-});
 ---
 
-<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <MedicalConditionSchema
+      id="condition-knee-pain"
+      name="Knee Pain"
+      description="Knee pain from arthritis, injury, or degeneration affects daily mobility. Discover non-surgical treatment options available in St. Peters, MO."
+      url="https://morningstarregmed.com/conditions/knee-pain/"
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      possibleTreatments={["service-platelet-rich-plasma-therapy","service-hyaluronic-acid-injections","service-regenerative-therapy"]}
+      causes={["Osteoarthritis","Meniscus tear","Ligament injury","Bursitis","Patellar tendinitis"]}
+      signOrSymptom={["Joint pain","Swelling","Stiffness","Reduced range of motion","Clicking or popping"]}
+      associatedAnatomy="Knee joint"
+      riskFactor={["Overweight","Age over 45","Prior knee injury","Repetitive stress activities"]}
+    />
+    <MedicalWebPageSchema
+      url="https://morningstarregmed.com/conditions/knee-pain/"
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId="https://morningstarregmed.com/#condition-knee-pain"
+      aspect="Symptom"
+    />
+    <BreadcrumbSchema items={[{"name":"Home","url":"https://morningstarregmed.com"},{"name":"Conditions","url":"https://morningstarregmed.com/conditions/"},{"name":"Knee Pain","url":"https://morningstarregmed.com/conditions/knee-pain/"}]} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
   <!-- Hero -->
   <section class="bg-brand-light py-16 px-4">
     <div class="max-w-4xl mx-auto">

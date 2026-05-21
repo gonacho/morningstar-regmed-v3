@@ -1,0 +1,47 @@
+---
+/**
+ * Block D-category — OfferCatalog
+ * Used on: Category hub pages (Pain Management, Regenerative Medicine)
+ */
+
+interface ServiceItem {
+  name: string;
+  url: string;
+  description: string;
+  serviceId: string;   // @id fragment
+}
+
+interface Props {
+  id: string;          // @id fragment — e.g. 'catalog-pain-management'
+  name: string;
+  description: string;
+  url: string;
+  services: ServiceItem[];
+}
+
+const { id, name, description, url, services } = Astro.props;
+
+const SITE_URL = 'https://morningstarregmed.com';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'OfferCatalog',
+  '@id': `${SITE_URL}/#${id}`,
+  name,
+  description,
+  url,
+  provider: { '@id': `${SITE_URL}/#localbusiness` },
+  hasOfferCatalog: services.map((svc) => ({
+    '@type': 'Offer',
+    itemOffered: {
+      '@type': 'TherapeuticProcedure',
+      '@id': `${SITE_URL}/#${svc.serviceId}`,
+      name: svc.name,
+      url: svc.url,
+      description: svc.description,
+    },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

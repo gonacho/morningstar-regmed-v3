@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import MedicalConditionSchema from '@/components/schemas/MedicalConditionSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
 const title = 'Neck Pain Treatment in St. Peters, MO | Morning Star';
 const description =
@@ -32,19 +36,35 @@ const faqs = [
       'Prevention starts with maintaining proper posture, especially at a desk or while using a phone. Regular stretching, strengthening exercises for the neck and upper back, ergonomic workspace adjustments, and stress management all play important roles. Patients who complete a treatment plan at Morning Star receive guidance on exercises and lifestyle changes to reduce the risk of recurrence.',
   },
 ];
-
-const faqSchema = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map(({ question, answer }) => ({
-    '@type': 'Question',
-    name: question,
-    acceptedAnswer: { '@type': 'Answer', text: answer },
-  })),
-});
 ---
 
-<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <MedicalConditionSchema
+      id="condition-neck-pain"
+      name="Neck Pain"
+      description="Neck pain from muscle strain, disc issues, or nerve compression can disrupt daily life. Explore non-surgical neck pain treatment in St. Peters, MO."
+      url="https://morningstarregmed.com/conditions/neck-pain/"
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      possibleTreatments={["service-neuromodulation-technique","service-chronic-pain-management"]}
+      causes={["Muscle strain","Cervical disc herniation","Osteoarthritis","Poor posture","Whiplash injury"]}
+      signOrSymptom={["Neck stiffness","Radiating arm pain","Headache","Shoulder pain","Numbness in arms"]}
+      associatedAnatomy="Cervical spine"
+      riskFactor={["Desk work","Poor posture","Prior neck injury","Age"]}
+    />
+    <MedicalWebPageSchema
+      url="https://morningstarregmed.com/conditions/neck-pain/"
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId="https://morningstarregmed.com/#condition-neck-pain"
+      aspect="Symptom"
+    />
+    <BreadcrumbSchema items={[{"name":"Home","url":"https://morningstarregmed.com"},{"name":"Conditions","url":"https://morningstarregmed.com/conditions/"},{"name":"Neck Pain","url":"https://morningstarregmed.com/conditions/neck-pain/"}]} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
   <!-- Breadcrumb -->
   <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
     <ol class="flex items-center gap-1.5">

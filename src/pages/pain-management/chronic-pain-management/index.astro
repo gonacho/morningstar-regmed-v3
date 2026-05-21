@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import TherapeuticProcedureSchema from '@/components/schemas/TherapeuticProcedureSchema.astro';
+import MedicalWebPageSchema from '@/components/schemas/MedicalWebPageSchema.astro';
+import BreadcrumbSchema from '@/components/schemas/BreadcrumbSchema.astro';
+import FAQPageSchema from '@/components/schemas/FAQPageSchema.astro';
 
 const title = 'Pain Management in St. Peters, MO | Morning Star';
 const description =
@@ -32,19 +36,34 @@ const faqs = [
       'Regular low-impact exercise, maintaining a healthy weight, practicing stress management techniques, getting adequate sleep, and following an anti-inflammatory diet can all contribute to better pain management. Our team provides personalized lifestyle guidance as part of your treatment plan.',
   },
 ];
-
-const faqSchema = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map(({ question, answer }) => ({
-    '@type': 'Question',
-    name: question,
-    acceptedAnswer: { '@type': 'Answer', text: answer },
-  })),
-});
 ---
 
-<BaseLayout title={title} description={description} jsonLd={faqSchema}>
+<BaseLayout title={title} description={description}>
+  <Fragment slot="head">
+    <TherapeuticProcedureSchema
+      id="service-chronic-pain-management"
+      name="Chronic Pain Management"
+      description="Personalized chronic pain management combining regenerative, neuromodulation, and lifestyle therapies for lasting relief."
+      url="https://morningstarregmed.com/pain-management/chronic-pain-management/"
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      indication={["condition-back-pain","condition-neck-pain","condition-sciatica"]}
+      bodyLocation={["back","neck","spine"]}
+      
+      
+    />
+    <MedicalWebPageSchema
+      url="https://morningstarregmed.com/pain-management/chronic-pain-management/"
+      name={title}
+      description={description}
+      publishDate="2024-01-01"
+      lastEdited="2025-05-13"
+      mainEntityId="https://morningstarregmed.com/#service-chronic-pain-management"
+      aspect="Treatment"
+    />
+    <BreadcrumbSchema items={[{"name":"Home","url":"https://morningstarregmed.com"},{"name":"Pain Management","url":"https://morningstarregmed.com/pain-management/"},{"name":"Chronic Pain Management","url":"https://morningstarregmed.com/pain-management/chronic-pain-management/"}]} />
+    <FAQPageSchema faqs={faqs} />
+  </Fragment>
   <!-- Breadcrumb -->
   <nav class="max-w-4xl mx-auto px-4 pt-6 text-sm text-gray-500" aria-label="Breadcrumb">
     <ol class="flex items-center gap-1.5">
