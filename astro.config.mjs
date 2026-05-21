@@ -6,9 +6,15 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://morningstarregmed.com',
   output: 'static',
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: 'cloudflare',
+  }),
   integrations: [
     tailwind(),
-    sitemap(),
+    sitemap({
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
+    }),
   ],
 });

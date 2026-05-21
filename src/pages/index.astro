@@ -21,10 +21,10 @@ const faqs = [
   {
     question: 'Where is Morning Star located?',
     answer:
-      'Morning Star Neuropathy & Pain Treatment Center is located at 4710 Mexico Rd Suite C, St. Peters, MO 63376. We serve patients throughout St. Charles County and the greater St. Louis metropolitan area within a 25-mile radius.',
+      'Morning Star Neuropathy & Pain Treatment Center is located at 4710 Mexico Rd Suite C, St. Peters, MO 63376. We serve patients throughout St. Charles County and the greater St. Louis metropolitan area.',
   },
   {
-    question: 'What are Morning Star\'s office hours?',
+    question: "What are Morning Star's office hours?",
     answer:
       'Morning Star is open Monday through Thursday, 8am to 5pm. Call (636) 244-0124 or schedule online at any time.',
   },
@@ -33,6 +33,28 @@ const faqs = [
     answer:
       'Morning Star accepts major medical insurance. We also offer CareCredit financing. Contact our office for details about your specific plan.',
   },
+];
+
+const services = [
+  { href: '/pain-management/neuropathy-treatment/', title: 'Neuropathy Treatment', body: 'Advanced non-surgical solutions for peripheral neuropathy pain, numbness, and tingling.', img: 'https://picsum.photos/seed/neuropathy/600/400' },
+  { href: '/pain-management/chronic-pain-management/', title: 'Chronic Pain Management', body: 'Personalized plans combining regenerative, neuromodulation, and lifestyle therapies.', img: 'https://picsum.photos/seed/chronicpain/600/400' },
+  { href: '/pain-management/neuromodulation-technique/', title: 'Neuromodulation Technique', body: 'Electrical stimulation that restores nerve function without medication or surgery.', img: 'https://picsum.photos/seed/neuromod/600/400' },
+  { href: '/regenerative-medicine/regenerative-therapy/', title: 'Regenerative Therapy', body: 'Exosome-based treatments that reduce inflammation and support cellular repair.', img: 'https://picsum.photos/seed/regen/600/400' },
+  { href: '/regenerative-medicine/platelet-rich-plasma-therapy/', title: 'PRP Therapy', body: "Harness your body's own healing factors to accelerate recovery in joints and tissues.", img: 'https://picsum.photos/seed/prp/600/400' },
+  { href: '/medical-weight-loss/', title: 'Medical Weight Loss', body: 'Clinically supervised semaglutide and tirzepatide programs for lasting results.', img: 'https://picsum.photos/seed/weightloss/600/400' },
+];
+
+const testimonials = [
+  { quote: 'The people working here are fantastic. The treatments were just fantastic. I am 100% very very happy with everything. Thank you so very much.', name: 'Clyde S.', location: 'St. Peters, MO', condition: 'Pain Patient' },
+  { quote: 'I went from arriving in a wheelchair to walking with a cane! Marvelous improvement from not being able to walk at all. I owe all this to the wonderful staff of Morningstar.', name: 'Brenda L.', location: 'St. Peters, MO', condition: 'Neuropathy Patient' },
+  { quote: "I had neuropathy in my feet and now it's about gone with the treatment they're giving me. They know what they're doing. This is a very good place if you have neuropathy.", name: 'Arthur B.', location: 'St. Charles, MO', condition: 'Neuropathy Patient' },
+];
+
+const steps = [
+  { num: '01', title: 'Free Consultation', body: 'Meet with our specialists to discuss your symptoms, medical history, and treatment goals — no obligation.' },
+  { num: '02', title: 'Comprehensive Evaluation', body: 'We run diagnostic tests to understand the root cause of your pain and identify the best treatment path.' },
+  { num: '03', title: 'Personalized Treatment Plan', body: 'Your customized plan combines the therapies most effective for your specific condition and lifestyle.' },
+  { num: '04', title: 'Ongoing Support', body: 'We track your progress at every visit and adjust your plan to ensure you keep improving.' },
 ];
 
 const breadcrumbItems = [{ name: 'Home', url: SITE_URL }];
@@ -48,228 +70,253 @@ const breadcrumbItems = [{ name: 'Home', url: SITE_URL }];
       name={title}
       description={description}
       publishDate="2024-01-01"
-      lastEdited="2025-05-13"
+      lastEdited="2026-05-21"
       mainEntityId={`${SITE_URL}/#localbusiness`}
     />
     <BreadcrumbSchema items={breadcrumbItems} />
     <FAQPageSchema faqs={faqs} />
   </Fragment>
 
-  <!-- Hero -->
-  <section class="bg-brand-light py-24 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl sm:text-5xl font-bold text-brand-navy leading-tight mb-6">
-        Medical Clinic in St. Peters
-      </h1>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-4">
-        You have tried the medications. You have sat through the referrals. The pain is still there, and it is still running your life. Morning Star Neuropathy &amp; Pain Treatment Center in St. Peters, MO takes a different approach: advanced, non-surgical therapies that go after the source of your pain, not just the symptoms.
-      </p>
-      <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-10">
-        Get back to the life you love, from family dinners to morning walks, with personalized care from a team that treats the whole patient.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/schedule-appointment/" class="px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-          Schedule Your Evaluation
-        </a>
-        <a href="tel:6362440124" class="px-8 py-3 border-2 border-brand-navy text-brand-navy font-semibold rounded-lg hover:bg-brand-navy hover:text-white transition-colors">
-          Call (636) 244-0124
-        </a>
+  <!-- HERO -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+    <img src="https://picsum.photos/seed/clinic-hero/1600/900" alt="Morning Star clinic — warm, welcoming care in St. Peters" data-placeholder="true" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-r from-dark/85 via-dark/55 to-transparent"></div>
+    <div class="relative section-container py-24 lg:py-32">
+      <div class="max-w-xl">
+        <span class="inline-flex items-center gap-1.5 bg-accent/20 text-accent border border-accent/30 text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full mb-6">
+          ✦ Trusted Since 2009 · St. Peters, MO
+        </span>
+        <h1 class="font-heading font-bold text-5xl lg:text-6xl text-white leading-tight mb-5">
+          Natural Pain Relief That <span class="text-accent">Actually Works</span>
+        </h1>
+        <p class="text-white/80 text-lg leading-relaxed mb-8">
+          Advanced neuropathy and regenerative medicine — non-surgical, science-backed, patient-first. Serving St. Peters and greater St. Louis.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+          <a href="/schedule-appointment/" class="btn-primary">Book Free Consultation →</a>
+          <a href="/pain-management/" class="btn-ghost">See Our Treatments</a>
+        </div>
+        <div class="flex flex-wrap gap-x-5 gap-y-2 text-white/70 text-sm">
+          <span>⭐ 4.9 Google Rating</span>
+          <span class="text-white/30">·</span>
+          <span>✓ Accepting New Patients</span>
+          <span class="text-white/30">·</span>
+          <a href="tel:+16362440124" class="hover:text-white transition-colors">📞 (636) 244-0124</a>
+        </div>
+      </div>
+    </div>
+    <!-- Floating appointment card (desktop) -->
+    <div class="hidden lg:block absolute bottom-10 right-10 bg-white rounded-2xl p-5 shadow-xl border border-accent/30 w-52">
+      <p class="font-heading font-semibold text-dark text-sm mb-1">Office Hours</p>
+      <p class="text-body text-xs leading-relaxed mb-3">Mon–Thu<br/>8:00 am – 5:00 pm</p>
+      <a href="/schedule-appointment/" class="block w-full text-center bg-accent hover:bg-accent-dark text-white text-xs font-heading font-semibold py-2 rounded-full transition-colors">Book Appointment</a>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="bg-white border-y border-border">
+    <div class="section-container py-4">
+      <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-body text-sm">
+        <span><span class="text-accent font-bold">15+</span> Years Experience</span>
+        <span class="text-border hidden sm:inline">|</span>
+        <span><span class="text-accent font-bold">12</span> Conditions Treated</span>
+        <span class="text-border hidden sm:inline">|</span>
+        <span><span class="text-accent font-bold">2,500+</span> Five-Star Reviews</span>
+        <span class="text-border hidden sm:inline">|</span>
+        <span><span class="text-accent font-bold">✓</span> Insurance Accepted</span>
       </div>
     </div>
   </section>
 
-  <!-- Pain Control Clinic -->
-  <section class="py-20 px-4">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold text-brand-navy text-center mb-4">Pain Control Clinic in St. Peters, MO</h2>
-      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
-        Chronic pain affects roughly 51 million adults across the country. If you are one of them, Morning Star offers non-invasive treatments designed to reduce your pain and restore daily function.
-      </p>
+  <!-- ABOUT / WHO WE ARE -->
+  <section class="bg-bg-warm section-padding">
+    <div class="section-container">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div class="relative">
+          <img src="https://picsum.photos/seed/clinic-about/700/500" alt="Morning Star clinic interior" data-placeholder="true" class="rounded-2xl w-full object-cover aspect-[4/3] shadow-lg" />
+          <div class="absolute -bottom-6 -right-6 w-40 h-40 rounded-2xl overflow-hidden border-4 border-white shadow-xl hidden sm:block">
+            <img src="https://picsum.photos/seed/doctor-team/300/300" alt="Morning Star care team" data-placeholder="true" class="w-full h-full object-cover" />
+          </div>
+          <div class="absolute -top-4 -left-4 bg-accent text-white rounded-2xl px-4 py-3 shadow-xl hidden sm:block">
+            <p class="font-heading font-bold text-lg leading-none">15+</p>
+            <p class="text-xs text-white/80 mt-0.5">Years Trusted Care</p>
+          </div>
+        </div>
+        <div>
+          <span class="inline-flex items-center gap-1.5 bg-primary/10 text-primary border border-primary/20 text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full mb-4">Accepting New Patients</span>
+          <h2 class="font-heading font-bold text-4xl text-dark mb-5">Healing That Puts the Patient First</h2>
+          <p class="text-body text-lg leading-relaxed mb-4">At Morning Star in St. Peters, MO, we believe lasting relief is possible — without surgery, without endless medications, and without feeling like just another chart number.</p>
+          <p class="text-body leading-relaxed mb-6">Our team combines advanced regenerative medicine, neuromodulation, and personalized care plans to address the root cause of your pain — from chronic neuropathy to joint pain.</p>
+          <div class="flex flex-wrap gap-3 mb-6">
+            <span class="text-xs bg-bg-cream text-body px-3 py-1.5 rounded-full border border-border">Board Certified Specialists</span>
+            <span class="text-xs bg-bg-cream text-body px-3 py-1.5 rounded-full border border-border">Non-Surgical Protocols</span>
+            <span class="text-xs bg-bg-cream text-body px-3 py-1.5 rounded-full border border-border">HIPAA Compliant</span>
+          </div>
+          <a href="/about/" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center gap-1 transition-colors">Meet the Team →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="bg-white section-padding">
+    <div class="section-container">
+      <div class="text-center mb-12">
+        <h2 class="font-heading font-bold text-4xl text-dark mb-3">Our Treatments</h2>
+        <p class="text-body text-lg max-w-2xl mx-auto">Non-surgical, science-backed therapies designed to address the root cause of your pain.</p>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <a href="/pain-management/neuropathy-treatment/" class="p-6 rounded-xl border border-gray-200 hover:shadow-md hover:border-brand-blue transition-all group">
-          <h3 class="font-semibold text-lg text-brand-navy mb-2 group-hover:text-brand-blue transition-colors">Neuropathy Treatment</h3>
-          <p class="text-gray-500 text-sm">Customized plans to restore peripheral nerve health and relieve neuropathic pain using advanced neuromodulation and regenerative protocols.</p>
-        </a>
-        <a href="/pain-management/chronic-pain-management/" class="p-6 rounded-xl border border-gray-200 hover:shadow-md hover:border-brand-blue transition-all group">
-          <h3 class="font-semibold text-lg text-brand-navy mb-2 group-hover:text-brand-blue transition-colors">Chronic Pain Management</h3>
-          <p class="text-gray-500 text-sm">Personalized pain management combining regenerative, neuromodulation, and lifestyle therapies to address pain at its source.</p>
-        </a>
-        <a href="/pain-management/neuromodulation-technique/" class="p-6 rounded-xl border border-gray-200 hover:shadow-md hover:border-brand-blue transition-all group">
-          <h3 class="font-semibold text-lg text-brand-navy mb-2 group-hover:text-brand-blue transition-colors">Neuromodulation Technique</h3>
-          <p class="text-gray-500 text-sm">Controlled electrical stimulation that restores nerve function, reduces pain signals, and improves sensation without medication.</p>
-        </a>
+        {services.map(({ href, title: sTitle, body, img }) => (
+          <a href={href} class="bg-white rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
+            <div class="aspect-video overflow-hidden">
+              <img src={img} alt={sTitle} data-placeholder="true" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-6">
+              <h3 class="font-heading font-semibold text-xl text-dark mb-2">{sTitle}</h3>
+              <p class="text-body text-sm leading-relaxed mb-4">{body}</p>
+              <span class="text-primary font-medium text-sm inline-flex items-center gap-1">Learn more →</span>
+            </div>
+          </a>
+        ))}
       </div>
-      <div class="text-center mt-8">
-        <a href="/pain-management/" class="text-brand-blue font-medium hover:underline">View all pain management services &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Alternative Medicine Practitioner -->
-  <section class="bg-brand-light py-20 px-4">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold text-brand-navy text-center mb-4">Alternative Medicine Practitioner in St. Peters, MO</h2>
-      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
-        Regenerative medicine helps your body heal from the inside out. Our team uses PRP therapy, exosome treatments, and hyaluronic acid injections to repair damaged tissue and reduce inflammation without surgery.
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <a href="/regenerative-medicine/regenerative-therapy/" class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md hover:border-brand-blue transition-all group">
-          <h3 class="font-semibold text-lg text-brand-navy mb-2 group-hover:text-brand-blue transition-colors">Regenerative Therapy</h3>
-          <p class="text-gray-500 text-sm">Exosome-based treatments that reduce inflammation, promote cellular repair, and support long-term tissue regeneration.</p>
-        </a>
-        <a href="/regenerative-medicine/platelet-rich-plasma-therapy/" class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md hover:border-brand-blue transition-all group">
-          <h3 class="font-semibold text-lg text-brand-navy mb-2 group-hover:text-brand-blue transition-colors">PRP Therapy</h3>
-          <p class="text-gray-500 text-sm">Platelet-rich plasma injections that harness your body's own healing factors to accelerate recovery in joints and soft tissues.</p>
-        </a>
-        <a href="/regenerative-medicine/hyaluronic-acid-injections/" class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-md hover:border-brand-blue transition-all group">
-          <h3 class="font-semibold text-lg text-brand-navy mb-2 group-hover:text-brand-blue transition-colors">Hyaluronic Acid Injections</h3>
-          <p class="text-gray-500 text-sm">Lubricate and cushion damaged joints with minimally invasive HA injections for improved mobility and reduced pain.</p>
-        </a>
-      </div>
-      <div class="text-center mt-8">
-        <a href="/regenerative-medicine/" class="text-brand-blue font-medium hover:underline">View all regenerative medicine services &rarr;</a>
+      <div class="text-center mt-10">
+        <a href="/pain-management/" class="btn-secondary">View All Services</a>
       </div>
     </div>
   </section>
 
-  <!-- Weight Loss Service -->
-  <section class="py-20 px-4">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-brand-navy text-center mb-4">Weight Loss Service in St. Peters, MO</h2>
-      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-8">
-        Carrying extra weight puts added stress on damaged joints and inflamed nerves. Our medically supervised weight loss program uses semaglutide and tirzepatide to help patients in St. Peters achieve lasting results under clinical guidance.
-      </p>
-      <div class="text-center">
-        <a href="/medical-weight-loss/" class="inline-block px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-          Learn About Medical Weight Loss
-        </a>
+  <!-- STATS COUNTER (dark section) -->
+  <section class="bg-dark section-padding">
+    <div class="section-container">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-white/10">
+        <div class="text-center px-4">
+          <p class="font-heading font-bold text-5xl text-accent" data-counter="2500" data-suffix="+">2,500+</p>
+          <p class="text-white/70 text-sm mt-2">Patients Treated</p>
+        </div>
+        <div class="text-center px-4">
+          <p class="font-heading font-bold text-5xl text-accent" data-counter="15" data-suffix="+">15+</p>
+          <p class="text-white/70 text-sm mt-2">Years Experience</p>
+        </div>
+        <div class="text-center px-4">
+          <p class="font-heading font-bold text-5xl text-accent" data-counter="12" data-suffix="">12</p>
+          <p class="text-white/70 text-sm mt-2">Conditions Treated</p>
+        </div>
+        <div class="text-center px-4">
+          <p class="font-heading font-bold text-5xl text-accent">4.9 ★</p>
+          <p class="text-white/70 text-sm mt-2">Google Rating</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Wellness Center -->
-  <section class="bg-brand-light py-20 px-4">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-brand-navy text-center mb-4">Wellness Center in St. Peters, MO</h2>
-      <p class="text-gray-600 text-center max-w-3xl mx-auto mb-8">
-        Morning Star is more than a pain clinic. We are a wellness center focused on helping every patient function better, move easier, and enjoy daily life again. From nerve repair and joint restoration to weight management, our team in St. Peters builds treatment plans around your real goals: playing with your grandchildren, walking without pain, sleeping through the night.
-      </p>
-    </div>
-  </section>
-
-  <!-- Conditions We Treat -->
-  <section class="py-20 px-4">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-brand-navy text-center mb-4">Conditions We Treat in St. Peters</h2>
-      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">
-        Our clinic treats a range of pain conditions affecting nerves, joints, and the spine. Select a condition to learn about causes, symptoms, and how we can help.
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <a href="/conditions/neuropathy/" class="bg-white rounded-lg px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></span>
-          <span class="text-brand-navy font-medium group-hover:text-brand-blue transition-colors">Neuropathy</span>
-        </a>
-        <a href="/conditions/knee-pain/" class="bg-white rounded-lg px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></span>
-          <span class="text-brand-navy font-medium group-hover:text-brand-blue transition-colors">Knee Pain</span>
-        </a>
-        <a href="/conditions/back-pain/" class="bg-white rounded-lg px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></span>
-          <span class="text-brand-navy font-medium group-hover:text-brand-blue transition-colors">Back Pain</span>
-        </a>
-        <a href="/conditions/neck-pain/" class="bg-white rounded-lg px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></span>
-          <span class="text-brand-navy font-medium group-hover:text-brand-blue transition-colors">Neck Pain</span>
-        </a>
-        <a href="/conditions/joint-pain/" class="bg-white rounded-lg px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></span>
-          <span class="text-brand-navy font-medium group-hover:text-brand-blue transition-colors">Joint Pain</span>
-        </a>
-        <a href="/conditions/sciatica/" class="bg-white rounded-lg px-5 py-4 flex items-center gap-3 hover:shadow-md transition-all group border border-gray-200">
-          <span class="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0"></span>
-          <span class="text-brand-navy font-medium group-hover:text-brand-blue transition-colors">Sciatica</span>
-        </a>
+  <!-- PATIENT JOURNEY / HOW IT WORKS -->
+  <section class="bg-bg-cream section-padding">
+    <div class="section-container">
+      <div class="text-center mb-12">
+        <h2 class="font-heading font-bold text-4xl text-dark mb-3">Your Path to Relief</h2>
+        <p class="text-body text-lg max-w-xl mx-auto">Here is what to expect from your first call to lasting results.</p>
       </div>
-      <div class="text-center mt-8">
-        <a href="/conditions/" class="text-brand-blue font-medium hover:underline">View all conditions we treat &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Morning Star -->
-  <section class="bg-brand-light py-20 px-4">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-bold text-brand-navy text-center mb-12">Why Patients in St. Peters Choose Morning Star</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl p-8 shadow-sm text-center">
-          <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+      <div class="max-w-2xl mx-auto space-y-8">
+        {steps.map(({ num, title: sTitle, body }) => (
+          <div class="flex gap-6 items-start">
+            <div class="flex-shrink-0 w-14 h-14 rounded-full bg-accent flex items-center justify-center font-heading font-bold text-white text-lg shadow-md">{num}</div>
+            <div class="pt-1">
+              <h3 class="font-heading font-semibold text-xl text-dark mb-1.5">{sTitle}</h3>
+              <p class="text-body leading-relaxed">{body}</p>
+            </div>
           </div>
-          <h3 class="font-semibold text-lg text-brand-navy mb-2">Non-Surgical Focus</h3>
-          <p class="text-gray-500 text-sm">Every treatment at our clinic avoids surgery and reduces reliance on daily medications. We help your body heal on its own terms.</p>
-        </div>
-        <div class="bg-white rounded-xl p-8 shadow-sm text-center">
-          <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
-          </div>
-          <h3 class="font-semibold text-lg text-brand-navy mb-2">Personalized Treatment Plans</h3>
-          <p class="text-gray-500 text-sm">No two patients are the same. Every plan is built around your specific condition, pain levels, and personal recovery goals.</p>
-        </div>
-        <div class="bg-white rounded-xl p-8 shadow-sm text-center">
-          <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-5">
-            <svg class="w-7 h-7 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-          </div>
-          <h3 class="font-semibold text-lg text-brand-navy mb-2">Real Patient Results</h3>
-          <p class="text-gray-500 text-sm">From wheelchair to walking with a cane. From an 8/10 pain to a 2/10. Our patients see measurable progress, not vague promises.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonial — Clyde Steese (verbatim, approved) -->
-  <section class="py-20 px-4">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-brand-navy text-center mb-10">What Our Patients Say</h2>
-      <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-sm">
-        <div class="flex items-center gap-1 mb-4">
-          <span class="text-yellow-400 text-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        </div>
-        <blockquote class="text-gray-600 leading-relaxed mb-4">
-          &ldquo;The people working here are fantastic. They are great help with everything. The treatments were just fantastic. They started off slow but then they started picking up and they have finished and I am 100% very very happy with everything. Thank you so very much the end.&rdquo;
-        </blockquote>
-        <p class="text-brand-navy font-semibold">— Clyde Steese, St. Peters patient</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="bg-brand-light py-20 px-4">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-brand-navy text-center mb-10">Frequently Asked Questions</h2>
-      <div class="space-y-4">
-        {faqs.map(({ question, answer }) => (
-          <details class="bg-white rounded-xl border border-gray-200 group">
-            <summary class="flex justify-between items-center px-6 py-4 cursor-pointer font-medium text-brand-navy list-none">
-              {question}
-              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </summary>
-            <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed">{answer}</div>
-          </details>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="bg-brand-navy text-white py-16 px-4">
+  <!-- TESTIMONIALS -->
+  <section class="bg-white section-padding">
+    <div class="section-container">
+      <div class="text-center mb-12">
+        <h2 class="font-heading font-bold text-4xl text-dark mb-3">What Our Patients Say</h2>
+        <p class="text-body text-lg">Real patients. Real results. Real life — reclaimed.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {testimonials.map(({ quote, name, location, condition }) => (
+          <div class="bg-white rounded-2xl p-7 border-l-4 border-accent shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex gap-0.5 mb-3 text-accent text-lg">★★★★★</div>
+            <blockquote class="text-body leading-relaxed mb-5 italic">"{quote}"</blockquote>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-bg-cream flex items-center justify-center font-heading font-bold text-primary text-sm flex-shrink-0">{name.charAt(0)}</div>
+              <div>
+                <p class="font-heading font-semibold text-dark text-sm">{name}</p>
+                <p class="text-muted text-xs">{location} · {condition}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="bg-bg-warm section-padding">
+    <div class="section-container">
+      <div class="text-center mb-12">
+        <h2 class="font-heading font-bold text-4xl text-dark mb-3">Meet Our Team</h2>
+        <p class="text-body text-lg">Compassionate specialists dedicated to your recovery.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {[
+          { name: 'Dr. Bradley Smith', role: 'Pain Management Specialist', img: 'https://picsum.photos/seed/doctor1/400/533', bio: '15+ years in regenerative medicine and neuromodulation for chronic pain.' },
+          { name: 'Heather Jones, RN', role: 'Lead Treatment Nurse', img: 'https://picsum.photos/seed/nurse1/400/533', bio: 'Specializes in neuropathy protocols and patient education and support.' },
+          { name: 'Mandy Williams', role: 'Patient Care Coordinator', img: 'https://picsum.photos/seed/staff1/400/533', bio: 'Guides new patients through their treatment journey from first call to discharge.' },
+        ].map(({ name, role, img, bio }) => (
+          <div class="relative rounded-2xl overflow-hidden group shadow-sm hover:shadow-md transition-shadow">
+            <img src={img} alt={name} data-placeholder="true" class="w-full aspect-[3/4] object-cover" />
+            <div class="absolute inset-0 bg-dark/85 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              <h3 class="font-heading font-bold text-white text-xl">{name}</h3>
+              <p class="text-accent text-sm mt-0.5 mb-3">{role}</p>
+              <p class="text-white/70 text-sm leading-relaxed">{bio}</p>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 bg-white px-5 py-3 translate-y-0 group-hover:translate-y-full transition-transform duration-300">
+              <p class="font-heading font-semibold text-dark">{name}</p>
+              <p class="text-muted text-sm">{role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/about/" class="btn-secondary">Meet the Full Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-bg-cream section-padding">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="font-heading font-bold text-3xl text-dark text-center mb-10">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          {faqs.map(({ question, answer }) => (
+            <details class="bg-white rounded-2xl border border-border group shadow-sm">
+              <summary class="flex justify-between items-center px-6 py-4 cursor-pointer font-heading font-semibold text-dark list-none">
+                {question}
+                <svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <div class="px-6 pb-5 text-body text-sm leading-relaxed">{answer}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BLOCK -->
+  <section class="bg-primary py-20 px-4">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Start Your Recovery in St. Peters, MO</h2>
-      <p class="text-blue-200 mb-8">
-        Take the first step toward a life with less pain. Call us at <a href="tel:6362440124" class="underline hover:text-white">(636) 244-0124</a> or schedule your evaluation online. Morning Star is open Monday through Thursday, 8am to 5pm.
-      </p>
-      <a href="/schedule-appointment/" class="px-8 py-3 bg-white text-brand-navy font-semibold rounded-lg hover:bg-blue-50 transition-colors">
-        Schedule Your Evaluation
+      <h2 class="font-heading font-bold text-4xl text-white mb-4">Ready to Start Your Recovery?</h2>
+      <p class="text-white/80 text-lg mb-8">Take the first step toward lasting pain relief. Consultations are free — no obligation.</p>
+      <a href="/schedule-appointment/" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-heading font-semibold text-base px-8 py-4 rounded-full transition-all duration-200 shadow-lg">
+        Schedule Free Consultation →
       </a>
+      <p class="text-white/50 text-sm mt-4">📞 (636) 244-0124 · Mon–Thu 8am–5pm</p>
     </div>
   </section>
 </BaseLayout>

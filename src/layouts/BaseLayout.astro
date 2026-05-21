@@ -38,10 +38,11 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://morningstarregmed.com'
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <!-- Fonts: Jost (headings) + DM Sans (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <title>{title}</title>
@@ -49,7 +50,7 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://morningstarregmed.com'
     <!-- JSON-LD slot: child pages may inject additional structured data here -->
     <slot name="head" />
   </head>
-  <body class="flex flex-col min-h-full bg-white">
+  <body class="flex flex-col min-h-full bg-bg-warm">
     <Header />
     <main class="flex-1">
       <slot />
@@ -159,10 +160,29 @@ const canonicalUrl = new URL(Astro.url.pathname, 'https://morningstarregmed.com'
       if (header) {
         ScrollTrigger.create({
           start: 'top -60',
-          onEnter: () => header.classList.add('shadow-brand'),
-          onLeaveBack: () => header.classList.remove('shadow-brand'),
+          onEnter: () => header.classList.add('shadow-md'),
+          onLeaveBack: () => header.classList.remove('shadow-md'),
         });
       }
+
+      // ── Stats counter ──────────────────────────────────────────────────────
+      document.querySelectorAll('[data-counter]').forEach((el) => {
+        const target = parseInt(el.getAttribute('data-counter') || '0', 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        gsap.from({ val: 0 }, {
+          val: target,
+          duration: 1.5,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+          onUpdate: function() {
+            el.textContent = Math.round(this.targets()[0].val).toLocaleString() + suffix;
+          },
+        });
+      });
     }
 
     // Run on initial load and after Astro view transitions
